@@ -251,6 +251,131 @@ const recipeSeed = [
     Combine the mayonnaise and mustard in a small bowl. Add a small amount of the sauce to the mustard and mayonnaise and stir until smooth, then add the mixture to the sauce. Stir until heated through. Add the cheese, stirring until melted. Add the pasta, shrimp and peas and stir until well combined. Transfer the mixture to the buttered dish and bake, covered, for about 15-25 minutes or until heated through.
     Makes 4 servings`,
   },
+
+  {
+    name: "Chocolate Truffle Cheesecake",
+    book: "The Last Suppers",
+    ingredients: [
+      "chocolate wafer cookies",
+      "butter",
+      "chocolate",
+      "cream cheese",
+      "eggs",
+      "sugar",
+      "Amaretto liquer",
+      "vanilla extract",
+      "whipping cream",
+    ],
+
+    quantities: [
+      "9 ounce",
+      "6 tablespoons",
+      "½ pound unsweetened",
+      "1 ½ pounds",
+      "3 large",
+      "1 cup",
+      "¼ cup",
+      "1 ½",
+      "½",
+    ],
+    course: "dessert",
+    glutenFree: false,
+    lowCarb: false,
+    instructions: `Whirl the chocolate cookies in a blender until they form crumbs. Mix with the melted butter. Press into the bottom and sides of a buttered 10-inch springform pan and refrigerate until you’re ready to fill and bake.
+    Preheat the oven to 350 degrees. I n the top of a double boiler over boiling water, melt the chocolate. Set aside to cool. In the large bowl of an electric mixer, heat the cream cheese until smooth. Add the eggs and sugar and beat until well incorporated. Stir a small amount of this mixture into the chocolate to loosen. Add the chocolate mixture to the cream cheese mixture and stir well. Stir in the Amaretto, vanilla, and cream. Stir until all ingredients are well mixed.
+    
+    Pour the filling into the prepared crust and bake for 50 to 55 minutes or until the cheesecake is puffed slightly and no longer giggles in the center. Cool to room temperature, then refrigerate until chilled, at least 2 hours. Take the cheesecake out of the refrigerator 30 minutes before serving for ease of slicing. Remove the sides of the pan and cut with a sharp knife. If the cheesecake is hard to slice, hold a long, unflavored piece of dental floss in 2 hands and carefully saw through the cake to cut even pieces.
+    Makes 16 servings`,
+  },
+
+  {
+    name: "Chilean Sea Bass with Garlic, Basil and Vegetables",
+    book: "The Last Suppers",
+    ingredients: [
+      "butter",
+      "basil",
+      "garlic cloves",
+      "lemon juice",
+      "potatoes",
+      "baby carrots",
+      "Chilean sea bass fillets",
+      "asparagus",
+    ],
+    quantities: [
+      "4 tablespoons unsalted",
+      "4 tablespoons finely chopped fresh",
+      "2 pressed",
+      "2 tablespoons fresh",
+      "4 red-skinned new",
+      "8 baby",
+      "1 ½ pounds fillets fresh boneless",
+      "8 slender",
+    ],
+    course: "main",
+    glutenFree: false,
+    lowCarb: false,
+    instructions: `Preheat the oven to 425 degrees. In a small bowl, beat the butter, basil, garlic, and lemon juice until well combined. Set aside. Parboil the potatoes and baby carrots for 5 minutes; drain. Divide the fillets into 4 equal portions.
+
+    Place the fillets in a buttered 9- by 13-inch pan. Arrange the vegetables over the fish in a appealing pattern. Top each fish portion with one-fourth of the butter-garlic mixture. Cover tightly with aluminum foil. Bake for 20 to 30 minutes or until the fish flakes easily with a fork. Serve immediately.
+    Makes 4 servings.`,
+  },
+
+  {
+    name: "The First Wasp Latkes",
+    book: "The Last Suppers",
+    ingredients: ["potatoes", "butter", "olive oil", "salt and pepper"],
+    quantities: [
+      "4 large or 8 small",
+      "2 tablespoons",
+      "2 tablespoons",
+      "to taste",
+    ],
+    course: "app",
+    glutenFree: false,
+    lowCarb: false,
+    instructions: `Grate the potatoes into a large clean kitchen towel that can be stained. Roil the potatoes up in the towel and wring to remove moisture. (It is best to do this over the sink, since it will produce a surprising amount of liquid).
+
+    Melt the butter with the olive oil on a large griddle. Form the grated potatoes into 4 pancakes. Cook the pancakes over medium heat for about 10 minutes, until the bottom is golden brown, then flip the pancakes. Cook on the other side for about 5 minutes. Season with salt and pepper and serve plain, or with sour cream and applesauce.
+    Makes 4 servings`,
+  },
+
+  {
+    name: "Portobello Mushrooms Stuffed With Grilled Chicken, Pesto, and Sun Dried Tomatoes",
+    book: "The Last Suppers",
+    ingredients: [
+      "portabello mushrooms",
+      "olive oil",
+      "sherry",
+      "olive oil",
+      "balsamic vinegar",
+      "garlic",
+      "chicken breast",
+      "pesto",
+      "sun-dried tomatoes",
+    ],
+    quantities: [
+      "4 large",
+      "5 tablespoons",
+      "5 tablespoons",
+      "½ cup extra virgin",
+      "2 tablespoons",
+      "1 clove pressed",
+      "4 boneless skinless, cut in half",
+      "¼ cup",
+      "2 tablespoons finely chopped, drained, and patted with a paper towels if packed in oil",
+    ],
+    course: "main",
+    glutenFree: false,
+    lowCarb: false,
+    instructions: `Carefully clean the mushrooms with damp paper towel and trim. Remove and chop the stems. Place the mushroom caps, tops down, and the chopped stems in a 9 by 13-inch glass-baking dish. Pour 1 tablespoon olive oil and 1 tablespoon sherry over the underside of each mushroom cap, pour the remaining olive oil and sherry over the stems. Cover and set aside to marinate at room temperature for 1 hour.
+
+    Mix together the marinade for the chicken and pour over the chicken slices. Cover and set aside to marinate at room temperature for 1 hour.
+    
+    Preheat a grill. Grill the chicken quickly, about 1 to 2 minutes per side (they will be cooked further). Preheat oven to 400 degrees. Carefully spread 1-tablespoon pesto over the underside of each mushroom cap. Sprinkle 1 ½ teaspoons sun-dried tomatoes on top of each pesto-covered mushroom. Evenly distribute the marinated mushroom stems on top of the tomatoes.
+    
+    Place 2 slices of chicken on top. Place the stuffed mushrooms in a greased 9 by 13-inch pan. Bake for approximately 20 to 25 minutes or until heated through. Serve immediately.
+    Makes 4 servings`,
+  },
 ];
 
 db.Recipe.remove({})
