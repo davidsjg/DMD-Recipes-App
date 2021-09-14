@@ -1,5 +1,6 @@
 import React from "react";
-import BookForm from "../../components/BookForm/BookForm";
+import SearchForm from "../../components/SearchForm/SearchForm";
+
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -12,7 +13,7 @@ export default function Home() {
         <Row>
           <Col></Col>
           <Col lg={8}>
-            <BookForm />
+            <SearchForm />
           </Col>
           <Col></Col>
         </Row>

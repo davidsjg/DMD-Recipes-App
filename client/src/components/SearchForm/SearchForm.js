@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { useStoreContext } from "../../utils/GlobalState";
 import API from "../../utils/API";
 
-export default function BookForm() {
+export default function SearchForm() {
   const [state, dispatch] = useStoreContext();
   let recipeSearch = useRef();
   let bookSearch = useRef();
@@ -10,20 +10,23 @@ export default function BookForm() {
 
   console.log(state);
 
-  function handleOnClick(e) {
+  // function handleOnClick(e) {
+  //   e.preventDefault();
+  //   console.log(recipeSearch.current.value);
+  // }
+
+  useEffect(() => {}, []);
+
+  function loadRecipes() {}
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log(recipeSearch.current.value);
-  }
 
-  useEffect(() => {
-    loadRecipes();
-  }, []);
-
-  function loadRecipes() {
-    API.getRecipes().then((data) => {
+    API.findByRecipe(recipeSearch.current.value).then((data) => {
       console.log(data);
     });
-  }
+  };
 
   return (
     <>
@@ -69,7 +72,7 @@ export default function BookForm() {
           <label className="form-check-label">Check me out</label>
         </div>
         <button
-          onClick={handleOnClick}
+          onClick={handleSubmit}
           type="submit"
           className="btn btn-primary"
         >
