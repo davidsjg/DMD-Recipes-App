@@ -1,8 +1,13 @@
 import React, { useRef } from "react";
 
 export default function BookForm() {
+  let recipeSearch = useRef();
+  let bookSearch = useRef();
+  let ingredSearch = useRef();
+
   function handleOnClick(e) {
     e.preventDefault();
+    console.log(recipeSearch.current.value);
   }
 
   return (
@@ -15,6 +20,7 @@ export default function BookForm() {
             id="recipeSearch"
             aria-describedby="recipeSearch"
             placeholder="Recipe"
+            ref={recipeSearch}
           />
         </div>
 
@@ -25,6 +31,7 @@ export default function BookForm() {
             id="ingredientSearch"
             aria-describedby="IngredientSearch"
             placeholder="Ingredient"
+            ref={ingredSearch}
           />
         </div>
         <div className="form-group">
@@ -34,6 +41,7 @@ export default function BookForm() {
             id="bookSearch"
             aria-describedby="bookSearch"
             placeholder="Book"
+            ref={bookSearch}
           />
         </div>
 
