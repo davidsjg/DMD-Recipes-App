@@ -9,11 +9,11 @@ export default function Home() {
     <>
       <Container>
         <Row>
-          <Col>sm=true</Col>
+          <Col></Col>
           <Col lg={8}>
             <BookForm />
           </Col>
-          <Col>sm=true</Col>
+          <Col></Col>
         </Row>
       </Container>
     </>
