@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const lakeRoutes = require("./lakes");
+const appRoutes = require("./recipeRoutes");
 
 // Destination routes
-router.use("/lakes", lakeRoutes);
+router.use("/", appRoutes);
 
 module.exports = router;

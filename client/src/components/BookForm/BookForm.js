@@ -1,13 +1,28 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
+import { useStoreContext } from "../../utils/GlobalState";
+import API from "../../utils/API";
 
 export default function BookForm() {
+  const [state, dispatch] = useStoreContext();
   let recipeSearch = useRef();
   let bookSearch = useRef();
   let ingredSearch = useRef();
 
+  console.log(state);
+
   function handleOnClick(e) {
     e.preventDefault();
     console.log(recipeSearch.current.value);
+  }
+
+  useEffect(() => {
+    loadRecipes();
+  }, []);
+
+  function loadRecipes() {
+    API.getRecipes().then((data) => {
+      console.log(data);
+    });
   }
 
   return (
