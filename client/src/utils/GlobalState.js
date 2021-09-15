@@ -1,19 +1,16 @@
 import React, { createContext, useReducer, useContext } from "react";
-import { GET_RECIPE, GET_ALL_RECIPES, LOADING } from "./actions";
+import { SET_CURRENT_RECIPE, GET_ALL_RECIPES, LOADING } from "./actions";
 
 const StoreContext = createContext();
 const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case GET_ALL_RECIPES:
+    case SET_CURRENT_RECIPE:
       return {
         ...state,
-      };
-
-    case GET_RECIPE:
-      return {
-        ...state,
+        recipe: action.recipe,
+        loading: false,
       };
 
     default:

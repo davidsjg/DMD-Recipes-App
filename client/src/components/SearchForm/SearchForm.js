@@ -1,14 +1,13 @@
 import React, { useRef, useEffect } from "react";
 import { useStoreContext } from "../../utils/GlobalState";
 import API from "../../utils/API";
+import { SET_CURRENT_RECIPE } from "../../utils/actions";
 
 export default function SearchForm() {
   const [state, dispatch] = useStoreContext();
   let recipeSearch = useRef();
   let bookSearch = useRef();
   let ingredSearch = useRef();
-
-  console.log(state);
 
   // function handleOnClick(e) {
   //   e.preventDefault();
@@ -24,7 +23,12 @@ export default function SearchForm() {
     console.log(recipeSearch.current.value);
 
     API.findByRecipe(recipeSearch.current.value).then((data) => {
-      console.log(data);
+      dispatch({
+        type: SET_CURRENT_RECIPE,
+        recipe: data.data[0],
+      });
+      console.log(data.data);
+      console.log(state);
     });
   };
 
