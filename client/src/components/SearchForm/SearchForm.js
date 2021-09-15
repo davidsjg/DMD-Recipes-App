@@ -45,7 +45,6 @@ export default function SearchForm() {
             ref={recipeSearch}
           />
         </div>
-
         <div className="form-group">
           <label>Ingredient</label>
           <input
@@ -66,14 +65,25 @@ export default function SearchForm() {
             ref={bookSearch}
           />
         </div>
-
+        Options:
         <div className="form-check">
           <input
+            inline="true"
             type="checkbox"
             className="form-check-input"
             id="exampleCheck1"
           />
-          <label className="form-check-label">Check me out</label>
+
+          <label className="form-check-label">Gluten-Free &nbsp</label>
+
+          <input
+            inline="true"
+            type="checkbox"
+            className="form-check-input"
+            id="exampleCheck1"
+          />
+
+          <label className="form-check-label">Low-Carb</label>
         </div>
         <button
           onClick={handleSubmit}
