@@ -1,5 +1,5 @@
 import React, { createContext, useReducer, useContext } from "react";
-import { SET_CURRENT_RECIPE } from "./actions";
+import { SET_CURRENT_RECIPE, SET_CURRENT_BOOK } from "./actions";
 
 const StoreContext = createContext();
 const { Provider } = StoreContext;
@@ -15,12 +15,12 @@ const reducer = (state, action) => {
         loading: false,
       };
 
-    // case SET_CURRENT_BOOK:
-    //   return {
-    //     ...state,
-    //     book: action.book,
-    //     loading: false,
-    //   };
+    case SET_CURRENT_BOOK:
+      return {
+        ...state,
+        book: action.book,
+        loading: false,
+      };
 
     default:
       return state;
