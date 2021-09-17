@@ -1,15 +1,16 @@
 import React, { useRef, useEffect } from "react";
 import { useStoreContext } from "../../utils/GlobalState";
 import API from "../../utils/API";
-import { SET_CURRENT_BOOK, SET_CURRENT_RECIPE } from "../../utils/actions";
+import { SET_CURRENT_RECIPE } from "../../utils/actions";
 
 export default function SearchForm() {
   const [state, dispatch] = useStoreContext();
-  let recipeSearch = useRef();
-  let bookSearch = useRef();
-  let ingredSearch = useRef();
+  const recipeSearch = useRef();
+  const bookSearch = useRef();
+  const ingredSearch = useRef();
 
-  useEffect(() => {}, []);
+  // useEffect(() => {}, []);
+  console.log(state);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,24 +20,22 @@ export default function SearchForm() {
     //   console.log(data);
     // });
 
-    // API.findByRecipe(recipeSearch.current.value).then((data) => {
+    API.findByRecipe(recipeSearch.current.value).then((data) => {
+      dispatch({
+        type: SET_CURRENT_RECIPE,
+        recipe: data.data[0],
+      });
+    });
+
+    // API.findByBook(bookSearch.current.value).then((data) => {
+    //   console.log(data);
     //   dispatch({
-    //     type: SET_CURRENT_RECIPE,
-    //     recipe: data.data[0],
+    //     type: SET_CURRENT_BOOK,
+    //     book: data.data[0],
     //   });
     //   console.log(data.data);
     //   console.log(state);
     // });
-
-    API.findByBook(bookSearch.current.value).then((data) => {
-      console.log(data);
-      // dispatch({
-      //   type: SET_CURRENT_BOOK,
-      //   book: data.data[0],
-      // });
-      // console.log(data.data);
-      // console.log(state);
-    });
   };
 
   return (

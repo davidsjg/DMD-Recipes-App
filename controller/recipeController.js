@@ -9,7 +9,7 @@ module.exports = {
   // },
   findRecipe: function (req, res) {
     db.Recipe.find({
-      title: { $regex: new RegExp(req.query.q, "i") },
+      name: { $regex: new RegExp(req.query.q, "i") },
     })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
