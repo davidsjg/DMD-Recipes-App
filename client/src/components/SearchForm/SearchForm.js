@@ -79,15 +79,37 @@ export default function SearchForm() {
 
     let queryArray = [iOnly, bOnly, rOnly, RnB, BnI, RnI, RnBnI];
 
-    console.log(queryArray);
+    if (iOnly) {
+      console.log("iOnly");
+    } else if (bOnly) {
+      console.log("bOnly");
+    } else if (rOnly) {
+      console.log("rOnly");
+    } else if (RnB) {
+      console.log("RnB");
+    } else if (BnI) {
+      console.log("BnI");
+    } else if (RnI) {
+      console.log("RnI");
+    } else if (RnBnI) {
+      console.log("RnBnI");
+    } else {
+      alert("Please fill in at least one search field!");
+    }
 
-    console.log("iONly " + iOnly);
-    console.log("bOnly " + bOnly);
-    console.log("rOnly " + rOnly);
-    console.log("RnB " + RnB);
-    console.log("Bni " + BnI);
-    console.log("RnI " + RnI);
-    console.log("RnBnI " + RnBnI);
+    const selectedQuery = queryArray.find((query) => (query = true));
+
+    // console.log("selectedQuery = " + selectedQuery);
+
+    // console.log(queryArray);
+
+    // console.log("iONly " + iOnly);
+    // console.log("bOnly " + bOnly);
+    // console.log("rOnly " + rOnly);
+    // console.log("RnB " + RnB);
+    // console.log("Bni " + BnI);
+    // console.log("RnI " + RnI);
+    // console.log("RnBnI " + RnBnI);
     //push them all into an array, return the one thats true, send that to setQuery()
     // setQuery();
   };
