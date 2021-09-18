@@ -18,6 +18,13 @@ export default function SearchForm() {
     let recipeInput = recipeSearch.current.value;
     let bookInput = bookSearch.current.value;
     let ingredInput = ingredSearch.current.value;
+    let rOnly = false;
+    let bOnly = false;
+    let iOnly = false;
+    let RnB = false;
+    let RnI = false;
+    let BnI = false;
+    let RnBnI = false;
 
     // API.getRecipes().then((data) => {
     //   console.log(data);
@@ -40,76 +47,49 @@ export default function SearchForm() {
     //   });
     // });
 
-    // recipeSearch.current.value === ""
-    //   ? console.log("it is undefined and should be blank")
-    //   : console.log("it is not null and is: " + recipeSearch);
-
-    // if (recipeInput === "") {
-    //   console.log("it is undefined and should be blank");
-    // } else {
-    //   console.log("it is not null and is: " + recipeSearch);
-    // }
-
-    // recipeInput === ""
-    // ? bookInput === ""
-    //   ? ingredInput === ""
-    //     ?
-    //     :
-    //   :
-    // : bookInput === ""
-    //   ? console.log('recipeInput has something but bookInput is empty')
-    //   : ingredInput === ""
-    //     ? console.log('THIS IS R + B')
-    //     : console.log('THIS IS R + B + I')
-
     recipeInput === ""
       ? console.log("recipeInput is empty")
       : bookInput === ""
       ? ingredInput === ""
-        ? console.log("this is R only")
-        : console.log("this is R + I")
+        ? (rOnly = true)
+        : (RnI = true)
       : ingredInput === ""
-      ? console.log("THIS IS R + B")
-      : console.log("THIS IS R + B + I");
+      ? (RnB = true)
+      : (RnBnI = true);
 
     bookInput === ""
       ? console.log("bookInput is empty")
       : ingredInput === ""
       ? recipeInput === ""
-        ? console.log("this is B only")
-        : console.log("this is B + R")
+        ? (bOnly = true)
+        : (RnB = true)
       : recipeInput === ""
-      ? console.log("THIS IS B + I")
-      : console.log("THIS IS R + B + I");
+      ? (BnI = true)
+      : (RnBnI = true);
 
     ingredInput === ""
       ? console.log("ingredInput is empty")
       : recipeInput === ""
       ? bookInput === ""
-        ? console.log("this is I only")
-        : console.log("this is I + B")
+        ? (iOnly = true)
+        : (BnI = true)
       : bookInput === ""
-      ? console.log("THIS IS I + R")
-      : console.log("THIS IS R + B + I");
+      ? (RnI = true)
+      : (RnBnI = true);
 
-    //   {
-    //     (() => {
-    //         if (conditionOne)
-    //            return <span>One</span>
-    //         if (conditionTwo)
-    //            return <span>Two</span>
-    //         else (conditionOne)
-    //            return <span>Three</span>
-    //     })()
-    //  }
+    let queryArray = [iOnly, bOnly, rOnly, RnB, BnI, RnI, RnBnI];
 
-    // if (recipeInput && bookInput && ingredInput === "") {
-    //   alert("Please enter at least one input field!");
-    // } else {
-    //   console.log(
-    //     "it is not null and is: " + recipeSearch + bookSearch + ingredSearch
-    //   );
-    // }
+    console.log(queryArray);
+
+    console.log("iONly " + iOnly);
+    console.log("bOnly " + bOnly);
+    console.log("rOnly " + rOnly);
+    console.log("RnB " + RnB);
+    console.log("Bni " + BnI);
+    console.log("RnI " + RnI);
+    console.log("RnBnI " + RnBnI);
+    //push them all into an array, return the one thats true, send that to setQuery()
+    // setQuery();
   };
 
   return (
@@ -176,3 +156,33 @@ export default function SearchForm() {
     </>
   );
 }
+
+// recipeInput === ""
+// ? console.log("recipeInput is empty")
+// : bookInput === ""
+// ? ingredInput === ""
+//   ? console.log("this is R only")
+//   : console.log("this is R + I")
+// : ingredInput === ""
+// ? console.log("THIS IS R + B")
+// : console.log("THIS IS R + B + I");
+
+// bookInput === ""
+// ? console.log("bookInput is empty")
+// : ingredInput === ""
+// ? recipeInput === ""
+//   ? console.log("this is B only")
+//   : console.log("this is B + R")
+// : recipeInput === ""
+// ? console.log("THIS IS B + I")
+// : console.log("THIS IS R + B + I");
+
+// ingredInput === ""
+// ? console.log("ingredInput is empty")
+// : recipeInput === ""
+// ? bookInput === ""
+//   ? console.log("this is I only")
+//   : console.log("this is I + B")
+// : bookInput === ""
+// ? console.log("THIS IS I + R")
+// : console.log("THIS IS R + B + I");
