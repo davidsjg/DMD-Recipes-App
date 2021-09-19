@@ -1,7 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import { useStoreContext } from "../../utils/GlobalState";
 import API from "../../utils/API";
-import { SET_CURRENT_RECIPE, SET_CURRENT_BOOK } from "../../utils/actions";
+import {
+  SET_CURRENT_RECIPE,
+  SET_CURRENT_BOOK,
+  SET_CURRENT_INGRED,
+} from "../../utils/actions";
 
 export default function SearchForm() {
   const [state, dispatch] = useStoreContext();
@@ -74,7 +78,12 @@ export default function SearchForm() {
     let queryArray = [iOnly, bOnly, rOnly, RnB, BnI, RnI, RnBnI];
 
     if (iOnly) {
-      console.log("iOnly");
+      API.singleQuery(ingredSearch.current.value).then((data) => {
+        dispatch({
+          type: SET_CURRENT_INGRED,
+          ingredients: data.data,
+        });
+      });
     } else if (bOnly) {
       API.singleQuery(bookSearch.current.value).then((data) => {
         dispatch({

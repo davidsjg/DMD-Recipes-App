@@ -1,5 +1,9 @@
 import React, { createContext, useReducer, useContext } from "react";
-import { SET_CURRENT_RECIPE, SET_CURRENT_BOOK } from "./actions";
+import {
+  SET_CURRENT_RECIPE,
+  SET_CURRENT_BOOK,
+  SET_CURRENT_INGRED,
+} from "./actions";
 
 const StoreContext = createContext();
 const { Provider } = StoreContext;
@@ -22,6 +26,13 @@ const reducer = (state, action) => {
         loading: false,
       };
 
+    case SET_CURRENT_INGRED:
+      return {
+        ...state,
+        ingredients: action.ingredients,
+        loading: false,
+      };
+
     default:
       return state;
   }
@@ -30,7 +41,7 @@ const reducer = (state, action) => {
 const StoreProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useReducer(reducer, {
     recipe: "",
-    ingredient: "",
+    ingredient: [],
     quantities: "",
     course: "",
     book: [],
