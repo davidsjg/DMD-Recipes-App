@@ -29,23 +29,17 @@ export default function SearchForm() {
     // API.getRecipes().then((data) => {
     //   console.log(data);
     // });
-    console.log(bookSearch.current.value);
 
-    API.findByBook(bookSearch.current.value).then((data) => {
-      console.log("API data below");
+    API.doubleQuery(bookSearch.current.value, recipeSearch.current.value).then(
+      (data) => {
+        console.log("returned api data below");
+        console.log(data);
+      }
+    );
+
+    API.singleQuery(ingredSearch.current.value).then((data) => {
       console.log(data);
-      dispatch({
-        type: SET_CURRENT_BOOK,
-        book: data.data,
-      });
     });
-
-    // API.findByRecipe(recipeSearch.current.value).then((data) => {
-    //   dispatch({
-    //     type: SET_CURRENT_RECIPE,
-    //     recipe: data.data[0],
-    //   });
-    // });
 
     recipeInput === ""
       ? console.log("recipeInput is empty")
@@ -82,7 +76,12 @@ export default function SearchForm() {
     if (iOnly) {
       console.log("iOnly");
     } else if (bOnly) {
-      console.log("bOnly");
+      API.singleQuery(bookSearch.current.value).then((data) => {
+        dispatch({
+          type: SET_CURRENT_BOOK,
+          book: data.data,
+        });
+      });
     } else if (rOnly) {
       API.singleQuery(recipeSearch.current.value).then((data) => {
         dispatch({
