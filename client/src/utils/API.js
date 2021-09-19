@@ -5,11 +5,11 @@ export default {
   //   return axios.get("/api/recipes");
   // },
 
-  findByRecipe: function (query) {
+  singleQuery: function (query) {
     return axios.get("/api/recipes", { params: { q: query } });
   },
 
-  findByBook: function (query) {
-    return axios.get("/api/recipes", { params: { q: query } });
-  },
+  // findByBook: function (query) {
+  //   return axios.get("/api/recipes", { params: { q: query } });
+  // },
 };

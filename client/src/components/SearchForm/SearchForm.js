@@ -84,7 +84,12 @@ export default function SearchForm() {
     } else if (bOnly) {
       console.log("bOnly");
     } else if (rOnly) {
-      console.log("rOnly");
+      API.singleQuery(recipeSearch.current.value).then((data) => {
+        dispatch({
+          type: SET_CURRENT_RECIPE,
+          recipe: data.data[0],
+        });
+      });
     } else if (RnB) {
       console.log("RnB");
     } else if (BnI) {
@@ -98,20 +103,6 @@ export default function SearchForm() {
     }
 
     const selectedQuery = queryArray.find((query) => (query = true));
-
-    // console.log("selectedQuery = " + selectedQuery);
-
-    // console.log(queryArray);
-
-    // console.log("iONly " + iOnly);
-    // console.log("bOnly " + bOnly);
-    // console.log("rOnly " + rOnly);
-    // console.log("RnB " + RnB);
-    // console.log("Bni " + BnI);
-    // console.log("RnI " + RnI);
-    // console.log("RnBnI " + RnBnI);
-    //push them all into an array, return the one thats true, send that to setQuery()
-    // setQuery();
   };
 
   return (
