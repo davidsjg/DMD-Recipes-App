@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { useStoreContext } from "../../utils/GlobalState";
 import API from "../../utils/API";
-import { SET_CURRENT_RECIPE } from "../../utils/actions";
+import { SET_CURRENT_RECIPE, SET_CURRENT_BOOK } from "../../utils/actions";
 
 export default function SearchForm() {
   const [state, dispatch] = useStoreContext();
@@ -29,16 +29,16 @@ export default function SearchForm() {
     // API.getRecipes().then((data) => {
     //   console.log(data);
     // });
+    console.log(bookSearch.current.value);
 
-    // API.findByBook(bookSearch.current.value).then((data) => {
-    //   console.log(data);
-    //   dispatch({
-    //     type: SET_CURRENT_BOOK,
-    //     book: data.data[0],
-    //   });
-    //   console.log(data.data);
-    //   console.log(state);
-    // });
+    API.findByBook(bookSearch.current.value).then((data) => {
+      console.log("API data below");
+      console.log(data);
+      dispatch({
+        type: SET_CURRENT_BOOK,
+        book: data.data,
+      });
+    });
 
     // API.findByRecipe(recipeSearch.current.value).then((data) => {
     //   dispatch({

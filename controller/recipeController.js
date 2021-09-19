@@ -17,7 +17,7 @@ module.exports = {
 
   findBook: function (req, res) {
     db.Recipe.find({
-      book: req.query.q,
+      book: { $regex: new RegExp(req.query.q, "i") },
     })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));

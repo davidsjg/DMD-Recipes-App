@@ -33,7 +33,7 @@ const StoreProvider = ({ value = [], ...props }) => {
     ingredient: "",
     quantities: "",
     course: "",
-    book: "",
+    book: [],
     meat: "",
   });
 
