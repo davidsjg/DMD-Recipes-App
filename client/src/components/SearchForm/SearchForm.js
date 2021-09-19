@@ -41,8 +41,11 @@ export default function SearchForm() {
     //   }
     // );
 
-    API.singleQuery(ingredSearch.current.value).then((data) => {
-      console.log(data);
+    API.singleQuery(bookSearch.current.value, "book").then((data) => {
+      dispatch({
+        type: SET_CURRENT_BOOK,
+        book: data.data,
+      });
     });
 
     recipeInput === ""
@@ -78,21 +81,21 @@ export default function SearchForm() {
     let queryArray = [iOnly, bOnly, rOnly, RnB, BnI, RnI, RnBnI];
 
     if (iOnly) {
-      API.singleQuery(ingredSearch.current.value).then((data) => {
+      API.singleQuery(ingredSearch.current.value, "ingred").then((data) => {
         dispatch({
           type: SET_CURRENT_INGRED,
           ingredients: data.data,
         });
       });
     } else if (bOnly) {
-      API.singleQuery(bookSearch.current.value).then((data) => {
+      API.singleQuery(bookSearch.current.value, "book").then((data) => {
         dispatch({
           type: SET_CURRENT_BOOK,
           book: data.data,
         });
       });
     } else if (rOnly) {
-      API.singleQuery(recipeSearch.current.value).then((data) => {
+      API.singleQuery(recipeSearch.current.value, "recipe").then((data) => {
         dispatch({
           type: SET_CURRENT_RECIPE,
           recipe: data.data[0],

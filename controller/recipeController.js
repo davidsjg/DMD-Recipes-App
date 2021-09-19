@@ -35,6 +35,31 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
 
+  mainQuery: function (req, res) {
+    console.log("inside double query, req.query below");
+    console.log(req.query);
+
+    if (req.query.r === "book") {
+      db.Recipe.find({
+        book: { $regex: new RegExp(req.query.q, "i") },
+      })
+        .then((dbModel) => res.json(dbModel))
+        .catch((err) => res.status(422).json(err));
+    } else if (req.query.r === "recipe") {
+      db.Recipe.find({
+        name: { $regex: new RegExp(req.query.q, "i") },
+      })
+        .then((dbModel) => res.json(dbModel))
+        .catch((err) => res.status(422).json(err));
+    } else if (req.query.r === "ingred") {
+      db.Recipe.find({
+        ingredients: { $regex: new RegExp(req.query.q, "i") },
+      })
+        .then((dbModel) => res.json(dbModel))
+        .catch((err) => res.status(422).json(err));
+    }
+  },
+
   // doubleQuery: function (req, res) {
   //   console.log("inside query, req below");
   //   console.log(req.query);
