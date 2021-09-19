@@ -23,14 +23,26 @@ module.exports = {
   //     .catch((err) => res.status(422).json(err));
   // },
 
-  doubleQuery: function (req, res) {
-    console.log("inside query, req below");
+  findIngredient: function (req, res) {
+    console.log("inside query, req.query below");
     console.log(req.query);
+
     db.Recipe.find({
-      book: { $regex: new RegExp(req.query.q, "i") },
-      recipe: { $regex: new RegExp(req.query.r, "i") },
+      ingredients: { $regex: new RegExp(req.query.q, "i") },
     })
       .then((dbModel) => res.json(dbModel))
+
       .catch((err) => res.status(422).json(err));
   },
+
+  // doubleQuery: function (req, res) {
+  //   console.log("inside query, req below");
+  //   console.log(req.query);
+  //   db.Recipe.find({
+  //     book: { $regex: new RegExp(req.query.q, "i") },
+  //     recipe: { $regex: new RegExp(req.query.r, "i") },
+  //   })
+  //     .then((dbModel) => res.json(dbModel))
+  //     .catch((err) => res.status(422).json(err));
+  // },
 };

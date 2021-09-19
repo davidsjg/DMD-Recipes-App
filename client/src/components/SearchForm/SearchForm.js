@@ -30,12 +30,12 @@ export default function SearchForm() {
     //   console.log(data);
     // });
 
-    API.doubleQuery(bookSearch.current.value, recipeSearch.current.value).then(
-      (data) => {
-        console.log("returned api data below");
-        console.log(data);
-      }
-    );
+    // API.doubleQuery(bookSearch.current.value, recipeSearch.current.value).then(
+    //   (data) => {
+    //     console.log("returned api data below");
+    //     console.log(data);
+    //   }
+    // );
 
     API.singleQuery(ingredSearch.current.value).then((data) => {
       console.log(data);
