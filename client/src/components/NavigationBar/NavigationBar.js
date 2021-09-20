@@ -1,20 +1,24 @@
 import React from "react";
+import NavDrop from "..//NavDrop/NavDrop";
 // import Navbar from 'react-bootstrap/Navbar'
 // import Container from 'react-bootstrap/Container'
 // import Nav from 'react-bootstrap/Nav'
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 
 export default function NavigationBar() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light">
       <Container>
-        <Navbar.Brand href="#home">Recipes App</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-          </Nav>
+        <Navbar.Brand href="#home">Diane Mott Davidson Recipes</Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse className="justify-content-end">
+          <Nav.Link href="#home" style={{ color: "black" }}>
+            Home
+          </Nav.Link>
+          <Nav.Link href="#link" style={{ color: "black" }}>
+            Link
+          </Nav.Link>
+          <NavDrop />
         </Navbar.Collapse>
       </Container>
     </Navbar>

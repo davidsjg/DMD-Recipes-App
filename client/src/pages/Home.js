@@ -12,7 +12,7 @@ export default function Home() {
       <Container>
         <Row>
           <Col></Col>
-          <Col lg={8}>
+          <Col lg={6}>
             <SearchForm />
           </Col>
           <Col></Col>

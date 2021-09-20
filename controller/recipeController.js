@@ -63,6 +63,12 @@ module.exports = {
       })
         .then((dbModel) => res.json(dbModel))
         .catch((err) => res.status(422).json(err));
+    } else if (req.query.r === "allBooks") {
+      db.Recipe.find({
+        book: { $exists: true },
+      })
+        .then((dbModel) => res.json(dbModel))
+        .catch((err) => res.status(422).json(err));
     }
   },
 

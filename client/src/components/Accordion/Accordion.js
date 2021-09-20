@@ -199,14 +199,13 @@ export default function AccordionExample() {
             </Card.Header>
             <Accordion.Collapse eventKey="4">
               <Card.Body>
-                Options:
                 <div onChange={onChangeValue}>
                   <input type="radio" value="Appetizer" name="course" />{" "}
-                  Appetizer
+                  Appetizer{" "}
                   <input type="radio" value="Breakfast" name="course" />{" "}
-                  Breakfast
-                  <input type="radio" value="Main" name="course" /> Main
-                  <input type="radio" value="Dessert" name="course" /> Dessert
+                  Breakfast <input type="radio" value="Main" name="course" />{" "}
+                  Main <input type="radio" value="Dessert" name="course" />{" "}
+                  Dessert{" "}
                 </div>
               </Card.Body>
             </Accordion.Collapse>
