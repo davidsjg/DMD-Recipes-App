@@ -2,3 +2,8 @@
   background-color: powderblue;
   border-radius: 5px;
 }
+
+.homeAccord {
+  display: flex;
+  justify-content: center;
+}
