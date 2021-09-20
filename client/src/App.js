@@ -1,10 +1,10 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React from "react";
-import Home from "./pages/Home/Home";
+import Home from "./pages/Home";
 import { StoreProvider } from "./utils/GlobalState";
 
-import Recipe from "./pages/Recipe/Recipe";
+import Recipe from "./pages/Recipe";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 
 function App() {

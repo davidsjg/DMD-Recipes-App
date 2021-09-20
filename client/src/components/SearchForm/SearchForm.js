@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+
 import { useStoreContext } from "../../utils/GlobalState";
 import API from "../../utils/API";
 import {
@@ -7,6 +8,8 @@ import {
   SET_CURRENT_INGRED,
   SET_CURRENT_COURSE,
 } from "../../utils/actions";
+
+import AccordionTest from "../AccordionTest";
 
 export default function SearchForm() {
   const [state, dispatch] = useStoreContext();
@@ -42,23 +45,15 @@ export default function SearchForm() {
       //   console.log(data);
       // });
 
-      // API.doubleQuery(bookSearch.current.value, recipeSearch.current.value).then(
-      //   (data) => {
-      //     console.log("returned api data below");
-      //     console.log(data);
-      //   }
-      // );
-      console.log(courseSelect);
-
-    recipeInput === ""
-      ? console.log("recipeInput is empty")
-      : bookInput === ""
-      ? ingredInput === ""
-        ? (rOnly = true)
-        : (RnI = true)
-      : ingredInput === ""
-      ? (RnB = true)
-      : (RnBnI = true);
+      recipeInput === ""
+        ? console.log("recipeInput is empty")
+        : bookInput === ""
+        ? ingredInput === ""
+          ? (rOnly = true)
+          : (RnI = true)
+        : ingredInput === ""
+        ? (RnB = true)
+        : (RnBnI = true);
 
     bookInput === ""
       ? console.log("bookInput is empty")
@@ -111,45 +106,11 @@ export default function SearchForm() {
         });
       });
     }
-
-    // if (iOnly) {
-    //   API.singleQuery(ingredSearch.current.value, "ingred").then((data) => {
-    //     dispatch({
-    //       type: SET_CURRENT_INGRED,
-    //       ingredients: data.data,
-    //     });
-    //   });
-    // } else if (bOnly) {
-    //   API.singleQuery(bookSearch.current.value, "book").then((data) => {
-    //     dispatch({
-    //       type: SET_CURRENT_BOOK,
-    //       book: data.data,
-    //     });
-    //   });
-    // } else if (rOnly) {
-    //   API.singleQuery(recipeSearch.current.value, "recipe").then((data) => {
-    //     dispatch({
-    //       type: SET_CURRENT_RECIPE,
-    //       recipe: data.data[0],
-    //     });
-    //   });
-    // } else if (RnB) {
-    //   console.log("RnB");
-    // } else if (BnI) {
-    //   console.log("BnI");
-    // } else if (RnI) {
-    //   console.log("RnI");
-    // } else if (RnBnI) {
-    //   console.log("RnBnI");
-    // } else {
-    //   alert("Please fill in at least one search field!");
-    // }
-
-    // const selectedQuery = queryArray.find((query) => (query = true));
   };
 
   return (
     <>
+      <AccordionTest />
       <form>
         <div className="form-group">
           <label>Recipe Name</label>
@@ -199,33 +160,3 @@ export default function SearchForm() {
     </>
   );
 }
-
-// recipeInput === ""
-// ? console.log("recipeInput is empty")
-// : bookInput === ""
-// ? ingredInput === ""
-//   ? console.log("this is R only")
-//   : console.log("this is R + I")
-// : ingredInput === ""
-// ? console.log("THIS IS R + B")
-// : console.log("THIS IS R + B + I");
-
-// bookInput === ""
-// ? console.log("bookInput is empty")
-// : ingredInput === ""
-// ? recipeInput === ""
-//   ? console.log("this is B only")
-//   : console.log("this is B + R")
-// : recipeInput === ""
-// ? console.log("THIS IS B + I")
-// : console.log("THIS IS R + B + I");
-
-// ingredInput === ""
-// ? console.log("ingredInput is empty")
-// : recipeInput === ""
-// ? bookInput === ""
-//   ? console.log("this is I only")
-//   : console.log("this is I + B")
-// : bookInput === ""
-// ? console.log("THIS IS I + R")
-// : console.log("THIS IS R + B + I");
