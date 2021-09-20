@@ -50,13 +50,6 @@ export default function SearchForm() {
       // );
       console.log(courseSelect);
 
-    API.singleQuery(courseSelect, "course").then((data) => {
-      dispatch({
-        type: SET_CURRENT_COURSE,
-        course: data.data,
-      });
-    });
-
     recipeInput === ""
       ? console.log("recipeInput is empty")
       : bookInput === ""
@@ -111,6 +104,12 @@ export default function SearchForm() {
         });
       });
     } else if (courseSelect !== "") {
+      API.singleQuery(courseSelect, "course").then((data) => {
+        dispatch({
+          type: SET_CURRENT_COURSE,
+          course: data.data,
+        });
+      });
     }
 
     // if (iOnly) {
