@@ -5,6 +5,7 @@ import {
   SET_CURRENT_RECIPE,
   SET_CURRENT_BOOK,
   SET_CURRENT_INGRED,
+  SET_CURRENT_COURSE,
 } from "../../utils/actions";
 
 export default function SearchForm() {
@@ -13,12 +14,14 @@ export default function SearchForm() {
   const bookSearch = useRef();
   const ingredSearch = useRef();
 
+  let courseSelect = "";
+
   // useEffect(() => {}, []);
   console.log("state is below");
   console.log(state);
 
   const onChangeValue = (e) => {
-    console.log(e.target.value);
+    courseSelect = e.target.value;
   };
 
   const handleSubmit = (e) => {
@@ -34,22 +37,21 @@ export default function SearchForm() {
     let BnI = false;
     let RnBnI = false;
 
-    // API.getRecipes().then((data) => {
-    //   console.log(data);
-    // });
+    if (rOnly)
+      // API.getRecipes().then((data) => {
+      //   console.log(data);
+      // });
 
-    // API.doubleQuery(bookSearch.current.value, recipeSearch.current.value).then(
-    //   (data) => {
-    //     console.log("returned api data below");
-    //     console.log(data);
-    //   }
-    // );
+      // API.doubleQuery(bookSearch.current.value, recipeSearch.current.value).then(
+      //   (data) => {
+      //     console.log("returned api data below");
+      //     console.log(data);
+      //   }
+      // );
+      console.log(courseSelect);
 
-    API.singleQuery(bookSearch.current.value, "book").then((data) => {
-      dispatch({
-        type: SET_CURRENT_BOOK,
-        book: data.data,
-      });
+    API.singleQuery(courseSelect, "course").then((data) => {
+      console.log(data);
     });
 
     recipeInput === ""
@@ -105,17 +107,41 @@ export default function SearchForm() {
           recipe: data.data[0],
         });
       });
-    } else if (RnB) {
-      console.log("RnB");
-    } else if (BnI) {
-      console.log("BnI");
-    } else if (RnI) {
-      console.log("RnI");
-    } else if (RnBnI) {
-      console.log("RnBnI");
-    } else {
-      alert("Please fill in at least one search field!");
+    } else if (courseSelect !== "") {
     }
+
+    // if (iOnly) {
+    //   API.singleQuery(ingredSearch.current.value, "ingred").then((data) => {
+    //     dispatch({
+    //       type: SET_CURRENT_INGRED,
+    //       ingredients: data.data,
+    //     });
+    //   });
+    // } else if (bOnly) {
+    //   API.singleQuery(bookSearch.current.value, "book").then((data) => {
+    //     dispatch({
+    //       type: SET_CURRENT_BOOK,
+    //       book: data.data,
+    //     });
+    //   });
+    // } else if (rOnly) {
+    //   API.singleQuery(recipeSearch.current.value, "recipe").then((data) => {
+    //     dispatch({
+    //       type: SET_CURRENT_RECIPE,
+    //       recipe: data.data[0],
+    //     });
+    //   });
+    // } else if (RnB) {
+    //   console.log("RnB");
+    // } else if (BnI) {
+    //   console.log("BnI");
+    // } else if (RnI) {
+    //   console.log("RnI");
+    // } else if (RnBnI) {
+    //   console.log("RnBnI");
+    // } else {
+    //   alert("Please fill in at least one search field!");
+    // }
 
     // const selectedQuery = queryArray.find((query) => (query = true));
   };
@@ -155,8 +181,8 @@ export default function SearchForm() {
         </div>
         Options:
         <div onChange={onChangeValue}>
-          <input type="radio" value="Breakfast" name="course" /> Breakfast
           <input type="radio" value="Appetizer" name="course" /> Appetizer
+          <input type="radio" value="Breakfast" name="course" /> Breakfast
           <input type="radio" value="Main" name="course" /> Main
           <input type="radio" value="Dessert" name="course" /> Dessert
         </div>

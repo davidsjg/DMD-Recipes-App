@@ -3,6 +3,7 @@ import {
   SET_CURRENT_RECIPE,
   SET_CURRENT_BOOK,
   SET_CURRENT_INGRED,
+  SET_CURRENT_COURSE,
 } from "./actions";
 
 const StoreContext = createContext();
@@ -33,6 +34,13 @@ const reducer = (state, action) => {
         loading: false,
       };
 
+    case SET_CURRENT_COURSE:
+      return {
+        ...state,
+        course: action.course,
+        loading: false,
+      };
+
     default:
       return state;
   }
@@ -43,7 +51,7 @@ const StoreProvider = ({ value = [], ...props }) => {
     recipe: "",
     ingredient: [],
     quantities: "",
-    course: "",
+    course: [],
     book: [],
     meat: "",
   });

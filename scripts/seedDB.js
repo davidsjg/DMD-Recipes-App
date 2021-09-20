@@ -330,7 +330,7 @@ const recipeSeed = [
       "2 tablespoons",
       "to taste",
     ],
-    course: "app",
+    course: "appetizer",
     glutenFree: false,
     lowCarb: false,
     instructions: `Grate the potatoes into a large clean kitchen towel that can be stained. Roil the potatoes up in the towel and wring to remove moisture. (It is best to do this over the sink, since it will produce a surprising amount of liquid).

@@ -57,6 +57,12 @@ module.exports = {
       })
         .then((dbModel) => res.json(dbModel))
         .catch((err) => res.status(422).json(err));
+    } else if (req.query.r === "course") {
+      db.Recipe.find({
+        course: { $regex: new RegExp(req.query.q, "i") },
+      })
+        .then((dbModel) => res.json(dbModel))
+        .catch((err) => res.status(422).json(err));
     }
   },
 
