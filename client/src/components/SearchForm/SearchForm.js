@@ -51,7 +51,10 @@ export default function SearchForm() {
       console.log(courseSelect);
 
     API.singleQuery(courseSelect, "course").then((data) => {
-      console.log(data);
+      dispatch({
+        type: SET_CURRENT_COURSE,
+        course: data.data,
+      });
     });
 
     recipeInput === ""
