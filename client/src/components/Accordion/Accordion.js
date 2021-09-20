@@ -39,7 +39,7 @@ export default function AccordionExample() {
     return (
       <Button
         type="button"
-        style={{ backgroundColor: "cornflowerBlue " }}
+        style={{ backgroundColor: "lightSkyBlue ", color: "black" }}
         onClick={decoratedOnClick}
       >
         {children}
@@ -134,7 +134,7 @@ export default function AccordionExample() {
 
   return (
     <>
-      <form>
+      <form style={{ textAlign: "center" }}>
         <Accordion defaultActiveKey="0">
           <Card>
             <Card.Header className="homeAccord">
@@ -216,6 +216,11 @@ export default function AccordionExample() {
           onClick={handleSubmit}
           type="submit"
           className="btn btn-primary"
+          style={{
+            backgroundColor: "lightSkyBlue ",
+            color: "black",
+            marginTop: 10,
+          }}
         >
           Submit
         </button>
