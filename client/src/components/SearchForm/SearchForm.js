@@ -17,6 +17,10 @@ export default function SearchForm() {
   console.log("state is below");
   console.log(state);
 
+  const onChangeValue = (e) => {
+    console.log(e.target.value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     let recipeInput = recipeSearch.current.value;
@@ -113,7 +117,7 @@ export default function SearchForm() {
       alert("Please fill in at least one search field!");
     }
 
-    const selectedQuery = queryArray.find((query) => (query = true));
+    // const selectedQuery = queryArray.find((query) => (query = true));
   };
 
   return (
@@ -150,10 +154,11 @@ export default function SearchForm() {
           />
         </div>
         Options:
-        <div className="form-check">
-          <input type="radio" value="Male" name="gender" /> Male
-          <input type="radio" value="Female" name="gender" /> Female
-          <input type="radio" value="Other" name="gender" /> Other
+        <div onChange={onChangeValue}>
+          <input type="radio" value="Breakfast" name="course" /> Breakfast
+          <input type="radio" value="Appetizer" name="course" /> Appetizer
+          <input type="radio" value="Main" name="course" /> Main
+          <input type="radio" value="Dessert" name="course" /> Dessert
         </div>
         <button
           onClick={handleSubmit}
