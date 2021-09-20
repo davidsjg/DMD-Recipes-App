@@ -151,23 +151,9 @@ export default function SearchForm() {
         </div>
         Options:
         <div className="form-check">
-          <input
-            inline="true"
-            type="checkbox"
-            className="form-check-input"
-            id="exampleCheck1"
-          />
-
-          <label className="form-check-label">Gluten-Free &nbsp</label>
-
-          <input
-            inline="true"
-            type="checkbox"
-            className="form-check-input"
-            id="exampleCheck1"
-          />
-
-          <label className="form-check-label">Low-Carb</label>
+          <input type="radio" value="Male" name="gender" /> Male
+          <input type="radio" value="Female" name="gender" /> Female
+          <input type="radio" value="Other" name="gender" /> Other
         </div>
         <button
           onClick={handleSubmit}
