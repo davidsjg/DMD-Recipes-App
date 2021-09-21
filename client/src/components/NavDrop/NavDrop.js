@@ -19,7 +19,7 @@ export default function NavDrop() {
     >
       {state.allBooks.map((bookTitle, i) => {
         return (
-          <NavDropdown.Item key={i} href="#action/3.1">
+          <NavDropdown.Item key={i} href={"/books/" + bookTitle}>
             {bookTitle}
           </NavDropdown.Item>
         );

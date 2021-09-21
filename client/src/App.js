@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React from "react";
 import Home from "./pages/Home";
 import RecipeSelect from "./pages/RecipeSelect";
+import BookSelect from "./pages/BookSelect";
 import { StoreProvider } from "./utils/GlobalState";
 
 import Recipes from "./pages/Recipes";
@@ -24,6 +25,9 @@ function App() {
             </Route>
             <Route exact path={"/books"}>
               <Books />
+            </Route>
+            <Route exact path={"/books/:book"}>
+              <BookSelect />
             </Route>
             <Route exact path={"/recipes/:recipe"}>
               <RecipeSelect />
