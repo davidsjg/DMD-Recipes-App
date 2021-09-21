@@ -60,10 +60,6 @@ export default function AccordionExample() {
     let BnI = false;
     let RnBnI = false;
 
-    const onChangeValue = (e) => {
-      courseSelect = e.target.value;
-    };
-
     // if (rOnly)
     // API.getRecipes().then((data) => {
     //   console.log(data);
@@ -98,8 +94,6 @@ export default function AccordionExample() {
       : bookInput === ""
       ? (RnI = true)
       : (RnBnI = true);
-
-    let queryArray = [iOnly, bOnly, rOnly, RnB, BnI, RnI, RnBnI];
 
     if (iOnly) {
       API.singleQuery(ingredSearch.current.value, "ingred").then((data) => {
@@ -175,7 +169,7 @@ export default function AccordionExample() {
             </Accordion.Collapse>
           </Card>
           <Card>
-            <Card.Header className="homeAccord">
+            <Card.Header className="homeAccord bookAccord">
               <CustomToggle eventKey="3">Search by Book</CustomToggle>
             </Card.Header>
             <Accordion.Collapse eventKey="3">

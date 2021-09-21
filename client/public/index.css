@@ -6,8 +6,13 @@
 .homeAccord {
   display: flex;
   justify-content: center;
+  background-color: blueviolet;
 }
 
 .dropDown {
   color: black;
+}
+
+.bookAccord {
+  background-color: blueviolet;
 }

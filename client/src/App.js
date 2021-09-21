@@ -2,10 +2,12 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React from "react";
 import Home from "./pages/Home";
+import RecipeSelect from "./pages/RecipeSelect";
 import { StoreProvider } from "./utils/GlobalState";
 
-import Recipe from "./pages/Recipe";
+import Recipes from "./pages/Recipes";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
+import Books from "./pages/Books";
 
 function App() {
   return (
@@ -17,8 +19,14 @@ function App() {
             <Route exact path={["/", "/home"]}>
               <Home />
             </Route>
-            <Route exact path={"/:recipe"}>
-              <Recipe />
+            <Route exact path={"/recipes"}>
+              <Recipes />
+            </Route>
+            <Route exact path={"/books"}>
+              <Books />
+            </Route>
+            <Route exact path={"/recipes/:recipe"}>
+              <RecipeSelect />
             </Route>
           </Switch>
         </StoreProvider>

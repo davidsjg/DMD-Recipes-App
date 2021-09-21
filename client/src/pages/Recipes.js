@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function Recipe() {
+export default function Recipes() {
   return <>Hello from recipe!</>;
 }

@@ -17,9 +17,11 @@ export default function NavDrop() {
       }
       id="basic-nav-dropdown"
     >
-      {state.allBooks.map((bookTitle) => {
+      {state.allBooks.map((bookTitle, i) => {
         return (
-          <NavDropdown.Item href="#action/3.1">{bookTitle}</NavDropdown.Item>
+          <NavDropdown.Item key={i} href="#action/3.1">
+            {bookTitle}
+          </NavDropdown.Item>
         );
       })}
     </NavDropdown>
