@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
-import Accordion from "..//Accordion/Accordion";
+import AccordionExample from "..//Accordion/Accordion";
 
-export default function SearchForm() {
-  return <Accordion />;
+export default function SearchForm(props) {
+  return <AccordionExample props={props} />;
 }

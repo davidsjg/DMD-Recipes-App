@@ -1,28 +1,37 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
 import { useAccordionButton } from "react-bootstrap/esm/AccordionButton";
 import Card from "react-bootstrap/Card";
+import RecipeContext from "../../utils/RecipeContext";
 
 import API from "../../utils/API";
 
 // var Accordion = require("react-bootstrap").Accordion;
 
-export default function AccordionExample() {
+export default function AccordionExample(props) {
   const recipeSearch = useRef(null);
   const bookSearch = useRef();
   const ingredSearch = useRef();
 
-  const [bookRecipes, setBookRecipes] = useState([]);
-  const [ingredRecipes, setIngredRecipes] = useState([]);
-  const [courseRecipes, setCourseRecipes] = useState([]);
-  const [currRecipe, setCurrRecipe] = useState({});
+  const { bookRecipes, ingredRecipes, courseRecipes, currRecipe } =
+    useContext(RecipeContext);
 
-  console.log("all states below, ingred, book, course, curr");
-  console.log(ingredRecipes);
-  console.log(bookRecipes);
-  console.log(courseRecipes);
-  console.log(currRecipe);
+  const history = useHistory();
+
+  const routeChange = () => {
+    let temp = recipeSearch;
+    let path = "/recipes/" + recipeSearch.current.value;
+    history.push(path);
+  };
+
+  console.log("props below");
+  console.log(props.props.props);
+
+  let setCurrRecipeState = props.props.props.setCurrState;
+
+  console.log(setCurrRecipeState);
 
   let courseSelect = "";
 
@@ -47,19 +56,10 @@ export default function AccordionExample() {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     let recipeInput = recipeSearch.current.value;
     let bookInput = bookSearch.current.value;
     let ingredInput = ingredSearch.current.value;
-    let rOnly = false;
-    let bOnly = false;
-    let iOnly = false;
-    let RnB = false;
-    let RnI = false;
-    let BnI = false;
-    let RnBnI = false;
-
-    let currTemp;
+    e.preventDefault();
 
     if (ingredInput) {
       API.singleQuery(ingredSearch.current.value, "ingred").then((data) => {
@@ -75,6 +75,8 @@ export default function AccordionExample() {
       API.singleQuery(recipeSearch.current.value, "recipe").then((data) => {
         // currTemp = data.data[0];
         // setCurrRecipe(currTemp);
+        setCurrRecipeState(data.data[0]);
+        routeChange();
         console.log(data.data[0]);
       });
     } else if (courseSelect !== "") {
@@ -87,7 +89,7 @@ export default function AccordionExample() {
 
   return (
     <>
-      <form style={{ textAlign: "center" }}>
+      <form style={{ textAlign: "center" }} action="/recipes/MexicanPizza">
         <Accordion defaultActiveKey="0">
           <Card>
             <Card.Header className="homeAccord">
@@ -165,7 +167,7 @@ export default function AccordionExample() {
           </Card>
         </Accordion>
         <button
-          onClick={handleSubmit}
+          onClick="/recipes/MexicanPizza"
           type="submit"
           className="btn btn-primary"
           style={{
@@ -173,6 +175,7 @@ export default function AccordionExample() {
             color: "black",
             marginTop: 10,
           }}
+          onClick={handleSubmit}
         >
           Submit
         </button>

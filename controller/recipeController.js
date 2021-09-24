@@ -24,9 +24,6 @@ module.exports = {
   // },
 
   findIngredient: function (req, res) {
-    console.log("inside query, req.query below");
-    console.log(req.query);
-
     db.Recipe.find({
       ingredients: { $regex: new RegExp(req.query.q, "i") },
     })
@@ -36,9 +33,6 @@ module.exports = {
   },
 
   mainQuery: function (req, res) {
-    console.log("inside double query, req.query below");
-    console.log(req.query);
-
     if (req.query.r === "book") {
       db.Recipe.find({
         book: { $regex: new RegExp(req.query.q, "i") },
