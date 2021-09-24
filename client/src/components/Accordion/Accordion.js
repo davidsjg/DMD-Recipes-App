@@ -4,19 +4,11 @@ import Button from "react-bootstrap/Button";
 import { useAccordionButton } from "react-bootstrap/esm/AccordionButton";
 import Card from "react-bootstrap/Card";
 
-import { useStoreContext } from "../../utils/GlobalState";
 import API from "../../utils/API";
-import {
-  SET_CURRENT_RECIPE,
-  SET_CURRENT_BOOK,
-  SET_CURRENT_INGRED,
-  SET_CURRENT_COURSE,
-} from "../../utils/actions";
 
 // var Accordion = require("react-bootstrap").Accordion;
 
 export default function AccordionExample() {
-  const [state, dispatch] = useStoreContext();
   const recipeSearch = useRef(null);
   const bookSearch = useRef();
   const ingredSearch = useRef();
@@ -33,10 +25,6 @@ export default function AccordionExample() {
   console.log(currRecipe);
 
   let courseSelect = "";
-
-  // useEffect(() => {}, []);
-  console.log("state is below");
-  console.log(state);
 
   const onChangeValue = (e) => {
     courseSelect = e.target.value;
@@ -108,37 +96,23 @@ export default function AccordionExample() {
       ? (RnI = true)
       : (RnBnI = true);
 
+    console.log(RnB, BnI, RnI, RnBnI);
+
     if (iOnly) {
       API.singleQuery(ingredSearch.current.value, "ingred").then((data) => {
-        dispatch({
-          type: SET_CURRENT_INGRED,
-          ingredients: data.data,
-        });
         setIngredRecipes([data.data]);
       });
     } else if (bOnly) {
       API.singleQuery(bookSearch.current.value, "book").then((data) => {
-        dispatch({
-          type: SET_CURRENT_BOOK,
-          book: data.data,
-        });
         setBookRecipes([data.data]);
       });
     } else if (rOnly) {
       API.singleQuery(recipeSearch.current.value, "recipe").then((data) => {
-        dispatch({
-          type: SET_CURRENT_RECIPE,
-          recipe: data.data[0],
-        });
         currTemp = data.data[0];
         setCurrRecipe(currTemp);
       });
     } else if (courseSelect !== "") {
       API.singleQuery(courseSelect, "course").then((data) => {
-        dispatch({
-          type: SET_CURRENT_COURSE,
-          course: data.data,
-        });
         setCourseRecipes(data.data);
       });
     }
