@@ -61,59 +61,26 @@ export default function AccordionExample() {
 
     let currTemp;
 
-    // if (rOnly)
-    // API.getRecipes().then((data) => {
-    //   console.log(data);
-    // });
-
-    recipeInput === ""
-      ? console.log("recipeInput is empty")
-      : bookInput === ""
-      ? ingredInput === ""
-        ? (rOnly = true)
-        : (RnI = true)
-      : ingredInput === ""
-      ? (RnB = true)
-      : (RnBnI = true);
-
-    bookInput === ""
-      ? console.log("bookInput is empty")
-      : ingredInput === ""
-      ? recipeInput === ""
-        ? (bOnly = true)
-        : (RnB = true)
-      : recipeInput === ""
-      ? (BnI = true)
-      : (RnBnI = true);
-
-    ingredInput === ""
-      ? console.log("ingredInput is empty")
-      : recipeInput === ""
-      ? bookInput === ""
-        ? (iOnly = true)
-        : (BnI = true)
-      : bookInput === ""
-      ? (RnI = true)
-      : (RnBnI = true);
-
-    console.log(RnB, BnI, RnI, RnBnI);
-
-    if (iOnly) {
+    if (ingredInput) {
       API.singleQuery(ingredSearch.current.value, "ingred").then((data) => {
-        setIngredRecipes([data.data]);
+        // setIngredRecipes([data.data]);
+        console.log(data.data);
       });
-    } else if (bOnly) {
+    } else if (bookInput) {
       API.singleQuery(bookSearch.current.value, "book").then((data) => {
-        setBookRecipes([data.data]);
+        // setBookRecipes([data.data]);
+        console.log(data.data);
       });
-    } else if (rOnly) {
+    } else if (recipeInput) {
       API.singleQuery(recipeSearch.current.value, "recipe").then((data) => {
-        currTemp = data.data[0];
-        setCurrRecipe(currTemp);
+        // currTemp = data.data[0];
+        // setCurrRecipe(currTemp);
+        console.log(data.data[0]);
       });
     } else if (courseSelect !== "") {
       API.singleQuery(courseSelect, "course").then((data) => {
-        setCourseRecipes(data.data);
+        // setCourseRecipes(data.data);
+        console.log(data.data);
       });
     }
   };

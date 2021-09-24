@@ -15,9 +15,13 @@ function App() {
       <div>
         <NavigationBar />
         <Switch>
-          <Route exact path={["/", "/home"]}>
-            <Home />
-          </Route>
+          <Route exact path={"/"} render={(props) => <Home {...props} />} />
+          <Route
+            exact
+            path={"/recipes/:recipe"}
+            render={(props) => <RecipeSelect {...props} />}
+          />
+
           <Route exact path={"/recipes"}>
             <Recipes />
           </Route>
@@ -26,9 +30,6 @@ function App() {
           </Route>
           <Route exact path={"/books/:book"}>
             <BookSelect />
-          </Route>
-          <Route exact path={"/recipes/:recipe"}>
-            <RecipeSelect />
           </Route>
         </Switch>
       </div>
