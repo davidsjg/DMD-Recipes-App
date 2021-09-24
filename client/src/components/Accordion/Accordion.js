@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
 import { useAccordionButton } from "react-bootstrap/esm/AccordionButton";
@@ -20,6 +20,17 @@ export default function AccordionExample() {
   const recipeSearch = useRef(null);
   const bookSearch = useRef();
   const ingredSearch = useRef();
+
+  const [bookRecipes, setBookRecipes] = useState([]);
+  const [ingredRecipes, setIngredRecipes] = useState([]);
+  const [courseRecipes, setCourseRecipes] = useState([]);
+  const [currRecipe, setCurrRecipe] = useState({});
+
+  console.log("all states below, ingred, book, course, curr");
+  console.log(ingredRecipes);
+  console.log(bookRecipes);
+  console.log(courseRecipes);
+  console.log(currRecipe);
 
   let courseSelect = "";
 
@@ -59,6 +70,8 @@ export default function AccordionExample() {
     let RnI = false;
     let BnI = false;
     let RnBnI = false;
+
+    let currTemp;
 
     // if (rOnly)
     // API.getRecipes().then((data) => {
@@ -101,6 +114,7 @@ export default function AccordionExample() {
           type: SET_CURRENT_INGRED,
           ingredients: data.data,
         });
+        setIngredRecipes([data.data]);
       });
     } else if (bOnly) {
       API.singleQuery(bookSearch.current.value, "book").then((data) => {
@@ -108,6 +122,7 @@ export default function AccordionExample() {
           type: SET_CURRENT_BOOK,
           book: data.data,
         });
+        setBookRecipes([data.data]);
       });
     } else if (rOnly) {
       API.singleQuery(recipeSearch.current.value, "recipe").then((data) => {
@@ -115,6 +130,8 @@ export default function AccordionExample() {
           type: SET_CURRENT_RECIPE,
           recipe: data.data[0],
         });
+        currTemp = data.data[0];
+        setCurrRecipe(currTemp);
       });
     } else if (courseSelect !== "") {
       API.singleQuery(courseSelect, "course").then((data) => {
@@ -221,62 +238,3 @@ export default function AccordionExample() {
     </>
   );
 }
-
-// export default function AccordionTest() {
-//   return (
-//     <>
-//       <form>
-//         <Accordion>
-//           <Accordion.Item eventKey="0">
-//             <Accordion.Header>Recipe</Accordion.Header>
-//             <Accordion.Body>
-//               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-//               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-//               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-//               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-//               reprehenderit in voluptate velit esse cillum dolore eu fugiat
-//               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-//               sunt in culpa qui officia deserunt mollit anim id est laborum.
-//             </Accordion.Body>
-//           </Accordion.Item>
-//           <Accordion.Item eventKey="1">
-//             <Accordion.Header>Ingredient</Accordion.Header>
-//             <Accordion.Body>
-//               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-//               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-//               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-//               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-//               reprehenderit in voluptate velit esse cillum dolore eu fugiat
-//               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-//               sunt in culpa qui officia deserunt mollit anim id est laborum.
-//             </Accordion.Body>
-//           </Accordion.Item>
-//           <Accordion.Item eventKey="2">
-//             <Accordion.Header>Book</Accordion.Header>
-//             <Accordion.Body>
-//               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-//               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-//               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-//               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-//               reprehenderit in voluptate velit esse cillum dolore eu fugiat
-//               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-//               sunt in culpa qui officia deserunt mollit anim id est laborum.
-//             </Accordion.Body>
-//           </Accordion.Item>
-//           <Accordion.Item eventKey="3">
-//             <Accordion.Header>Accordion Item #2</Accordion.Header>
-//             <Accordion.Body>
-//               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-//               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-//               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-//               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-//               reprehenderit in voluptate velit esse cillum dolore eu fugiat
-//               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-//               sunt in culpa qui officia deserunt mollit anim id est laborum.
-//             </Accordion.Body>
-//           </Accordion.Item>
-//         </Accordion>
-//       </form>
-//     </>
-//   );
-// }

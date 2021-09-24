@@ -12,9 +12,9 @@ import Books from "./pages/Books";
 
 function App() {
   return (
-    <Router>
-      <div>
-        <StoreProvider>
+    <StoreProvider>
+      <Router>
+        <div>
           <NavigationBar />
           <Switch>
             <Route exact path={["/", "/home"]}>
@@ -33,9 +33,9 @@ function App() {
               <RecipeSelect />
             </Route>
           </Switch>
-        </StoreProvider>
-      </div>
-    </Router>
+        </div>
+      </Router>
+    </StoreProvider>
   );
 }
 
