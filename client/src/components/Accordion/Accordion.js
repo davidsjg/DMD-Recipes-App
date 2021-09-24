@@ -139,6 +139,7 @@ export default function AccordionExample() {
           type: SET_CURRENT_COURSE,
           course: data.data,
         });
+        setCourseRecipes(data.data);
       });
     }
   };
