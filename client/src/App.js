@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import RecipeSelect from "./pages/RecipeSelect";
 import BookSelect from "./pages/BookSelect";
 import { StoreProvider } from "./utils/GlobalState";
+import RecipeContext from "./utils/RecipeContext";
 
 import Recipes from "./pages/Recipes";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
