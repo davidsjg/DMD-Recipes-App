@@ -8,6 +8,7 @@ export default function RecipeSelect(props) {
 
   console.log("currRecipe below");
   console.log(props.match.params.recipe);
+  console.log(props);
   let historyRecipe = props.match.params.recipe;
 
   useEffect(() => {

@@ -20,10 +20,12 @@ export default function AccordionExample(props) {
 
   const history = useHistory();
 
-  const routeChange = () => {
+  const routeChange = (action) => {
+    console.log("inside routeChange");
+    console.log(action);
     let temp = recipeSearch;
     let path = "/recipes/" + recipeSearch.current.value;
-    history.push(path);
+    history.push(path, "hello");
   };
 
   console.log("props below");
@@ -65,24 +67,27 @@ export default function AccordionExample(props) {
       API.singleQuery(ingredSearch.current.value, "ingred").then((data) => {
         // setIngredRecipes([data.data]);
         console.log(data.data);
+        routeChange("ingred");
       });
     } else if (bookInput) {
       API.singleQuery(bookSearch.current.value, "book").then((data) => {
         // setBookRecipes([data.data]);
         console.log(data.data);
+        routeChange("book");
       });
     } else if (recipeInput) {
       API.singleQuery(recipeSearch.current.value, "recipe").then((data) => {
         // currTemp = data.data[0];
         // setCurrRecipe(currTemp);
         setCurrRecipeState(data.data[0]);
-        routeChange();
+        routeChange("recipe");
         console.log(data.data[0]);
       });
     } else if (courseSelect !== "") {
       API.singleQuery(courseSelect, "course").then((data) => {
         // setCourseRecipes(data.data);
         console.log(data.data);
+        routeChange("course");
       });
     }
   };
