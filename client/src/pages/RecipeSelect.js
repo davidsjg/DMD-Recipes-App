@@ -6,18 +6,8 @@ export default function RecipeSelect(props) {
   const { bookRecipes, ingredRecipes, courseRecipes, currRecipes } =
     useContext(RecipeContext);
 
-  console.log("currRecipe below");
-  console.log(props.match.params.recipe);
-  console.log(props);
-  let historyRecipe = props.match.params.recipe;
-
-  useEffect(() => {
-    API.singleQuery(historyRecipe, "recipe").then((data) => {
-      // setIngredRecipes([data.data]);
-      console.log("return from history search");
-      console.log(data.data);
-    });
-  }, []);
+  //which input was entered by the user
+  let searchParam = props.location.state;
 
   return "hello from Recipe Select";
 }

@@ -21,11 +21,20 @@ export default function AccordionExample(props) {
   const history = useHistory();
 
   const routeChange = (action) => {
-    console.log("inside routeChange");
-    console.log(action);
-    let temp = recipeSearch;
-    let path = "/recipes/" + recipeSearch.current.value;
-    history.push(path, "hello");
+    //ingred, book, recipe, course
+    if (action === "ingred") {
+      let path = "/recipes/" + ingredSearch.current.value;
+      history.push(path, "ingred");
+    } else if (action === "book") {
+      let path = "/recipes/" + bookSearch.current.value;
+      history.push(path, "book");
+    } else if (action === "recipe") {
+      let path = "/recipes/" + recipeSearch.current.value;
+      history.push(path, "recipe");
+    } else if (action === "course") {
+      let path = "/recipes/" + courseSelect.current.value;
+      history.push(path, "course");
+    }
   };
 
   console.log("props below");
