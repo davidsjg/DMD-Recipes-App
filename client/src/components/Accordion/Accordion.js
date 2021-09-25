@@ -23,16 +23,16 @@ export default function AccordionExample(props) {
   const routeChange = (action) => {
     //ingred, book, recipe, course
     if (action === "ingred") {
-      let path = "/recipes/" + ingredSearch.current.value;
+      let path = "/recipeSelect/" + ingredSearch.current.value;
       history.push(path, "ingred");
     } else if (action === "book") {
-      let path = "/recipes/" + bookSearch.current.value;
+      let path = "/recipeSelect/" + bookSearch.current.value;
       history.push(path, "book");
     } else if (action === "recipe") {
-      let path = "/recipes/" + recipeSearch.current.value;
+      let path = "/recipe/" + recipeSearch.current.value;
       history.push(path, "recipe");
     } else if (action === "course") {
-      let path = "/recipes/" + courseSelect.current.value;
+      let path = "/recipeSelect/" + courseSelect.current.value;
       history.push(path, "course");
     }
   };

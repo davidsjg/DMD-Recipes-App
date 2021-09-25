@@ -2,7 +2,8 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React, { useState } from "react";
 import Home from "./pages/Home";
-import RecipeSelect from "./pages/RecipeSelect";
+import MappedRecipes from "./pages/MappedRecipes";
+import Recipe from "./pages/Recipe";
 
 import RecipeContext from "./utils/RecipeContext";
 
@@ -47,8 +48,13 @@ function App() {
             />
             <Route
               exact
-              path={"/recipes/:recipe"}
-              render={(props) => <RecipeSelect {...props} />}
+              path={"/recipeSelect/:recipe"}
+              render={(props) => <MappedRecipes {...props} />}
+            />
+            <Route
+              exact
+              path={"/recipe/:recipe"}
+              render={(props) => <Recipe {...props} />}
             />
           </Switch>
         </div>
