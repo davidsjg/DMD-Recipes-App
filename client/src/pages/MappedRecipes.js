@@ -14,7 +14,7 @@ export default function MappedRecipes(props) {
   useEffect(() => {
     API.singleQuery(historyRecipe, searchParam).then((data) => {
       // setIngredRecipes([data.data]);
-      console.log("return from history search");
+      // console.log("return from history search");
       console.log(data.data);
     });
   }, []);
