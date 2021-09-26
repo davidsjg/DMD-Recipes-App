@@ -22,6 +22,7 @@ export default function AccordionExample(props) {
 
   const routeChange = (action) => {
     //ingred, book, recipe, course
+    console.log("inside routeChange");
     if (action === "ingred") {
       let path = "/recipeSelect/" + ingredSearch.current.value;
       history.push(path, "ingred");
@@ -37,12 +38,10 @@ export default function AccordionExample(props) {
     }
   };
 
-  console.log("props below");
+  let setCurrRecipeState = props.props.props.updateCurrRecipe;
+
+  console.log("props below accordion");
   console.log(props.props.props);
-
-  let setCurrRecipeState = props.props.props.setCurrState;
-
-  console.log(setCurrRecipeState);
 
   let courseSelect = "";
 
@@ -90,7 +89,9 @@ export default function AccordionExample(props) {
         // setCurrRecipe(currTemp);
         setCurrRecipeState(data.data[0]);
         routeChange("recipe");
-        console.log(data.data[0]);
+        console.log("inside recipe query");
+        console.log("currRecipe below");
+        console.log(currRecipe);
       });
     } else if (courseSelect !== "") {
       API.singleQuery(courseSelect, "course").then((data) => {

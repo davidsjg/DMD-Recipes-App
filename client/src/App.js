@@ -10,31 +10,21 @@ import RecipeContext from "./utils/RecipeContext";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 
 function App() {
-  const [bookRecipes, setBookRecipes] = useState([]);
-  const [ingredRecipes, setIngredRecipes] = useState([]);
-  const [courseRecipes, setCourseRecipes] = useState([]);
-  const [currRecipe, setCurrRecipe] = useState({});
+  const [recipeState, setRecipeState] = useState({
+    bookRecipes: [],
+    ingredRecipes: [],
+    courseRecipes: [],
+    currRecipe: {},
+  });
 
-  function setBookState(bookRecipes) {
-    setBookRecipes(bookRecipes);
-  }
-
-  function setIngredState(ingredRecipes) {
-    setIngredRecipes(ingredRecipes);
-  }
-
-  function setCourseState(courseRecipes) {
-    setCourseRecipes(courseRecipes);
-  }
-
-  function setCurrState(currRecipe) {
-    setCurrRecipe(currRecipe);
+  function updateCurrRecipe(currRecipe) {
+    console.log("inside updateCurrRecipe");
+    console.log(currRecipe);
+    setRecipeState({ ...recipeState, currRecipe });
   }
 
   return (
-    <RecipeContext.Provider
-      value={(bookRecipes, ingredRecipes, courseRecipes, currRecipe)}
-    >
+    <RecipeContext.Provider value={recipeState}>
       <Router>
         <div>
           <NavigationBar />
@@ -43,18 +33,22 @@ function App() {
               exact
               path={"/"}
               render={(props) => (
-                <Home {...props} setCurrState={setCurrState} />
+                <Home {...props} updateCurrRecipe={updateCurrRecipe} />
               )}
             />
             <Route
               exact
               path={"/recipeSelect/:recipe"}
-              render={(props) => <MappedRecipes {...props} />}
+              render={(props) => (
+                <MappedRecipes {...props} updateCurrRecipe={updateCurrRecipe} />
+              )}
             />
             <Route
               exact
               path={"/recipe/:recipe"}
-              render={(props) => <Recipe {...props} />}
+              render={(props) => (
+                <Recipe {...props} updateCurrRecipe={updateCurrRecipe} />
+              )}
             />
           </Switch>
         </div>

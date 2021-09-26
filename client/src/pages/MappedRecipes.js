@@ -1,9 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import RecipeContext from "../utils/RecipeContext";
 import API from "../utils/API";
+import DisplayCard from "../components/DisplayCard/DisplayCard";
 
 export default function MappedRecipes(props) {
-  const { bookRecipes, ingredRecipes, courseRecipes, currRecipes } =
+  const { bookRecipes, ingredRecipes, courseRecipes, currRecipe } =
     useContext(RecipeContext);
 
   //which input was entered by the user
@@ -19,5 +20,5 @@ export default function MappedRecipes(props) {
     });
   }, []);
 
-  return "hello from Recipe Select";
+  return <DisplayCard />;
 }
