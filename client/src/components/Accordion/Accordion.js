@@ -40,9 +40,6 @@ export default function AccordionExample(props) {
 
   let setCurrRecipeState = props.props.props.updateCurrRecipe;
 
-  console.log("props below accordion");
-  console.log(props.props.props);
-
   let courseSelect = "";
 
   const onChangeValue = (e) => {
@@ -80,7 +77,7 @@ export default function AccordionExample(props) {
     } else if (bookInput) {
       API.singleQuery(bookSearch.current.value, "book").then((data) => {
         // setBookRecipes([data.data]);
-        console.log(data.data);
+
         routeChange("book");
       });
     } else if (recipeInput) {
@@ -89,14 +86,11 @@ export default function AccordionExample(props) {
         // setCurrRecipe(currTemp);
         setCurrRecipeState(data.data[0]);
         routeChange("recipe");
-        console.log("inside recipe query");
-        console.log("currRecipe below");
-        console.log(currRecipe);
       });
     } else if (courseSelect !== "") {
       API.singleQuery(courseSelect, "course").then((data) => {
         // setCourseRecipes(data.data);
-        console.log(data.data);
+
         routeChange("course");
       });
     }
