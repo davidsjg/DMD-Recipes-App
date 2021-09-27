@@ -46,6 +46,8 @@ module.exports = {
         .then((dbModel) => res.json(dbModel))
         .catch((err) => res.status(422).json(err));
     } else if (req.query.r === "ingred") {
+      console.log("inside else/if for ingred on backend");
+      console.log(req.query.q);
       db.Recipe.find({
         ingredients: { $regex: new RegExp(req.query.q, "i") },
       })

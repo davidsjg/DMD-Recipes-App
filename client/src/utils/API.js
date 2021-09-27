@@ -10,6 +10,9 @@ export default {
   // },
 
   singleQuery: function (query1, query2) {
+    console.log("inside singleQuery, queries below ");
+
+    console.log(query1, query2);
     return axios.get("/api/recipes", { params: { q: query1, r: query2 } });
   },
 

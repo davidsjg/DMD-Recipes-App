@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
+
 import SearchForm from "../components/SearchForm/SearchForm";
 
 import Container from "react-bootstrap/Container";

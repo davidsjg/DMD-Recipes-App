@@ -6,7 +6,7 @@ import styles from "./ColGrid.module.css";
 
 function ColGrid(props) {
   const cName = props.cName;
-  console.log(props);
+
   const size = props.size
     .split(" ")
     .map((size) => "col-" + size)

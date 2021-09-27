@@ -6,7 +6,7 @@ import styles from "./QuantCol.module.css";
 
 function QuantCol(props) {
   const cName = props.cName;
-  console.log(props);
+
   const size = props.size
     .split(" ")
     .map((size) => "col-" + size)

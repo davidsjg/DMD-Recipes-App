@@ -8,6 +8,8 @@ router.route("/").get(recipeController.mainQuery);
 
 // router.route("/:name").get(lakeController.findByName);
 
+router.route("/recipe/:recipe").get(recipeController.mainQuery);
+
 // Matches with "/api/cities/:id"
 // router
 //   .route("/:id")

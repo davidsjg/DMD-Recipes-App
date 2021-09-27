@@ -15,10 +15,10 @@ export default function Recipe(props) {
 
   const setCurrRecipe = props.updateCurrRecipe;
 
+  console.log(props);
+
   //which input was entered by the user
   let searchParam = props.location.state;
-  let ingredients = [];
-  let quantities = [];
 
   let historyRecipe = props.match.params.recipe;
 
@@ -27,15 +27,16 @@ export default function Recipe(props) {
   }
 
   useEffect(() => {
+    console.log("two search params below");
+    console.log(historyRecipe);
+    console.log(searchParam);
     API.singleQuery(historyRecipe, searchParam).then((data) => {
       // setIngredRecipes([data.data]);
-
+      console.log("returned data below");
+      console.log(data);
       setCurrRecipe(data.data[0]);
       console.log("currRecipe below");
       console.log(currRecipe);
-      ingredients = currRecipe.ingredients;
-      quantities = currRecipe.quantities;
-      console.log(ingredients);
     });
   }, []);
 
@@ -73,8 +74,12 @@ export default function Recipe(props) {
                   })
                 : console.log("no data yet")}
             </ListGroup>
-            {/* <ColGrid size="md-6">{currRecipe.quantities[0]}</ColGrid>
-            <ColGrid size="md-6">{currRecipe.ingredients[0]}</ColGrid> */}
+            {typeof currRecipe.quantities !== "undefined" && (
+              <>
+                <ColGrid size="md-6">{currRecipe.quantities[0]}</ColGrid>
+                <ColGrid size="md-6">{currRecipe.ingredients[0]}</ColGrid>
+              </>
+            )}
           </RowGrid>
         </ColGrid>
         <ColGrid size="md-3"></ColGrid>

@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import Link from "react-router-dom/Link";
 import RecipeContext from "../utils/RecipeContext";
 import API from "../utils/API";
 import DisplayCard from "../components/DisplayCard/DisplayCard";
@@ -18,18 +19,21 @@ export default function MappedRecipes(props) {
 
   let historyRecipe = props.match.params.recipe;
 
+  let tempArr = [];
+
   useEffect(() => {
     // setIngredRecipes([data.data]);
     // console.log("return from history search");
 
-    if (searchParam === "ingred") {
-      API.singleQuery(historyRecipe, searchParam).then((data) => {
-        setCurrIngred(data.data);
-      });
-    }
+    API.singleQuery(historyRecipe, searchParam).then((data) => {
+      setCurrIngred(data.data);
+    });
+
+    let path = "/recipe/" + historyRecipe;
   }, []);
 
   function handleClick() {
+    tempArr = ingredRecipes.slice();
     console.log(ingredRecipes);
   }
 
@@ -40,15 +44,20 @@ export default function MappedRecipes(props) {
         {ingredRecipes.map((recipe) => {
           return (
             <ListGroup.Item style={{ textAlign: "center" }}>
-              <p>
+              <Link
+                to={{
+                  pathname: "/recipe/" + recipe.name,
+                  state: "recipe",
+                }}
+              >
                 {recipe.name} - {recipe.book}
-              </p>
+              </Link>
             </ListGroup.Item>
           );
         })}
       </ColGrid>
       <ColGrid size="md-3">
-        <Button onClick={handleClick}>CLICK ME YOU FAK</Button>
+        <Button onClick={handleClick}>CLICK ME</Button>
       </ColGrid>
     </RowGrid>
   );
