@@ -19,15 +19,14 @@ export default function MappedRecipes(props) {
   let historyRecipe = props.match.params.recipe;
 
   useEffect(() => {
-    API.singleQuery(historyRecipe, searchParam).then((data) => {
-      // setIngredRecipes([data.data]);
-      // console.log("return from history search");
-      console.log(data.data);
+    // setIngredRecipes([data.data]);
+    // console.log("return from history search");
 
-      if (searchParam === "ingred") {
+    if (searchParam === "ingred") {
+      API.singleQuery(historyRecipe, searchParam).then((data) => {
         setCurrIngred(data.data);
-      }
-    });
+      });
+    }
   }, []);
 
   function handleClick() {
@@ -38,9 +37,15 @@ export default function MappedRecipes(props) {
     <RowGrid>
       <ColGrid size="md-3"></ColGrid>
       <ColGrid size="md-6">
-        <ListGroup.Item style={{ textAlign: "center" }}>
-          Recipe: {currRecipe.name}
-        </ListGroup.Item>
+        {ingredRecipes.map((recipe) => {
+          return (
+            <ListGroup.Item style={{ textAlign: "center" }}>
+              <p>
+                {recipe.name} - {recipe.book}
+              </p>
+            </ListGroup.Item>
+          );
+        })}
       </ColGrid>
       <ColGrid size="md-3">
         <Button onClick={handleClick}>CLICK ME YOU FAK</Button>
