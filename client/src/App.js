@@ -18,9 +18,16 @@ function App() {
   });
 
   function updateCurrRecipe(currRecipe) {
-    console.log("inside updateCurrRecipe");
-    console.log(currRecipe);
     setRecipeState({ ...recipeState, currRecipe });
+  }
+  function updateCourse(courseRecipes) {
+    setRecipeState({ ...recipeState, courseRecipes });
+  }
+  function updateIngred(ingredRecipes) {
+    setRecipeState({ ...recipeState, ingredRecipes });
+  }
+  function updateBook(bookRecipes) {
+    setRecipeState({ ...recipeState, bookRecipes });
   }
 
   return (
@@ -40,7 +47,11 @@ function App() {
               exact
               path={"/recipeSelect/:recipe"}
               render={(props) => (
-                <MappedRecipes {...props} updateCurrRecipe={updateCurrRecipe} />
+                <MappedRecipes
+                  {...props}
+                  updateCurrRecipe={updateCurrRecipe}
+                  updateIngred={updateIngred}
+                />
               )}
             />
             <Route

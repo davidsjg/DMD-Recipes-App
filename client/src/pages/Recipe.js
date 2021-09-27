@@ -47,7 +47,10 @@ export default function Recipe(props) {
         <ColGrid size="md-3"></ColGrid>
         <ColGrid size="md-6">
           <ListGroup.Item style={{ textAlign: "center" }}>
-            {currRecipe.name}
+            Recipe: {currRecipe.name}
+          </ListGroup.Item>
+          <ListGroup.Item style={{ textAlign: "center" }}>
+            Book: {currRecipe.book}
           </ListGroup.Item>
         </ColGrid>
         <ColGrid size="md-3"></ColGrid>

@@ -9,10 +9,10 @@ export default function NavigationBar() {
   return (
     <Navbar bg="light">
       <Container>
-        <Navbar.Brand href="/home">Diane Mott Davidson Recipes</Navbar.Brand>
+        <Navbar.Brand href="/">Diane Mott Davidson Recipes</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
-          <Nav.Link href="#home" style={{ color: "black" }}>
+          <Nav.Link href="/" style={{ color: "black" }}>
             Home
           </Nav.Link>
           <Nav.Link href="#link" style={{ color: "black" }}>
