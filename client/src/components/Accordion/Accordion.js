@@ -33,7 +33,7 @@ export default function AccordionExample(props) {
       let path = "/recipe/" + recipeSearch.current.value;
       history.push(path, "recipe");
     } else if (action === "course") {
-      let path = "/recipeSelect/" + courseSelect.current.value;
+      let path = "/recipeSelect/" + courseSelect;
       history.push(path, "course");
     }
   };
@@ -88,6 +88,7 @@ export default function AccordionExample(props) {
         routeChange("recipe");
       });
     } else if (courseSelect !== "") {
+      console.log(courseSelect);
       API.singleQuery(courseSelect, "course").then((data) => {
         // setCourseRecipes(data.data);
 

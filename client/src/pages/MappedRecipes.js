@@ -31,7 +31,6 @@ export default function MappedRecipes(props) {
   }, []);
 
   function handleClick() {
-    tempArr = ingredRecipes.slice();
     console.log(ingredRecipes);
   }
 
