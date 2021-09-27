@@ -4,6 +4,7 @@ import RecipeContext from "../utils/RecipeContext";
 import ColGrid from "../components/ColGrid/ColGrid";
 import RowGrid from "../components/RowGrid/RowGrid";
 import ListGroup from "react-bootstrap/ListGroup";
+import Card from "react-bootstrap/Card";
 
 import API from "../utils/API";
 import QuantCol from "../components/QuantCol/QuantCol";
@@ -43,50 +44,6 @@ export default function Recipe(props) {
   return (
     <>
       <RowGrid>
-        <ColGrid size="md-2"></ColGrid>
-        <ColGrid size="md-8">
-          <ListGroup.Item style={{ textAlign: "center" }}>
-            {currRecipe.name}
-          </ListGroup.Item>
-        </ColGrid>
-        <ColGrid size="md-2"></ColGrid>
-      </RowGrid>
-      <RowGrid>
-        <ColGrid size="md-2"></ColGrid>
-        <ColGrid size="md-8">
-          <RowGrid>
-            {typeof currRecipe.quantities !== "undefined"
-              ? currRecipe.ingredients.map((ingred, index) => {
-                  let quantContent = currRecipe.quantities[index];
-                  return (
-                    <>
-                      <QuantCol size="md-6" cName="quantRecipe">
-                        {quantContent}
-                      </QuantCol>
-                      <ColGrid size="md-6">{ingred}</ColGrid>
-                    </>
-                  );
-                })
-              : console.log("no data yet")}
-
-            {/* <ColGrid size="md-6">{currRecipe.quantities[0]}</ColGrid>
-            <ColGrid size="md-6">{currRecipe.ingredients[0]}</ColGrid> */}
-          </RowGrid>
-        </ColGrid>
-        <ColGrid size="md-2"></ColGrid>
-      </RowGrid>
-      {/* <RowGrid>
-        <ColGrid size="md-2">test</ColGrid>
-        <ColGrid size="md-8">
-          <RowGrid>
-            <ColGrid size="md-6">{currRecipe.quantities[0]}</ColGrid>
-            <ColGrid size="md-6">{currRecipe.ingredients[0]}</ColGrid>
-          </RowGrid>
-        </ColGrid>
-        <ColGrid size="md-2">test</ColGrid>
-      </RowGrid> */}
-      {/* 
-      <RowGrid>
         <ColGrid size="md-3"></ColGrid>
         <ColGrid size="md-6">
           <ListGroup.Item style={{ textAlign: "center" }}>
@@ -97,31 +54,39 @@ export default function Recipe(props) {
       </RowGrid>
       <RowGrid>
         <ColGrid size="md-3"></ColGrid>
-        <ColGrid size="md-3">
-          <ListGroup variant="flush">
-            {typeof currRecipe.quantities !== "undefined"
-              ? currRecipe.quantities.map((test) => {
-                  return <ListGroup.Item>{test}</ListGroup.Item>;
-                })
-              : console.log("no data yet")}
-          </ListGroup>
-        </ColGrid>
-        <ColGrid size="md-3">
-          <ListGroup variant="flush">
-            {typeof currRecipe.ingredients !== "undefined"
-              ? currRecipe.ingredients.map((test) => {
-                  return <ListGroup.Item>{test}</ListGroup.Item>;
-                })
-              : console.log("no data yet")}
-          </ListGroup>
+        <ColGrid size="md-6">
+          <RowGrid>
+            <ListGroup variant="flush">
+              {typeof currRecipe.quantities !== "undefined"
+                ? currRecipe.ingredients.map((ingred, index) => {
+                    let quantContent = currRecipe.quantities[index];
+                    return (
+                      <>
+                        <ListGroup.Item className={styles["items"]}>
+                          {quantContent} {ingred}
+                        </ListGroup.Item>
+                      </>
+                    );
+                  })
+                : console.log("no data yet")}
+            </ListGroup>
+            {/* <ColGrid size="md-6">{currRecipe.quantities[0]}</ColGrid>
+            <ColGrid size="md-6">{currRecipe.ingredients[0]}</ColGrid> */}
+          </RowGrid>
         </ColGrid>
         <ColGrid size="md-3"></ColGrid>
       </RowGrid>
       <RowGrid>
         <ColGrid size="md-3"></ColGrid>
-        <ColGrid size="md-6"></ColGrid>
+        <ColGrid size="md-6">
+          <ListGroup.Item style={{ textAlign: "center" }}>
+            <Card>
+              <Card.Body>{currRecipe.instructions}</Card.Body>
+            </Card>
+          </ListGroup.Item>
+        </ColGrid>
         <ColGrid size="md-3"></ColGrid>
-      </RowGrid> */}
+      </RowGrid>
     </>
   );
 }
