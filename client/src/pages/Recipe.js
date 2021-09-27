@@ -41,6 +41,46 @@ export default function Recipe(props) {
   return (
     <>
       <RowGrid>
+        <ColGrid size="md-2"></ColGrid>
+        <ColGrid size="md-8">
+          <ListGroup.Item style={{ textAlign: "center" }}>
+            {currRecipe.name}
+          </ListGroup.Item>
+        </ColGrid>
+        <ColGrid size="md-2"></ColGrid>
+      </RowGrid>
+      <RowGrid>
+        <ColGrid size="md-2">test</ColGrid>
+        <ColGrid size="md-8">
+          <RowGrid>
+            {currRecipe.ingredients.map((ingred, index) => {
+              let quantContent = currRecipe.quantities[index];
+              return (
+                <>
+                  <ColGrid size="md-6">{quantContent}</ColGrid>
+                  <ColGrid size="md-6">{ingred}</ColGrid>
+                </>
+              );
+            })}
+
+            {/* <ColGrid size="md-6">{currRecipe.quantities[0]}</ColGrid>
+            <ColGrid size="md-6">{currRecipe.ingredients[0]}</ColGrid> */}
+          </RowGrid>
+        </ColGrid>
+        <ColGrid size="md-2">test</ColGrid>
+      </RowGrid>
+      {/* <RowGrid>
+        <ColGrid size="md-2">test</ColGrid>
+        <ColGrid size="md-8">
+          <RowGrid>
+            <ColGrid size="md-6">{currRecipe.quantities[0]}</ColGrid>
+            <ColGrid size="md-6">{currRecipe.ingredients[0]}</ColGrid>
+          </RowGrid>
+        </ColGrid>
+        <ColGrid size="md-2">test</ColGrid>
+      </RowGrid> */}
+      {/* 
+      <RowGrid>
         <ColGrid size="md-3"></ColGrid>
         <ColGrid size="md-6">
           <ListGroup.Item style={{ textAlign: "center" }}>
@@ -51,7 +91,16 @@ export default function Recipe(props) {
       </RowGrid>
       <RowGrid>
         <ColGrid size="md-3"></ColGrid>
-        <ColGrid size="md-2">
+        <ColGrid size="md-3">
+          <ListGroup variant="flush">
+            {typeof currRecipe.quantities !== "undefined"
+              ? currRecipe.quantities.map((test) => {
+                  return <ListGroup.Item>{test}</ListGroup.Item>;
+                })
+              : console.log("no data yet")}
+          </ListGroup>
+        </ColGrid>
+        <ColGrid size="md-3">
           <ListGroup variant="flush">
             {typeof currRecipe.ingredients !== "undefined"
               ? currRecipe.ingredients.map((test) => {
@@ -60,21 +109,13 @@ export default function Recipe(props) {
               : console.log("no data yet")}
           </ListGroup>
         </ColGrid>
-        <ColGrid size="md-4">
-          <ListGroup variant="flush">
-            <ListGroup.Item>Cras justo odio</ListGroup.Item>
-            <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-            <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-            <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-          </ListGroup>
-        </ColGrid>
         <ColGrid size="md-3"></ColGrid>
       </RowGrid>
       <RowGrid>
         <ColGrid size="md-3"></ColGrid>
         <ColGrid size="md-6"></ColGrid>
         <ColGrid size="md-3"></ColGrid>
-      </RowGrid>
+      </RowGrid> */}
     </>
   );
 }
