@@ -1,10 +1,12 @@
 import React, { useContext, useEffect } from "react";
+import styles from "./Recipe.module.css";
 import RecipeContext from "../utils/RecipeContext";
 import ColGrid from "../components/ColGrid/ColGrid";
 import RowGrid from "../components/RowGrid/RowGrid";
 import ListGroup from "react-bootstrap/ListGroup";
 
 import API from "../utils/API";
+import QuantCol from "../components/QuantCol/QuantCol";
 
 export default function Recipe(props) {
   const { bookRecipes, ingredRecipes, courseRecipes, currRecipe } =
@@ -50,24 +52,28 @@ export default function Recipe(props) {
         <ColGrid size="md-2"></ColGrid>
       </RowGrid>
       <RowGrid>
-        <ColGrid size="md-2">test</ColGrid>
+        <ColGrid size="md-2"></ColGrid>
         <ColGrid size="md-8">
           <RowGrid>
-            {currRecipe.ingredients.map((ingred, index) => {
-              let quantContent = currRecipe.quantities[index];
-              return (
-                <>
-                  <ColGrid size="md-6">{quantContent}</ColGrid>
-                  <ColGrid size="md-6">{ingred}</ColGrid>
-                </>
-              );
-            })}
+            {typeof currRecipe.quantities !== "undefined"
+              ? currRecipe.ingredients.map((ingred, index) => {
+                  let quantContent = currRecipe.quantities[index];
+                  return (
+                    <>
+                      <QuantCol size="md-6" cName="quantRecipe">
+                        {quantContent}
+                      </QuantCol>
+                      <ColGrid size="md-6">{ingred}</ColGrid>
+                    </>
+                  );
+                })
+              : console.log("no data yet")}
 
             {/* <ColGrid size="md-6">{currRecipe.quantities[0]}</ColGrid>
             <ColGrid size="md-6">{currRecipe.ingredients[0]}</ColGrid> */}
           </RowGrid>
         </ColGrid>
-        <ColGrid size="md-2">test</ColGrid>
+        <ColGrid size="md-2"></ColGrid>
       </RowGrid>
       {/* <RowGrid>
         <ColGrid size="md-2">test</ColGrid>
