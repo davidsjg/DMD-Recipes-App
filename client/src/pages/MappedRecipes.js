@@ -19,8 +19,6 @@ export default function MappedRecipes(props) {
 
   let historyRecipe = props.match.params.recipe;
 
-  let tempArr = [];
-
   useEffect(() => {
     // setIngredRecipes([data.data]);
     // console.log("return from history search");
