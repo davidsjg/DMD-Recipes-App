@@ -74,12 +74,6 @@ export default function Recipe(props) {
                   })
                 : console.log("no data yet")}
             </ListGroup>
-            {typeof currRecipe.quantities !== "undefined" && (
-              <>
-                <ColGrid size="md-6">{currRecipe.quantities[0]}</ColGrid>
-                <ColGrid size="md-6">{currRecipe.ingredients[0]}</ColGrid>
-              </>
-            )}
           </RowGrid>
         </ColGrid>
         <ColGrid size="md-3"></ColGrid>

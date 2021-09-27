@@ -376,6 +376,271 @@ const recipeSeed = [
     Place 2 slices of chicken on top. Place the stuffed mushrooms in a greased 9 by 13-inch pan. Bake for approximately 20 to 25 minutes or until heated through. Serve immediately.
     Makes 4 servings`,
   },
+
+  {
+    name: "Goldy’s Marvelous Mayonnaise",
+    book: "Catering to Nobody",
+    quantities: [
+      "1 Large",
+      "1 Tablespoon fresh",
+      "1 Tablespoon",
+      "½ Tablespoon dry",
+      "½ Tablespoon",
+      "1 Cup",
+    ],
+    ingredients: [
+      "egg",
+      "lemon juice",
+      "white wine vinegar",
+      "mustard",
+      "salt",
+      "safflower oil",
+    ],
+    course: "main",
+    glutenFree: false,
+    lowCarb: false,
+    instructions: `Put the egg, juice vinegar, mustard and salt in a food processor fitted with a metal blade. Process until well blended, about 30 to 40 seconds.
+
+    Place the oil in a small pitcher, and with the food processor running, dribble the oil into the egg mixture in a thin stream. When all the oil has been added, turn off the processor and scrape the mayonnaise from the bowl and the blade into a small bowl that can be tightly covered. Keep the mixture well chilled. It is best to use homemade mayonnaise within 24 hours.`,
+  },
+
+  {
+    name: "Wild Man’s Wild Rice Salad",
+    book: "Catering to Nobody",
+    quantities: [
+      "½ Cup raw",
+      "2 Cups chicken or vegetable",
+      "2 Tablespoons",
+      "1 Tablespoon",
+      "½ Teaspoon Dijon",
+      "1 Tablespoon",
+      "2 finely chopped",
+      "3 diced",
+      "1 small drained, seeded, and diced",
+      "1/3 cup peeled and diced",
+      "1 Cup washed and drained baby",
+    ],
+    ingredients: [
+      "wild rice",
+      "broth",
+      "mayonnaise",
+      "tarragon vinegar",
+      "mustard",
+      "olive oil",
+      "Scallions",
+      "Radishes",
+      "tomato",
+      "jicama",
+      "spinach",
+      "Salt and pepper to taste",
+    ],
+    course: "main",
+    glutenFree: false,
+    lowCarb: false,
+    ingredients:
+      "The night before you are to serve the salad, thoroughly rinse the rice, place it in a glass bowl, and completely cover the kernels with water. Allow the rice to soak overnight.  The next morning, carefully strain the rice and discard the water. In a large pan, bring the broth to a boil and add the rice. Cover the pan and immediately lower the heat to the lowest setting. Allow the rice to cook, covered about 1 hour to 1 ¼ hours, or until the kernels have puffed and taste done (i.e., they are not chewy or hard). Drain the rice and measure it. You should have between 1 ¾ and 2 cu[s cooked rice. Spread the kernels out on two plates to cool completely. For the salad the kernels must be dry and cool. Pat the kernels dry with paper towels, if necessary.  In a small bowl, combine the mayonnaise, vinegar and mustard, and whisk well. Add the oil in a thin stream whisking all the while, until you have a smooth, blended dressing. In a medium-sized bowl, gently combine the cool rice kernels with the scallions, radishes, tomato, jicama, and spinach. Pour the dressing over this mixture and mix very gently. Taste and correct the seasoning. Chill at least 2 hours before serving. Turn out onto a small platter that you may line with spinach leaves, if desired. The salad must be consumed the day it is made; it does not keep well.",
+  },
+
+  {
+    name: "Goldy’s Dream Cake",
+    book: "Catering to Nobody",
+    quantities: [
+      "4 1/2 cups all-purpose",
+      "1 1/2 cups",
+      "1 1/2 cups well chilled, cut into 1 tbsp, unsalted",
+      "1 teaspoon",
+      "1 teaspoon",
+      "1/2 teaspoon",
+      "6 cups reserved",
+      "2 large beaten",
+      "1 ½ cups",
+      "2 teaspoons",
+      "1 pound (two 8-ounce packages) softened",
+      "1/4 teaspoon",
+      "½ cup",
+      "2 large beaten",
+      "¼ teaspoon",
+      "1 cup red sieved(seeds removed)",
+      "2/3 cups raw whole",
+      "2 cups reserved",
+    ],
+    ingredients: [
+      "flour",
+      "sugar",
+      "butter",
+      "baking powder",
+      "baking soda",
+      "Salt",
+      "crumb mixture",
+      "eggs",
+      "sour cream",
+      "almond extract",
+      "cream cheese",
+      "Vanilla",
+      "sugar",
+      "eggs",
+      "vanilla extract",
+      "raspberry preserves",
+      "almonds",
+      "crumb mixture",
+    ],
+    course: "dessert",
+    glutenFree: false,
+    lowCarb: false,
+    instructions: `Preheat the oven to 350 degrees. Butter two 9- or 10-inch spring form pans and set aside.
+
+    In the large bowl of a food processor fitted with a steel blade, blend the flour and sugar until well combined, about 5 seconds. With the motor running, quickly drop the butter pieces through the chute, blending until the mixture resembles small, sandy crumbs, less the than a minute. Measure out 6 cups o this mixture for the cake. Measure the last 2 cups of the mixture for the topping and set aside.
+    
+    For the cake, gently stir the baking powder, soda and salt into the 6 cups of reserved crumb mixture. In a separate bowl, mix the beaten eggs with the sour cream and almond extract, stirring until well combined. Pour the egg mixture over the crumb mixture and stir until smooth and thick. Spread the cake batter over the bottom and up the sides of each of the prepared pans.
+    
+    For the filling, beat the cream cheese, sugar, eggs and vanilla extract in the large bowl of an electric mixer until smooth. Spread half of this mixture over the cake batter in each of the prepared pans. Top with cream cheese mixture in each pan with ½ cup of the sieved preserves.
+    
+    For the topping, whirl the raw almonds in a food processor fitted with the steel blade until chunky. Mix the almonds into the 2 cups reserved crumb mixture and sprinkle half of this mixture over the preserves layer in each pan.
+    
+    Bake the cakes for 45 to 55 minutes. Test with a toothpick for doneness. (All that should adhere to the toothpick is cream cheese and preserves, not cake batter. Cool the cakes thoroughly on racks, then cover with foil and refrigerate several hours or, even better, overnight. Serve in the morning with coffee, if desired.
+    
+    Makes 2 large cakes.`,
+  },
+
+  {
+    name: "Dungeon Bars",
+    book: "Catering to Nobody",
+    quantities: [
+      "1 cup all-purpose",
+      "½ teaspoon",
+      "¼ teaspoon",
+      "1 cup (2 sticks) unsalted",
+      "½ cup packed dark",
+      "½ cup granulated",
+      "2 large",
+      "2 teaspoons",
+      "1 cup rolled",
+      "1 cup",
+    ],
+    ingredients: [
+      "flour",
+      "salt",
+      "baking soda",
+      "butter",
+      "brown sugar",
+      "sugar",
+      "eggs",
+      "vanilla extract",
+      "oats",
+      "raisins",
+    ],
+    course: "dessert",
+    glutenFree: false,
+    lowCarb: false,
+    instructions: `Preheat the oven to 350 degrees. Butter a 9 x 13- inch baking pan and set aside.
+
+    Sift together the flour, salt, and baking soda. Set aside.
+    
+    In a large mixing bowl, cream the butter with the sugars until the mixture is light and fluffy. Turn the mixer to low, and bet in the eggs and vanilla until well combined. Carefully stir in the flour mixture, oats, and raisins until well combined. Spread in the prepared pan (batter will be thick). Smooth the top. Bake from 20 – 30 minutes, until the batter has puffed and flattened, is brown around the edges, no longer appears wet in the center, and testes d one with a toothpick. Cool slightly. While warm, cut into 32 bars. Allow to cool completely on a rack. Serve with best quality vanilla or cinnamon ice cream.
+    
+    Makes 32 bars`,
+  },
+
+  {
+    name: "Goldy’s Terrific Toffee",
+    book: "Catering to Nobody",
+    quantities: [
+      "2 cups coarsely chopped",
+      "2 pounds (8 sticks) unsalted",
+      "2 pounds best-quality milk",
+      "4 cups packed",
+    ],
+    ingredients: ["pecans", "butter", "chocolate", "sugar"],
+    course: "dessert",
+    glutenFree: false,
+    lowCarb: false,
+    instructions: `Note: A candy thermometer is essential for this recipe.
+
+    Preheat the oven to 375 degrees. Spread the pecans in two 9-inch glass pie plates, and roast until the nuts have turned slightly darker and are well toasted, about 10 minutes. Stir once or twice during the roasting process to ensure even browning. Remove the pecans from the oven, spread out to cool on paper towels, and set aside until you finish the toffee.
+    
+    Butter two 9 x 13 inch glass pans and set aside. Unwrap the chocolate and divide between tow plates. Break all the chocolate into squares and set aside. Using a deep, heavy-bottomed pan, melt the butter with the sugar and cook over medium to medium-high heat, stirring constantly, until a candy thermometer hits 285 degrees to 290 degrees, the soft-crack stage. (Candy will be very hot: be sure to protect your skin and clothing through the cooking and pouring process.) Pour the toffee into the prepared pan and immediately place the squares of chocolate in rows across the toffee (1 pound of chocolate per pan). When the chocolate has softened, spread it to the edges of the toffee. Sprinkle 1 cup of the roasted pecans over the chocolate in each pan. Allow to cool, then cover with foil and chill.
+    
+    Using a large, heavy-duty knife, break the toffee into 1- to 3-inch pieces.
+    
+    Makes approximately 6 dozen pieces`,
+  },
+
+  {
+    name: "Honey I’m Home Gingersnaps",
+    book: "Catering to Nobody",
+    quantities: [
+      "2 cups all-purpose",
+      "2 teaspoons",
+      "¼ teaspoon",
+      "1 ½ teaspoon ground",
+      "1 teaspoon ground",
+      "½ teaspoon ground",
+      "¼ teaspoon freshly grated",
+      "¼ cup solid vegetable",
+      "½ cup (1 stick) unsalted",
+      "1 cup",
+      "1 large",
+      "¼ cup",
+      "¼ teaspoon finely minced",
+    ],
+    ingredients: [
+      "flour",
+      "baking soda",
+      "salt",
+      "ginger",
+      "cinnamon",
+      "cloves",
+      "nutmeg",
+      "shortening",
+      "butter",
+      "sugar",
+      "egg",
+      "honey",
+      "lemon zest",
+    ],
+    course: "dessert",
+    glutenFree: false,
+    lowCarb: false,
+    instructions: `Preheat the oven to 375 degrees. Butter two cookie sheets.
+
+    Sift together the flour, soda, salt, ginger, cinnamon, cloves and nutmeg. Set aside.
+    
+    In a large mixer bowl, cream the shortening, butter and sugar until light and fluffy. Beat in the egg and honey until well combined. Stir in the flour mixture and the zest, stirring until well combined, with no traces of flour visible.
+    
+    Using a 1-tablespoon scoop, measure the cookie onto the cooking sheets, keeping them two inches apart. Do not attempt to make more than one dozen per sheet. Bake the batches one at a time, until the cookies have puffed and flattened and have a crinkly surface, 10 – 12 minutes per batch.
+    
+    Cool the cookies completely on racks.
+    
+    Makes 32 cookies`,
+  },
+
+  {
+    name: "Holy Moly Guacamole",
+    book: "Catering to Nobody",
+    quantities: [
+      "1 large or 2 small pitted and mashed",
+      "1 ½ teaspoons fresh",
+      "1 teaspoon freshly grated",
+      "¼ teaspoon",
+      "1 tablespoon",
+      "¼ cup",
+    ],
+    ingredients: [
+      "avocado (make 1 cup)",
+      "lemon juice",
+      "onion",
+      "salt",
+      "picante sauce",
+      "mayonnaise",
+      "Corn Chips",
+    ],
+    course: "appetizer",
+    glutenFree: false,
+    lowCarb: false,
+    instructions: `Place the mashed avocado in a non-metallic bowl. Mix the juice, onion, salt, and picante sauce until well blended. Spread the mayonnaise over the top to the edges, cover the bowl, and refrigerate. At serving time, uncover the bowl and thoroughly mix in the mayonnaise. Serve with corn chips
+
+    Makes 1 ¼ cups`,
+  },
 ];
 
 db.Recipe.remove({})
@@ -390,7 +655,7 @@ db.Recipe.remove({})
   });
 
 // name: "",
-// book: "",
+// book: "Catering to Nobody",
 // quantities: ['','','','','','',''],
 // ingredients: ['','','','','','',''],
 // course: "",
