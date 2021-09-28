@@ -17,6 +17,7 @@ export default function NavDrop() {
   const routeChange = (e) => {
     let path = `/recipeSelect/${e}`;
     history.push({ pathname: path, state: "book" });
+    window.location.reload(false);
   };
 
   const handleSelect = (e) => {
