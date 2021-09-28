@@ -1,10 +1,12 @@
-import React, { useRef, useState, useContext } from "react";
+import React, { useRef, useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
 import { useAccordionButton } from "react-bootstrap/esm/AccordionButton";
 import Card from "react-bootstrap/Card";
 import RecipeContext from "../../utils/RecipeContext";
+import TextInput from "react-autocomplete-input";
+import "react-autocomplete-input/dist/bundle.css";
 
 import API from "../../utils/API";
 
@@ -19,6 +21,20 @@ export default function AccordionExample(props) {
     useContext(RecipeContext);
 
   const history = useHistory();
+  let setCurrRecipeState = props.props.props.updateCurrRecipe;
+  let courseSelect = "";
+  let setCurrIngred;
+  let tempData;
+
+  useEffect(() => {
+    API.getRecipes().then((data) => {
+      tempData = data;
+    });
+  }, []);
+
+  function handleClick() {
+    console.log(tempData);
+  }
 
   const routeChange = (action) => {
     //ingred, book, recipe, course
@@ -37,10 +53,6 @@ export default function AccordionExample(props) {
       history.push(path, "course");
     }
   };
-
-  let setCurrRecipeState = props.props.props.updateCurrRecipe;
-
-  let courseSelect = "";
 
   const onChangeValue = (e) => {
     courseSelect = e.target.value;
@@ -109,12 +121,13 @@ export default function AccordionExample(props) {
               <Card.Body>
                 <div className="form-group">
                   <label>Recipe Name</label>
-                  <input
+                  <TextInput
                     className="form-control"
                     id="recipeSearch"
                     aria-describedby="recipeSearch"
                     placeholder="Recipe"
                     ref={recipeSearch}
+                    // options = {}
                   />
                 </div>
               </Card.Body>
@@ -190,6 +203,7 @@ export default function AccordionExample(props) {
           Submit
         </button>
       </form>
+      <Button onClick={handleClick}>SUP YALL</Button>
     </>
   );
 }
