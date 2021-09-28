@@ -1,5 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  withRouter,
+} from "react-router-dom";
 import React, { useState } from "react";
 import Home from "./pages/Home";
 import MappedRecipes from "./pages/MappedRecipes";
@@ -33,7 +38,7 @@ function App() {
     ingredRecipes: [],
     courseRecipes: [],
     currRecipe: {},
-    books: [],
+    allBooks: [allBooks],
   });
 
   function updateCurrRecipe(currRecipe) {

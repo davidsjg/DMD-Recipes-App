@@ -1,45 +1,67 @@
 import React, { useContext } from "react";
+import Link from "react-router-dom/Link";
+import { useHistory } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 import RecipeContext from "../../utils/RecipeContext";
 import API from "../../utils/API";
+import ListGroup from "react-bootstrap/ListGroup";
 
 export default function NavDrop() {
-  const { bookRecipes, ingredRecipes, courseRecipes, currRecipe } =
+  const { bookRecipes, ingredRecipes, courseRecipes, currRecipe, allBooks } =
     useContext(RecipeContext);
 
-  console.log(RecipeContext);
+  let bookTitles = allBooks[0];
+
+  const history = useHistory();
+  const routeChange = (e) => {
+    let path = `/recipeSelect/${e}`;
+    history.push({ pathname: path, state: "book" });
+  };
 
   const handleSelect = (e) => {
-    console.log("event =");
-    console.log(e);
-
-    API.singleQuery(e, "book").then((data) => {
-      console.log(data);
-    });
-
-    let newRedirect = `/books/${e}`;
-
-    return <Redirect to={newRedirect} />;
+    routeChange(e);
+    // browserHistory.push({pathname: `/recipeSelect/${e}`, state: {book}});
+    // <Redirect
+    //   to={{
+    //     pathname: `/recipeSelect/${e}`,
+    //     state: { message: 'hello, im a passed message!' }
+    //   }}
+    // />;
   };
 
   return (
-    <DropdownButton
-      alignright="true"
-      title="Dropdown right"
-      id="dropdown-menu-align-right"
-      onSelect={handleSelect}
-    >
-      {/* {state.allBooks.map((bookTitle, i) => {
-        return (
-          <Dropdown.Item eventKey={bookTitle} key={i}>
-            {bookTitle}
-          </Dropdown.Item>
-        );
-      })} */}
+    <>
+      <DropdownButton
+        alignright="true"
+        title="Select Book"
+        // id="dropdown-menu-align-right"
+        onSelect={handleSelect}
+      >
+        {/* {bookTitles.map((bookTitle, i) => {
+          return (
+            <ListGroup.Item style={{ textAlign: "center" }}>
+              <a
+                to={{
+                  pathname: "/recipeSelect/" + bookTitle,
+                  state: "book",
+                }}
+                // href={"/recipeSelect/" + bookTitle + "?book"}
+              >
+                {bookTitle}
+              </a>
+            </ListGroup.Item>
+          );
+        })} */}
 
-      <Dropdown.Divider />
-      <Dropdown.Item eventKey="some link">some link</Dropdown.Item>
-    </DropdownButton>
+        {bookTitles.map((book, i) => {
+          return (
+            <Dropdown.Item eventKey={book} key={i} href="">
+              {book}
+            </Dropdown.Item>
+          );
+        })}
+      </DropdownButton>
+    </>
   );
 }

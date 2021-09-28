@@ -11,6 +11,8 @@ export default function MappedRecipes(props) {
   const { bookRecipes, ingredRecipes, courseRecipes, currRecipe } =
     useContext(RecipeContext);
 
+  console.log(props);
+
   const setCurrIngred = props.updateIngred;
 
   //which input was entered by the user
