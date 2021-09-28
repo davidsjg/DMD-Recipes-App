@@ -5,8 +5,6 @@ import Button from "react-bootstrap/Button";
 import { useAccordionButton } from "react-bootstrap/esm/AccordionButton";
 import Card from "react-bootstrap/Card";
 import RecipeContext from "../../utils/RecipeContext";
-import TextInput from "react-autocomplete-input";
-import "react-autocomplete-input/dist/bundle.css";
 
 import API from "../../utils/API";
 
@@ -25,15 +23,21 @@ export default function AccordionExample(props) {
   let courseSelect = "";
   let setCurrIngred;
   let tempData;
+  let recipeTitles = [];
 
   useEffect(() => {
     API.getRecipes().then((data) => {
-      tempData = data;
+      tempData = data.data;
+
+      tempData.map((name) => {
+        console.log(name.name);
+        recipeTitles.push(name.name);
+      });
     });
   }, []);
 
   function handleClick() {
-    console.log(tempData);
+    console.log(recipeTitles);
   }
 
   const routeChange = (action) => {
@@ -121,13 +125,13 @@ export default function AccordionExample(props) {
               <Card.Body>
                 <div className="form-group">
                   <label>Recipe Name</label>
-                  <TextInput
+                  <input
                     className="form-control"
                     id="recipeSearch"
                     aria-describedby="recipeSearch"
                     placeholder="Recipe"
                     ref={recipeSearch}
-                    // options = {}
+                    options={recipeTitles}
                   />
                 </div>
               </Card.Body>
