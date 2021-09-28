@@ -40,8 +40,6 @@ export default function Recipe(props) {
     });
   }, []);
 
-  let testArr = ["test", "fuck", "damnit", "shit"];
-
   return (
     <>
       <RowGrid>

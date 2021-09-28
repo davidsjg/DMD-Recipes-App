@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Redirect } from "react-router-dom";
 import { Dropdown, DropdownButton } from "react-bootstrap";
-
+import RecipeContext from "../../utils/RecipeContext";
 import API from "../../utils/API";
 
 export default function NavDrop() {
+  const { bookRecipes, ingredRecipes, courseRecipes, currRecipe } =
+    useContext(RecipeContext);
+
+  console.log(RecipeContext);
+
   const handleSelect = (e) => {
     console.log("event =");
     console.log(e);

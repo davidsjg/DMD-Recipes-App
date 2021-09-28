@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from "react";
 import Link from "react-router-dom/Link";
 import RecipeContext from "../utils/RecipeContext";
 import API from "../utils/API";
-import DisplayCard from "../components/DisplayCard/DisplayCard";
 import RowGrid from "../components/RowGrid/RowGrid";
 import ColGrid from "../components/ColGrid/ColGrid";
 import ListGroup from "react-bootstrap/ListGroup";

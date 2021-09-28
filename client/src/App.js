@@ -4,10 +4,28 @@ import React, { useState } from "react";
 import Home from "./pages/Home";
 import MappedRecipes from "./pages/MappedRecipes";
 import Recipe from "./pages/Recipe";
-
 import RecipeContext from "./utils/RecipeContext";
-
 import NavigationBar from "./components/NavigationBar/NavigationBar";
+
+let allBooks = [
+  "Catering to Nobody",
+  "Dying for Chocolate",
+  "The Cereal Murders",
+  "The Last Suppers",
+  "Killer Pancake",
+  "The Main Corpse",
+  "The Grilling Season",
+  "Prime Cut",
+  "Tough Cookie",
+  "Sticks & Scones",
+  "Chopping Spree",
+  "Double Shot",
+  "Dark Tort",
+  "Sweet Revenge",
+  "Fatally Flaky",
+  "Crunch Time",
+  "The Whole Enchilada",
+];
 
 function App() {
   const [recipeState, setRecipeState] = useState({
@@ -15,6 +33,7 @@ function App() {
     ingredRecipes: [],
     courseRecipes: [],
     currRecipe: {},
+    books: [],
   });
 
   function updateCurrRecipe(currRecipe) {
