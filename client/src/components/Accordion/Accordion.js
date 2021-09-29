@@ -14,6 +14,7 @@ export default function AccordionExample(props) {
   const recipeSearch = useRef(null);
   const bookSearch = useRef();
   const ingredSearch = useRef();
+  let newArray = [];
 
   const { bookRecipes, ingredRecipes, courseRecipes, currRecipe } =
     useContext(RecipeContext);
@@ -32,16 +33,21 @@ export default function AccordionExample(props) {
       tempData.map((name) => {
         recipeTitles.push(name.name);
       });
+      recipeTitles.map((title, index) => {
+        newArray.push({ id: title, label: title });
+      });
     });
   }, []);
 
   function handleClick() {
     console.log(recipeTitles);
+
+    console.log(newArray);
   }
 
   const routeChange = (action) => {
     //ingred, book, recipe, course
-    console.log("inside routeChange");
+
     if (action === "ingred") {
       let path = "/recipeSelect/" + ingredSearch.current.value;
       history.push(path, "ingred");
@@ -86,7 +92,7 @@ export default function AccordionExample(props) {
     if (ingredInput) {
       API.singleQuery(ingredSearch.current.value, "ingred").then((data) => {
         // setIngredRecipes([data.data]);
-        console.log(data.data);
+
         routeChange("ingred");
       });
     } else if (bookInput) {
@@ -103,7 +109,6 @@ export default function AccordionExample(props) {
         routeChange("recipe");
       });
     } else if (courseSelect !== "") {
-      console.log(courseSelect);
       API.singleQuery(courseSelect, "course").then((data) => {
         // setCourseRecipes(data.data);
 
@@ -114,7 +119,6 @@ export default function AccordionExample(props) {
 
   return (
     <>
-      {/* <Autocomplete /> */}
       <form style={{ textAlign: "center" }} action="/recipes/MexicanPizza">
         <Accordion defaultActiveKey="0">
           <Card>
@@ -208,6 +212,7 @@ export default function AccordionExample(props) {
         </button>
       </form>
       <Button onClick={handleClick}>SUP YALL</Button>
+      <Autocomplete recipeTitles={newArray} />
     </>
   );
 }

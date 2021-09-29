@@ -15,11 +15,6 @@ export default function Recipe(props) {
 
   const setCurrRecipe = props.updateCurrRecipe;
 
-  console.log(props);
-
-  console.log("currREcipe below");
-  console.log(currRecipe);
-
   //which input was entered by the user
   let searchParam = props.location.state;
 
@@ -30,16 +25,10 @@ export default function Recipe(props) {
   }
 
   useEffect(() => {
-    console.log("two search params below");
-    console.log(historyRecipe);
-    console.log(searchParam);
     API.singleQuery(historyRecipe, searchParam).then((data) => {
       // setIngredRecipes([data.data]);
-      console.log("returned data below");
-      console.log(data);
+
       setCurrRecipe(data.data[0]);
-      console.log("currRecipe below");
-      console.log(currRecipe);
     });
   }, []);
 

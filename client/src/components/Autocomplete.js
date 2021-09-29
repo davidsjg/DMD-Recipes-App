@@ -1,38 +1,45 @@
-// import React, { Component } from "react";
-// import PropTypes from "prop-types";
+import React from "react";
+import ReactAutocomplete from "react-autocomplete";
+import Button from "react-bootstrap/Button";
+import RecipeContext from "../utils/RecipeContext";
 
-// export class Autocomplete extends Component {
-//   static propTypes = {};
+class Autocomplete extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: "",
+    };
+  }
 
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       activeSuggestion: 0,
-//       filteredSuggestions: [],
-//       showSuggestions: false,
-//       userInput: "",
-//     };
-//   }
+  render() {
+    function handleClick(props) {
+      // return <h1>Hello, {props.name}</h1>;
+      console.log(this.props);
+    }
+    return (
+      <>
+        <ReactAutocomplete
+          items={this.props.recipeTitles}
+          shouldItemRender={(item, value) =>
+            item.label.toLowerCase().indexOf(value.toLowerCase()) > -1
+          }
+          getItemValue={(item) => item.label}
+          renderItem={(item, highlighted) => (
+            <div
+              key={item.id}
+              style={{ backgroundColor: highlighted ? "#eee" : "transparent" }}
+            >
+              {item.label}
+            </div>
+          )}
+          value={this.state.value}
+          onChange={(e) => this.setState({ value: e.target.value })}
+          onSelect={(value) => this.setState({ value })}
+        />
+        <Button onClick={handleClick}>SUP YALL</Button>
+      </>
+    );
+  }
+}
 
-//   static defaultProperty = {
-//     suggestions: [],
-//   };
-
-//   render() {
-//     return (
-//       <Autocomplete
-//         getItemValue={(item) => item.label}
-//         items={[{ label: "apple" }, { label: "banana" }, { label: "pear" }]}
-//         renderItem={(item, isHighlighted) => (
-//           <div style={{ background: isHighlighted ? "lightgray" : "white" }}>
-//             {item.label}
-//           </div>
-//         )}
-//         value={value}
-//         onChange={(e) => (value = e.target.value)}
-//         onSelect={(val) => (value = val)}
-//       />
-//     );
-//   }
-// }
-// export default Autocomplete;
+export default Autocomplete;
