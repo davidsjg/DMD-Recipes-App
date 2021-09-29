@@ -16,7 +16,18 @@ export default function CardDisplayBooks() {
       <ListGroup.Item>SELECT BY BOOK</ListGroup.Item>
 
       {allBooks[0].map((book) => {
-        return <ListGroup.Item>{book}</ListGroup.Item>;
+        return (
+          <ListGroup.Item>
+            <Link
+              to={{
+                pathname: "/recipeSelect/" + book,
+                state: "book",
+              }}
+            >
+              {book}
+            </Link>
+          </ListGroup.Item>
+        );
       })}
     </ListGroup>
   );

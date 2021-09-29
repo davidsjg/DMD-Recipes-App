@@ -76,7 +76,23 @@ export default function Recipe(props) {
         <ColGrid size="md-6">
           <ListGroup.Item style={{ textAlign: "center" }}>
             <Card>
-              <Card.Body>{currRecipe.instructions}</Card.Body>
+              <Card.Body>{currRecipe.instructions1}</Card.Body>
+
+              {currRecipe.instructions2 && (
+                <Card.Body>{currRecipe.instructions2}</Card.Body>
+              )}
+              {currRecipe.instructions3 && (
+                <Card.Body>{currRecipe.instructions3}</Card.Body>
+              )}
+              {currRecipe.instructions4 && (
+                <Card.Body>{currRecipe.instructions4}</Card.Body>
+              )}
+              {currRecipe.instructions5 && (
+                <Card.Body>{currRecipe.instructions5}</Card.Body>
+              )}
+              {currRecipe.instructions6 && (
+                <Card.Body>{currRecipe.instructions6}</Card.Body>
+              )}
             </Card>
           </ListGroup.Item>
         </ColGrid>
