@@ -1,10 +1,23 @@
-import React from "react";
-import Card from "react-bootstrap/Card";
+import React, { useEffect, useContext } from "react";
+import ListGroup from "react-bootstrap/ListGroup";
+import Link from "react-router-dom/Link";
+import RecipeContext from "../../utils/RecipeContext";
 
 export default function CardDisplayBooks() {
+  const { bookRecipes, ingredRecipes, courseRecipes, currRecipe, allBooks } =
+    useContext(RecipeContext);
+
+  let booksArr = [];
+
+  useEffect(() => {}, []);
+
   return (
-    <Card>
-      <Card.Body>This is some text within a card body.</Card.Body>
-    </Card>
+    <ListGroup>
+      <ListGroup.Item>SELECT BY BOOK</ListGroup.Item>
+
+      {allBooks[0].map((book) => {
+        return <ListGroup.Item>{book}</ListGroup.Item>;
+      })}
+    </ListGroup>
   );
 }
