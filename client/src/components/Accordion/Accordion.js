@@ -5,8 +5,8 @@ import Button from "react-bootstrap/Button";
 import { useAccordionButton } from "react-bootstrap/esm/AccordionButton";
 import Card from "react-bootstrap/Card";
 import RecipeContext from "../../utils/RecipeContext";
-
 import API from "../../utils/API";
+import Autocomplete from "../Autocomplete";
 
 // var Accordion = require("react-bootstrap").Accordion;
 
@@ -30,7 +30,6 @@ export default function AccordionExample(props) {
       tempData = data.data;
 
       tempData.map((name) => {
-        console.log(name.name);
         recipeTitles.push(name.name);
       });
     });
@@ -115,6 +114,7 @@ export default function AccordionExample(props) {
 
   return (
     <>
+      {/* <Autocomplete /> */}
       <form style={{ textAlign: "center" }} action="/recipes/MexicanPizza">
         <Accordion defaultActiveKey="0">
           <Card>

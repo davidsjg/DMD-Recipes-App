@@ -17,6 +17,9 @@ export default function Recipe(props) {
 
   console.log(props);
 
+  console.log("currREcipe below");
+  console.log(currRecipe);
+
   //which input was entered by the user
   let searchParam = props.location.state;
 
