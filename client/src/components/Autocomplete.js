@@ -36,7 +36,7 @@ class Autocomplete extends React.Component {
           onChange={(e) => this.setState({ value: e.target.value })}
           onSelect={(value) => this.setState({ value })}
         />
-        <Button onClick={handleClick}>SUP YALL</Button>
+        {/* <Button onClick={handleClick}>SUP YALL</Button> */}
       </>
     );
   }

@@ -25,10 +25,15 @@ export default function AccordionExample(props) {
   let setCurrIngred;
   let tempData;
   let recipeTitles = [];
+  let sortArray = [];
 
   useEffect(() => {
     API.getRecipes().then((data) => {
       tempData = data.data;
+
+      tempData.sort();
+
+      console.log(tempData);
 
       tempData.map((name) => {
         recipeTitles.push(name.name);
@@ -40,9 +45,7 @@ export default function AccordionExample(props) {
   }, []);
 
   function handleClick() {
-    console.log(recipeTitles);
-
-    console.log(newArray);
+    console.log(recipeSearch.current.state.value);
   }
 
   const routeChange = (action) => {
@@ -55,7 +58,7 @@ export default function AccordionExample(props) {
       let path = "/recipeSelect/" + bookSearch.current.value;
       history.push(path, "book");
     } else if (action === "recipe") {
-      let path = "/recipe/" + recipeSearch.current.value;
+      let path = "/recipe/" + recipeSearch.current.state.value;
       history.push(path, "recipe");
     } else if (action === "course") {
       let path = "/recipeSelect/" + courseSelect;
@@ -84,12 +87,15 @@ export default function AccordionExample(props) {
   }
 
   const handleSubmit = (e) => {
-    let recipeInput = recipeSearch.current.value;
+    console.log(e);
+
+    let recipeInput = recipeSearch.current.state.value;
     let bookInput = bookSearch.current.value;
     let ingredInput = ingredSearch.current.value;
     e.preventDefault();
 
     if (ingredInput) {
+      console.log();
       API.singleQuery(ingredSearch.current.value, "ingred").then((data) => {
         // setIngredRecipes([data.data]);
 
@@ -102,12 +108,14 @@ export default function AccordionExample(props) {
         routeChange("book");
       });
     } else if (recipeInput) {
-      API.singleQuery(recipeSearch.current.value, "recipe").then((data) => {
-        // currTemp = data.data[0];
-        // setCurrRecipe(currTemp);
-        setCurrRecipeState(data.data[0]);
-        routeChange("recipe");
-      });
+      API.singleQuery(recipeSearch.current.state.value, "recipe").then(
+        (data) => {
+          // currTemp = data.data[0];
+          // setCurrRecipe(currTemp);
+          setCurrRecipeState(data.data[0]);
+          routeChange("recipe");
+        }
+      );
     } else if (courseSelect !== "") {
       API.singleQuery(courseSelect, "course").then((data) => {
         // setCourseRecipes(data.data);
@@ -121,26 +129,6 @@ export default function AccordionExample(props) {
     <>
       <form style={{ textAlign: "center" }} action="/recipes/MexicanPizza">
         <Accordion defaultActiveKey="0">
-          <Card>
-            <Card.Header className="homeAccord">
-              <CustomToggle eventKey="1">Search by Recipe</CustomToggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="1">
-              <Card.Body>
-                <div className="form-group">
-                  <label>Recipe Name</label>
-                  <input
-                    className="form-control"
-                    id="recipeSearch"
-                    aria-describedby="recipeSearch"
-                    placeholder="Recipe"
-                    ref={recipeSearch}
-                    options={recipeTitles}
-                  />
-                </div>
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
           <Card>
             <Card.Header className="homeAccord">
               <CustomToggle eventKey="2">Search by Ingredient</CustomToggle>
@@ -196,9 +184,33 @@ export default function AccordionExample(props) {
               </Card.Body>
             </Accordion.Collapse>
           </Card>
+          <Card>
+            <Card.Header className="homeAccord">
+              <CustomToggle eventKey="1">Search by Recipe</CustomToggle>
+            </Card.Header>
+            <Accordion.Collapse eventKey="1">
+              <Card.Body>
+                <div className="form-group">
+                  <label>Recipe Name</label>
+                  <Autocomplete
+                    onChange={onChangeValue}
+                    recipeTitles={newArray}
+                    ref={recipeSearch}
+                  />
+                  {/* <input
+                    className="form-control"
+                    id="recipeSearch"
+                    aria-describedby="recipeSearch"
+                    placeholder="Recipe"
+                    // ref={recipeSearch}
+                    options={recipeTitles}
+                  /> */}
+                </div>
+              </Card.Body>
+            </Accordion.Collapse>
+          </Card>
         </Accordion>
         <button
-          onClick="/recipes/MexicanPizza"
           type="submit"
           className="btn btn-primary"
           style={{
@@ -212,7 +224,6 @@ export default function AccordionExample(props) {
         </button>
       </form>
       <Button onClick={handleClick}>SUP YALL</Button>
-      <Autocomplete recipeTitles={newArray} />
     </>
   );
 }
