@@ -6,7 +6,7 @@ import { useAccordionButton } from "react-bootstrap/esm/AccordionButton";
 import Card from "react-bootstrap/Card";
 import RecipeContext from "../../utils/RecipeContext";
 import API from "../../utils/API";
-import Autocomplete from "../Autocomplete";
+import Autocomplete from "../Autocomplete/Autocomplete";
 
 // var Accordion = require("react-bootstrap").Accordion;
 
