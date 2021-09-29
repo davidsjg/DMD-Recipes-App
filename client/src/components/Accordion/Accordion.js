@@ -38,30 +38,23 @@ export default function AccordionExample(props) {
         recipeTitles.push(name.name);
       });
 
-      tempData.map((title) => {});
-
       recipeTitles.map((title, index) => {
         newArray.push({ id: title, label: title });
       });
     });
     API.getBooks().then((data) => {
+      console.log(data);
       tempData = data.data;
       bookTitles = data.data;
 
       tempData.map((name) => {
         recipeTitles.push(name.name);
       });
-
-      tempData.map((title) => {});
-
-      recipeTitles.map((title, index) => {
-        newArray.push({ id: title, label: title });
-      });
     });
   }, []);
 
   function handleClick() {
-    console.log(tempBooks);
+    console.log(newArray);
   }
 
   const routeChange = (action) => {
@@ -84,6 +77,9 @@ export default function AccordionExample(props) {
 
   const onChangeValue = (e) => {
     courseSelect = e.target.value;
+  };
+  const onChangeValue2 = (e) => {
+    console.log(e);
   };
 
   function CustomToggle({ children, eventKey }) {
@@ -147,9 +143,9 @@ export default function AccordionExample(props) {
         <Accordion defaultActiveKey="0">
           <Card>
             <Card.Header className="homeAccord">
-              <CustomToggle eventKey="2">Search by Ingredient</CustomToggle>
+              <CustomToggle eventKey="1">Search by Ingredient</CustomToggle>
             </Card.Header>
-            <Accordion.Collapse eventKey="2">
+            <Accordion.Collapse eventKey="1">
               <Card.Body>
                 <div className="form-group">
                   <label>Ingredient</label>
@@ -166,9 +162,9 @@ export default function AccordionExample(props) {
           </Card>
           <Card>
             <Card.Header className="homeAccord bookAccord">
-              <CustomToggle eventKey="3">Search by Book</CustomToggle>
+              <CustomToggle eventKey="2">Search by Book</CustomToggle>
             </Card.Header>
-            <Accordion.Collapse eventKey="3">
+            <Accordion.Collapse eventKey="2">
               <Card.Body>
                 <div className="form-group">
                   <label>Book</label>
@@ -185,9 +181,9 @@ export default function AccordionExample(props) {
           </Card>
           <Card>
             <Card.Header className="homeAccord">
-              <CustomToggle eventKey="4">Search by Course</CustomToggle>
+              <CustomToggle eventKey="3">Search by Course</CustomToggle>
             </Card.Header>
-            <Accordion.Collapse eventKey="4">
+            <Accordion.Collapse eventKey="3">
               <Card.Body>
                 <div onChange={onChangeValue}>
                   <input type="radio" value="Appetizer" name="course" />{" "}
@@ -202,9 +198,9 @@ export default function AccordionExample(props) {
           </Card>
           <Card>
             <Card.Header className="homeAccord">
-              <CustomToggle eventKey="1">Search by Recipe</CustomToggle>
+              <CustomToggle eventKey="4">Search by Recipe</CustomToggle>
             </Card.Header>
-            <Accordion.Collapse eventKey="1">
+            <Accordion.Collapse eventKey="4">
               <Card.Body>
                 <div className="form-group">
                   <label>Recipe Name (start typing) </label>
@@ -214,6 +210,11 @@ export default function AccordionExample(props) {
                     recipeTitles={newArray}
                     ref={recipeSearch}
                   />
+                  {/* <Autocomplete
+                    onChange={onChangeValue2}
+                    recipeTitles={newArray}
+                    ref={recipeSearch}
+                  /> */}
                   {/* <input
                     className="form-control"
                     id="recipeSearch"
