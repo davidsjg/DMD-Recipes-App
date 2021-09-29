@@ -1,15 +1,12 @@
 import React, { useContext } from "react";
-import Link from "react-router-dom/Link";
+
 import { useHistory } from "react-router-dom";
-import { Redirect } from "react-router-dom";
+
 import { Dropdown, DropdownButton } from "react-bootstrap";
 import RecipeContext from "../../utils/RecipeContext";
-import API from "../../utils/API";
-import ListGroup from "react-bootstrap/ListGroup";
 
 export default function NavDrop() {
-  const { bookRecipes, ingredRecipes, courseRecipes, currRecipe, allBooks } =
-    useContext(RecipeContext);
+  const { allBooks } = useContext(RecipeContext);
 
   let bookTitles = allBooks[0];
 

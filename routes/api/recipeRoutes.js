@@ -3,7 +3,8 @@ const recipeController = require("../../controller/recipeController");
 
 // Matches with "/api/recipes"
 router.route("/").get(recipeController.mainQuery);
-router.route("/titles").get(recipeController.findAll);
+router.route("/titles").get(recipeController.findTitles);
+router.route("/books").get(recipeController.findBooks);
 //   .post(destinationController.create)
 //   .put(destinationController.update);
 

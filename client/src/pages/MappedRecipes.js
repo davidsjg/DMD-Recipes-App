@@ -34,9 +34,9 @@ export default function MappedRecipes(props) {
     <RowGrid>
       <ColGrid size="md-3"></ColGrid>
       <ColGrid size="md-6">
-        {ingredRecipes.map((recipe) => {
+        {ingredRecipes.map((recipe, index) => {
           return (
-            <ListGroup.Item style={{ textAlign: "center" }}>
+            <ListGroup.Item key={index} style={{ textAlign: "center" }}>
               <Link
                 to={{
                   pathname: "/recipe/" + recipe.name,

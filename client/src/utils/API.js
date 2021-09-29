@@ -1,8 +1,11 @@
 import axios from "axios";
 
 export default {
-  getRecipes: function () {
+  getTitles: function () {
     return axios.get("/api/recipes/titles");
+  },
+  getBooks: function () {
+    return axios.get("/api/recipes/books");
   },
   // singleQuery: function (query) {
   //   return axios.get("/api/recipes", { params: { q: query } });

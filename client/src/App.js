@@ -1,10 +1,5 @@
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  withRouter,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React, { useState } from "react";
 import Home from "./pages/Home";
 import MappedRecipes from "./pages/MappedRecipes";
@@ -44,15 +39,15 @@ function App() {
   function updateCurrRecipe(currRecipe) {
     setRecipeState({ ...recipeState, currRecipe });
   }
-  function updateCourse(courseRecipes) {
-    setRecipeState({ ...recipeState, courseRecipes });
-  }
+  // function updateCourse(courseRecipes) {
+  //   setRecipeState({ ...recipeState, courseRecipes });
+  // }
   function updateIngred(ingredRecipes) {
     setRecipeState({ ...recipeState, ingredRecipes });
   }
-  function updateBook(bookRecipes) {
-    setRecipeState({ ...recipeState, bookRecipes });
-  }
+  // function updateBook(bookRecipes) {
+  //   setRecipeState({ ...recipeState, bookRecipes });
+  // }
 
   return (
     <RecipeContext.Provider value={recipeState}>

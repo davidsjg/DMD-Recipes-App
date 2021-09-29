@@ -2,8 +2,13 @@ const db = require("../models");
 
 // Defining methods for the lakeController
 module.exports = {
-  findAll: function (req, res) {
+  findTitles: function (req, res) {
     db.Recipe.find({}, { name: 1 })
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(422).json(err));
+  },
+  findBooks: function (req, res) {
+    db.Recipe.find({}, { book: 1 })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },

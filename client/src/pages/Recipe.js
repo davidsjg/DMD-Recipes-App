@@ -56,7 +56,10 @@ export default function Recipe(props) {
                     let quantContent = currRecipe.quantities[index];
                     return (
                       <>
-                        <ListGroup.Item className={styles["items"]}>
+                        <ListGroup.Item
+                          key={currRecipe.id}
+                          className={styles["items"]}
+                        >
                           {quantContent} {ingred}
                         </ListGroup.Item>
                       </>

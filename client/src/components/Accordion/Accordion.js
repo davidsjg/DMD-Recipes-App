@@ -1,4 +1,4 @@
-import React, { useRef, useState, useContext, useEffect } from "react";
+import React, { useRef, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import Accordion from "react-bootstrap/Accordion";
 import Button from "react-bootstrap/Button";
@@ -16,28 +16,44 @@ export default function AccordionExample(props) {
   const ingredSearch = useRef();
   let newArray = [];
 
-  const { bookRecipes, ingredRecipes, courseRecipes, currRecipe } =
+  const { bookRecipes, ingredRecipes, courseRecipes, currRecipe, allBooks } =
     useContext(RecipeContext);
 
   const history = useHistory();
   let setCurrRecipeState = props.props.props.updateCurrRecipe;
   let courseSelect = "";
-  let setCurrIngred;
+
+  let tempBooks;
   let tempData;
+  let bookTitles = [];
   let recipeTitles = [];
-  let sortArray = [];
 
   useEffect(() => {
-    API.getRecipes().then((data) => {
+    tempBooks = allBooks[0];
+    API.getTitles().then((data) => {
       tempData = data.data;
-
-      tempData.sort();
-
-      console.log(tempData);
+      bookTitles = data.data;
 
       tempData.map((name) => {
         recipeTitles.push(name.name);
       });
+
+      tempData.map((title) => {});
+
+      recipeTitles.map((title, index) => {
+        newArray.push({ id: title, label: title });
+      });
+    });
+    API.getBooks().then((data) => {
+      tempData = data.data;
+      bookTitles = data.data;
+
+      tempData.map((name) => {
+        recipeTitles.push(name.name);
+      });
+
+      tempData.map((title) => {});
+
       recipeTitles.map((title, index) => {
         newArray.push({ id: title, label: title });
       });
@@ -45,7 +61,7 @@ export default function AccordionExample(props) {
   }, []);
 
   function handleClick() {
-    console.log(recipeSearch.current.state.value);
+    console.log(tempBooks);
   }
 
   const routeChange = (action) => {
@@ -191,7 +207,8 @@ export default function AccordionExample(props) {
             <Accordion.Collapse eventKey="1">
               <Card.Body>
                 <div className="form-group">
-                  <label>Recipe Name</label>
+                  <label>Recipe Name (start typing) </label>
+                  <br />
                   <Autocomplete
                     onChange={onChangeValue}
                     recipeTitles={newArray}

@@ -1,7 +1,5 @@
 import React from "react";
 import ReactAutocomplete from "react-autocomplete";
-import Button from "react-bootstrap/Button";
-import RecipeContext from "../utils/RecipeContext";
 
 class Autocomplete extends React.Component {
   constructor(props) {
@@ -12,10 +10,6 @@ class Autocomplete extends React.Component {
   }
 
   render() {
-    function handleClick(props) {
-      // return <h1>Hello, {props.name}</h1>;
-      console.log(this.props);
-    }
     return (
       <>
         <ReactAutocomplete
@@ -36,7 +30,6 @@ class Autocomplete extends React.Component {
           onChange={(e) => this.setState({ value: e.target.value })}
           onSelect={(value) => this.setState({ value })}
         />
-        {/* <Button onClick={handleClick}>SUP YALL</Button> */}
       </>
     );
   }
