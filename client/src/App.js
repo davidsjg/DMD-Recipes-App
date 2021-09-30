@@ -33,7 +33,7 @@ function App() {
     ingredRecipes: [],
     courseRecipes: [],
     currRecipe: {},
-    allBooks: [allBooks],
+    allBooks: allBooks,
   });
 
   function updateCurrRecipe(currRecipe) {

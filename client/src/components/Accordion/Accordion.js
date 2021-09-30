@@ -78,9 +78,6 @@ export default function AccordionExample(props) {
   const onChangeValue = (e) => {
     courseSelect = e.target.value;
   };
-  const onChangeValue2 = (e) => {
-    console.log(e);
-  };
 
   function CustomToggle({ children, eventKey }) {
     const decoratedOnClick = useAccordionButton(eventKey, () =>
@@ -99,47 +96,25 @@ export default function AccordionExample(props) {
   }
 
   const handleSubmit = (e) => {
-    console.log(e);
-
     let recipeInput = recipeSearch.current.state.value;
     let bookInput = bookSearch.current.value;
     let ingredInput = ingredSearch.current.value;
     e.preventDefault();
 
     if (ingredInput) {
-      console.log();
-      API.singleQuery(ingredSearch.current.value, "ingred").then((data) => {
-        // setIngredRecipes([data.data]);
-
-        routeChange("ingred");
-      });
+      routeChange("ingred");
     } else if (bookInput) {
-      API.singleQuery(bookSearch.current.value, "book").then((data) => {
-        // setBookRecipes([data.data]);
-
-        routeChange("book");
-      });
+      routeChange("book");
     } else if (recipeInput) {
-      API.singleQuery(recipeSearch.current.state.value, "recipe").then(
-        (data) => {
-          // currTemp = data.data[0];
-          // setCurrRecipe(currTemp);
-          setCurrRecipeState(data.data[0]);
-          routeChange("recipe");
-        }
-      );
+      routeChange("recipe");
     } else if (courseSelect !== "") {
-      API.singleQuery(courseSelect, "course").then((data) => {
-        // setCourseRecipes(data.data);
-
-        routeChange("course");
-      });
+      routeChange("course");
     }
   };
 
   return (
     <>
-      <form style={{ textAlign: "center" }} action="/recipes/MexicanPizza">
+      <form style={{ textAlign: "center" }}>
         <Accordion defaultActiveKey="0">
           <Card>
             <Card.Header className="homeAccord">

@@ -12,21 +12,6 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  // findRecipe: function (req, res) {
-  //   db.Recipe.find({
-  //     name: { $regex: new RegExp(req.query.q, "i") },
-  //   })
-  //     .then((dbModel) => res.json(dbModel))
-  //     .catch((err) => res.status(422).json(err));
-  // },
-
-  // findBook: function (req, res) {
-  //   db.Recipe.find({
-  //     book: { $regex: new RegExp(req.query.q, "i") },
-  //   })
-  //     .then((dbModel) => res.json(dbModel))
-  //     .catch((err) => res.status(422).json(err));
-  // },
 
   findIngredient: function (req, res) {
     db.Recipe.find({
@@ -77,6 +62,14 @@ module.exports = {
   //   db.Recipe.find({
   //     book: { $regex: new RegExp(req.query.q, "i") },
   //     recipe: { $regex: new RegExp(req.query.r, "i") },
+  //   })
+  //     .then((dbModel) => res.json(dbModel))
+  //     .catch((err) => res.status(422).json(err));
+  // },
+
+  // findRecipe: function (req, res) {
+  //   db.Recipe.find({
+  //     name: { $regex: new RegExp(req.query.q, "i") },
   //   })
   //     .then((dbModel) => res.json(dbModel))
   //     .catch((err) => res.status(422).json(err));

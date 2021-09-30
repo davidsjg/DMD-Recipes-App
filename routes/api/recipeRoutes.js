@@ -3,20 +3,11 @@ const recipeController = require("../../controller/recipeController");
 
 // Matches with "/api/recipes"
 router.route("/").get(recipeController.mainQuery);
+// Matches with "/api/recipes/titles"
 router.route("/titles").get(recipeController.findTitles);
+// Matches with "/api/recipes/books"
 router.route("/books").get(recipeController.findBooks);
-//   .post(destinationController.create)
-//   .put(destinationController.update);
-
-// router.route("/:name").get(lakeController.findByName);
 
 router.route("/recipe/:recipe").get(recipeController.mainQuery);
-
-// Matches with "/api/cities/:id"
-// router
-//   .route("/:id")
-//   .get(destinationController.findById)
-//   .put(destinationController.update)
-//   .delete(destinationController.remove);
 
 module.exports = router;

@@ -8,7 +8,7 @@ import RecipeContext from "../../utils/RecipeContext";
 export default function NavDrop() {
   const { allBooks } = useContext(RecipeContext);
 
-  let bookTitles = allBooks[0];
+  let bookTitles = allBooks;
 
   const history = useHistory();
   const routeChange = (e) => {

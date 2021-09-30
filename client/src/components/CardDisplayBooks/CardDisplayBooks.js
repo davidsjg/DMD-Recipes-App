@@ -15,7 +15,7 @@ export default function CardDisplayBooks() {
     <ListGroup>
       <ListGroup.Item>SELECT BY BOOK</ListGroup.Item>
 
-      {allBooks[0].map((book) => {
+      {allBooks.map((book) => {
         return (
           <ListGroup.Item>
             <Link
