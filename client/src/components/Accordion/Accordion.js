@@ -16,7 +16,7 @@ export default function AccordionExample(props) {
   const ingredSearch = useRef();
   let newArray = [];
 
-  const { bookRecipes, ingredRecipes, courseRecipes, currRecipe, allBooks } =
+  const { bookRecipes, ingredRecipes, courseRecipes, currRecipe, allTitles } =
     useContext(RecipeContext);
 
   const history = useHistory();
@@ -29,7 +29,7 @@ export default function AccordionExample(props) {
   let recipeTitles = [];
 
   useEffect(() => {
-    tempBooks = allBooks[0];
+    tempBooks = allTitles[0];
     API.getTitles().then((data) => {
       tempData = data.data;
       bookTitles = data.data;

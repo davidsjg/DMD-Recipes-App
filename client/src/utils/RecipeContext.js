@@ -5,7 +5,7 @@ const RecipeContext = React.createContext({
   ingredRecipes: [],
   courseRecipes: [],
   currRecipe: {},
-  allBooks: [],
+  allTitles: [],
 });
 
 // const LakeConsumer = LakeContext.Consumer;

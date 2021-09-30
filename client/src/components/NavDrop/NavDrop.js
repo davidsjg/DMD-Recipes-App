@@ -6,9 +6,9 @@ import { Dropdown, DropdownButton } from "react-bootstrap";
 import RecipeContext from "../../utils/RecipeContext";
 
 export default function NavDrop() {
-  const { allBooks } = useContext(RecipeContext);
+  const { allTitles } = useContext(RecipeContext);
 
-  let bookTitles = allBooks;
+  let bookTitles = allTitles;
 
   const history = useHistory();
   const routeChange = (e) => {

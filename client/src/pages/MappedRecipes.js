@@ -8,7 +8,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
 
 export default function MappedRecipes(props) {
-  const { bookRecipes, ingredRecipes, courseRecipes, currRecipe, allBooks } =
+  const { bookRecipes, ingredRecipes, courseRecipes, currRecipe, allTitles } =
     useContext(RecipeContext);
 
   const setCurrIngred = props.updateIngred;
@@ -25,20 +25,19 @@ export default function MappedRecipes(props) {
 
   useEffect(() => {
     bookTitles = [];
-    console.log("allBooks below");
-    console.log(allBooks);
+
     API.singleQuery(historyRecipe, searchParam).then((data) => {
       setCurrIngred(data.data);
     });
 
-    bookTitles = allBooks[0];
+    bookTitles = allTitles[0];
     console.log("book titles below");
     console.log(bookTitles);
   }, []);
 
   function handleClick() {
     //array of recipe objects
-    console.log(allBooks);
+    console.log(ingredRecipes);
   }
 
   return (

@@ -7,7 +7,7 @@ import Recipe from "./pages/Recipe";
 import RecipeContext from "./utils/RecipeContext";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 
-let allBooks = [
+let allTitles = [
   "Catering to Nobody",
   "Dying for Chocolate",
   "The Cereal Murders",
@@ -33,7 +33,7 @@ function App() {
     ingredRecipes: [],
     courseRecipes: [],
     currRecipe: {},
-    allBooks: allBooks,
+    allTitles: allTitles,
   });
 
   function updateCurrRecipe(currRecipe) {

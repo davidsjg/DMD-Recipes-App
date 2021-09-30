@@ -4,7 +4,7 @@ import Link from "react-router-dom/Link";
 import RecipeContext from "../../utils/RecipeContext";
 
 export default function CardDisplayBooks() {
-  const { bookRecipes, ingredRecipes, courseRecipes, currRecipe, allBooks } =
+  const { bookRecipes, ingredRecipes, courseRecipes, currRecipe, allTitles } =
     useContext(RecipeContext);
 
   let booksArr = [];
@@ -15,7 +15,7 @@ export default function CardDisplayBooks() {
     <ListGroup>
       <ListGroup.Item>SELECT BY BOOK</ListGroup.Item>
 
-      {allBooks.map((book) => {
+      {allTitles.map((book) => {
         return (
           <ListGroup.Item>
             <Link
