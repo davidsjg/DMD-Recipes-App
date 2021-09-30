@@ -91,7 +91,7 @@ const recipeSeed = [
     course: "breakfast",
     glutenFree: false,
     lowCarb: false,
-    instructions: `Preheat the oven to 325 degrees. Line 30 muffin cups with paper liners. In a large mixing bowl, beat together the eggs, sugar, evaporated milk, milk, and vegetable oil. Sift together the baking powder, salt and flour. Gradually add the flour mixture to the egg mixture, beating until well combined. Add the extracts and poppy seeds, stirring only until well combined. Using a 1/3-cup measure, pour the batter into the muffin cups. Bake for 25 to 30 minutes or until a toothpick inserted into the center of a muffin comes out clean.
+    instructions1: `Preheat the oven to 325 degrees. Line 30 muffin cups with paper liners. In a large mixing bowl, beat together the eggs, sugar, evaporated milk, milk, and vegetable oil. Sift together the baking powder, salt and flour. Gradually add the flour mixture to the egg mixture, beating until well combined. Add the extracts and poppy seeds, stirring only until well combined. Using a 1/3-cup measure, pour the batter into the muffin cups. Bake for 25 to 30 minutes or until a toothpick inserted into the center of a muffin comes out clean.
     Makes 30 muffins`,
   },
 
@@ -166,7 +166,7 @@ const recipeSeed = [
     course: "dessert",
     glutenFree: false,
     lowCarb: false,
-    instructions: `Preheat oven to 400 degrees. In a large mixing bowl, beat the shortening, butter and brown sugar together until smooth. Beat in the eggs, then stir in the buttermilk and vanilla. Blend the flour, baking soda and salt together in a small bowl; stir the flour mixture into the butter mixture until incorporated. Stir in the coconut, nuts, raisins and chocolate chips. Drop by level half-tablespoons onto greased cookie sheets. Bake for 7-10 minutes, until the cookies are puffed and slightly brown. Cool on a rack. The cookies keep well in an airtight tin.
+    instructions1: `Preheat oven to 400 degrees. In a large mixing bowl, beat the shortening, butter and brown sugar together until smooth. Beat in the eggs, then stir in the buttermilk and vanilla. Blend the flour, baking soda and salt together in a small bowl; stir the flour mixture into the butter mixture until incorporated. Stir in the coconut, nuts, raisins and chocolate chips. Drop by level half-tablespoons onto greased cookie sheets. Bake for 7-10 minutes, until the cookies are puffed and slightly brown. Cool on a rack. The cookies keep well in an airtight tin.
     Makes 11 dozen`,
   },
 
