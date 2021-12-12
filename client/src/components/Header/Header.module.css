@@ -5,6 +5,26 @@
   align-items: center;
 }
 
-.header__container div {
+.header__left {
   padding: 20px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__right {
+  padding: 20px 20px;
+}
+
+.test {
+  background-color: red;
+}
+
+.fas fa-bars {
+  background-color: red;
+}
+
+.fa-bars {
+  background-color: red;
 }
