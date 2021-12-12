@@ -55,7 +55,6 @@ function App() {
       <Router>
         <div>
           <Header />
-          <NavigationBar />
           <Switch>
             <Route
               exact

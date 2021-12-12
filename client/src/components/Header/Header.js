@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styles from "./Header.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import NavDrop from "../NavDrop/NavDrop";
+import NavDrop2 from "../NavDrop2/NavDrop2";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [burgerStatus, setBurgerStatus] = useState(false);
@@ -38,11 +40,13 @@ function Header() {
             <span>Sign-up</span>
           </aside>
         </div>
-        <div className={styles["header__center"]}>
-          <img src="/images/goldysLogo.png" alt="" />
-        </div>
+        <Link to="/">
+          <div className={styles["header__center"]}>
+            <img src="/images/goldysLogo.png" alt="" />
+          </div>
+        </Link>
         <div className={styles["header__right"]}>
-          <NavDrop />
+          <NavDrop2 />
         </div>
       </div>
     </>

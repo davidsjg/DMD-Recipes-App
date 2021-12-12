@@ -4,11 +4,14 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import CardDisplayBooks from "../components/CardDisplayBooks/CardDisplayBooks";
+import HomeHero from "../components/HomeHero/HomeHero";
+import Header from "../components/Header/Header";
 
 export default function Home(props) {
   return (
     <>
-      <Container>
+      <HomeHero />
+      {/* <Container>
         <Row>
           <Col>
             <CardDisplayBooks />
@@ -18,7 +21,7 @@ export default function Home(props) {
           </Col>
           <Col></Col>
         </Row>
-      </Container>
+      </Container> */}
     </>
   );
 }

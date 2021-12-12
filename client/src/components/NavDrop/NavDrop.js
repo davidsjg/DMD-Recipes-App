@@ -5,6 +5,9 @@ import { useHistory } from "react-router-dom";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 import RecipeContext from "../../utils/RecipeContext";
 
+// import Dropdown from "react-dropdown";
+// import "react-dropdown/style.css";
+
 export default function NavDrop() {
   const { allTitles } = useContext(RecipeContext);
 
@@ -35,6 +38,7 @@ export default function NavDrop() {
         title="Select Book"
         // id="dropdown-menu-align-right"
         onSelect={handleSelect}
+        backgroundColor={{ color: "red" }}
       >
         {/* {bookTitles.map((bookTitle, i) => {
           return (
