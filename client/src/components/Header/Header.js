@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Header.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
+import NavDrop from "../NavDrop/NavDrop";
 
 function Header() {
   const [burgerStatus, setBurgerStatus] = useState(false);
@@ -41,7 +42,7 @@ function Header() {
           <img src="/images/goldysLogo.png" alt="" />
         </div>
         <div className={styles["header__right"]}>
-          <aside> Select Book Dropdown</aside>
+          <NavDrop />
         </div>
       </div>
     </>
