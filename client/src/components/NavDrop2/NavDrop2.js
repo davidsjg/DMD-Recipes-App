@@ -1,5 +1,6 @@
 import React, { useContext, Component, Fragment } from "react";
 import Select from "react-select";
+import styles from "./NavDrop2.module.css";
 
 import { useHistory } from "react-router-dom";
 
@@ -30,13 +31,27 @@ export default function NavDrop2() {
 
   return (
     <>
-      <Dropdown
+      {/* <Dropdown
         options={bookTitles}
         onChange={handleSelect}
         value={defaultOption}
         placeholder="Select Book"
-        style={{ backgroundColor: "black" }}
-      />
+        style={{ color: "red" }}
+      /> */}
+
+      <select
+        name="books"
+        placeholder="Select Book"
+        className={styles["selectBook"]}
+      >
+        <option value="" disabled selected>
+          Select Book
+        </option>
+        {bookTitles.map((book) => {
+          return <option value={book}>{book}</option>;
+        })}
+        {/* <option value="volvo">Volvo</option> */}
+      </select>
     </>
   );
 }
