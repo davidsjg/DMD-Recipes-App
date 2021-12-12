@@ -17,6 +17,9 @@ code {
   cursor: pointer;
 }
 
-.Dropdown-root {
-  color: red;
+.fa-search {
+  background-color: white;
+  padding: 17px;
+  opacity: 0.8;
+  margin-top: 1px;
 }

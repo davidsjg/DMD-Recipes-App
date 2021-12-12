@@ -33,9 +33,13 @@ function Header() {
             <p>test</p>
           </div>
           <aside className={styles["header__customMenu"]}>
-            <i class="fas fa-bars" onClick={() => setBurgerStatus(true)} />
+            <i
+              class="fas fa-bars"
+              style={{ color: "#6d04ad" }}
+              onClick={() => setBurgerStatus(true)}
+            />
           </aside>
-          <aside>
+          <aside className={styles["logIn"]}>
             <span>Log-In/</span>
             <span>Sign-up</span>
           </aside>

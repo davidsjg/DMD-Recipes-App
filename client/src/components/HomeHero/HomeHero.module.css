@@ -6,9 +6,48 @@
   right: 0;
   bottom: 0;
   z-index: -1;
-  height: 575px;
+  height: 485px;
   width: 100%;
+  padding-top: 66px;
 
   background-repeat: no-repeat;
   background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeHero__findRecipe {
+  font-size: 60px;
+  color: white;
+}
+
+.homeHero__serachbar {
+  height: 60px;
+  width: 200px;
+}
+
+.header__searchInput {
+  border: none;
+  height: 50px;
+  width: 600px;
+  opacity: 0.8;
+  /* margin-right: 20px; */
+}
+
+.header__searchInput:focus {
+  outline-width: 0;
+}
+
+@media (max-width: 768px) {
+  .homeHero__mainContain {
+    margin-top: 132px;
+
+    border-radius: 10px;
+  }
+  .header__searchInput {
+    width: 300px;
+  }
 }

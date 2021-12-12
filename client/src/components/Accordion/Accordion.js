@@ -10,7 +10,7 @@ import Autocomplete from "../Autocomplete/Autocomplete";
 
 // var Accordion = require("react-bootstrap").Accordion;
 
-export default function AccordionExample(props) {
+export default function AccordionExample() {
   const recipeSearch = useRef(null);
   const bookSearch = useRef();
   const ingredSearch = useRef();
@@ -20,7 +20,7 @@ export default function AccordionExample(props) {
     useContext(RecipeContext);
 
   const history = useHistory();
-  let setCurrRecipeState = props.props.props.updateCurrRecipe;
+  // let setCurrRecipeState = props.props.props.updateCurrRecipe;
   let courseSelect = "";
 
   let tempBooks;

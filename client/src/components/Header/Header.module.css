@@ -64,6 +64,10 @@
   transition: transform 0.5x;
 }
 
+.logIn {
+  color: #6d04ad;
+}
+
 .header__center {
   display: flex;
   flex-direction: row;
