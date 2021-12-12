@@ -6,6 +6,7 @@ import MappedRecipes from "./pages/MappedRecipes";
 import Recipe from "./pages/Recipe";
 import RecipeContext from "./utils/RecipeContext";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
+import Header from "./components/Header/Header";
 
 let allTitles = [
   "Catering to Nobody",
@@ -53,6 +54,7 @@ function App() {
     <RecipeContext.Provider value={recipeState}>
       <Router>
         <div>
+          <Header />
           <NavigationBar />
           <Switch>
             <Route

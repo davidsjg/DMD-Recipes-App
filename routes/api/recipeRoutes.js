@@ -8,6 +8,6 @@ router.route("/titles").get(recipeController.findTitles);
 // Matches with "/api/recipes/books"
 router.route("/books").get(recipeController.findBooks);
 
-router.route("/recipe/:recipe").get(recipeController.mainQuery);
+// router.route("/recipe/:recipe").get(recipeController.mainQuery);
 
 module.exports = router;
