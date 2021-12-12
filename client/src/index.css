@@ -1,15 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+* {
+  font-family: "Source Serif Pro";
 }
 
 .fa-bars {
@@ -19,7 +18,8 @@ code {
 
 .fa-search {
   background-color: white;
-  padding: 17px;
+  padding-top: 15px;
+  padding-bottom: 19px;
+  padding-left: 10px;
   opacity: 0.8;
-  margin-top: 1px;
 }

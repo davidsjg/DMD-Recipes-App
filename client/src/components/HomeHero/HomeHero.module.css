@@ -6,7 +6,7 @@
   right: 0;
   bottom: 0;
   z-index: -1;
-  height: 485px;
+  height: 546px;
   width: 100%;
   padding-top: 66px;
 
@@ -27,6 +27,10 @@
 .homeHero__serachbar {
   height: 60px;
   width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .header__searchInput {
@@ -39,6 +43,23 @@
 
 .header__searchInput:focus {
   outline-width: 0;
+}
+
+.homeHero__submitButton {
+  color: white;
+  margin-top: 20px;
+  box-shadow: inset 0 0 0 1px white;
+  border-radius: 24px;
+  padding: 10px 24px;
+  transition-duration: 167ms;
+  text-align: center;
+  cursor: pointer;
+}
+.homeHero__submitButton:hover {
+  color: white;
+  background-color: black;
+  box-shadow: inset 0 0 0 1px white;
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
