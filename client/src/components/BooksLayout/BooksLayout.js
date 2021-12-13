@@ -25,7 +25,6 @@ function BooksLayout() {
               <aside className={styles["bookData"]} key={index}>
                 <Link to={`/book/${cName}`} className={styles["bookLink"]}>
                   <BookCover img={img} />
-                  {/* <div className={styles["bookCover"]} /> */}
                   <span className={styles["bookTitle"]}>
                     <span>{title}</span>
                   </span>
@@ -49,11 +48,11 @@ const MainBook = styled.div`
   /* border-radius: 5px; */
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.4;
+  opacity: 0.3;
   z-index: -1;
   /* height: 730px; */
-  width: 1400px;
   height: 750px;
+  width: 100%;
 `;
 
 const BookCover = styled.img`
@@ -63,4 +62,5 @@ const BookCover = styled.img`
   border-radius: 3px;
   background-position: center;
   background-size: cover;
+  /* border: 2px solid #6d04ad; */
 `;
