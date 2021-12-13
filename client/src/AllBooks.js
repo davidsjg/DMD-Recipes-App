@@ -1,82 +1,82 @@
 export const allBooks = [
   {
     title: "Catering to Nobody",
-    img: "",
+    img: "/images/catering.jpg",
     cName: "catering",
   },
   {
     title: "Dying for Chocolate",
-    img: "",
+    img: "/images/dying.jpeg",
     cName: "dying",
   },
   {
     title: "The Last Suppers",
-    img: "",
+    img: "/images/suppers.jpeg",
     cName: "lastSuppers",
   },
   {
     title: "Killer Pancake",
-    img: "",
+    img: "/images/pancake.jpeg",
     cName: "pancake",
   },
   {
     title: "The Main Corpse",
-    img: "",
+    img: "/images/corpse.jpeg",
     cName: "corpse",
   },
   {
     title: "The Grilling Season",
-    img: "",
+    img: "/images/grilling.jpeg",
     cName: "grilling",
   },
   {
     title: "Prime Cut",
-    img: "",
+    img: "/images/primeCut.jpeg",
     cName: "primeCut",
   },
   {
     title: "Tough Cookie",
-    img: "",
+    img: "/images/cookie.jpeg",
     cName: "toughCookie",
   },
   {
     title: "Sticks & Scones",
-    img: "",
+    img: "/images/scones.jpeg",
     cName: "stickScones",
   },
   {
     title: "Chopping Spree",
-    img: "",
+    img: "/images/chopping.jpeg",
     cName: "choppingSpree",
   },
   {
     title: "Double Shot",
-    img: "",
+    img: "/images/doubleShot.jpeg",
     cName: "doubleShot",
   },
   {
     title: "Dark Tort",
-    img: "",
+    img: "/images/tort.jpeg",
     cName: "tort",
   },
   {
     title: "Sweet Revenge",
-    img: "",
+    img: "/images/revenge.jpeg",
     cName: "revenge",
   },
   {
     title: "Fatally Flaky",
-    img: "",
+    img: "/images/flaky.jpeg",
     cName: "flaky",
   },
   {
     title: "Crunch Time",
-    img: "",
+    img: "/images/crunch.jpeg",
     cName: "crunchTime",
   },
   {
     title: "The Whole Enchilada",
-    img: "",
+    img: "/images/enchilada.jpeg",
     clas: "enchilada",
   },
 ];

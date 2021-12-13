@@ -11,14 +11,13 @@ function BooksLayout() {
   console.log(allBooks);
 
   return (
-    <div>
+    <>
+      <h4 className={styles["header"]}>Select Book for Recipes</h4>
       <div className={styles["booksLayout__container"]}>
-        {allBooks.map(({ title, cName }, index) => {
-          console.log(cName);
-
+        {allBooks.map(({ title, cName, img }, index) => {
           return (
             <aside className={styles["bookData"]} key={index}>
-              <div>{title}</div>
+              <img src={img} alt="book cover" className={styles["bookCover"]} />
               <span className={styles["tempImage"]}>
                 <span>{title}</span>
               </span>
@@ -26,7 +25,7 @@ function BooksLayout() {
           );
         })}
       </div>
-    </div>
+    </>
   );
 }
 
