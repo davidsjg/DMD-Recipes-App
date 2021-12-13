@@ -34,7 +34,7 @@ function Header() {
           </div>
           <aside className={styles["header__customMenu"]}>
             <i
-              class="fas fa-bars"
+              class="fas fa-bars fa-lg"
               style={{ color: "#6d04ad" }}
               onClick={() => setBurgerStatus(true)}
             />
@@ -44,11 +44,15 @@ function Header() {
             <span>Sign-up</span>
           </aside>
         </div>
-        <Link to="/">
+        <Link to="/" className={styles["linkHeader"]}>
           <div className={styles["header__center"]}>
-            <img src="/images/goldysLogo.png" alt="" />
+            <img src="/images/goldysLogo6.png" alt="" />
           </div>
         </Link>
+        <div className={styles["mobileLogin"]}>
+          <span>Log-In/</span>
+          <span>Sign-up</span>
+        </div>
         <div className={styles["header__right"]}>
           <NavDrop2 />
         </div>

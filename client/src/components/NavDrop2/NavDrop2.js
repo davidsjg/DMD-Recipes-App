@@ -2,7 +2,7 @@ import React, { useContext, Component, Fragment } from "react";
 import Select from "react-select";
 import styles from "./NavDrop2.module.css";
 
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 // import { Dropdown, DropdownButton } from "react-bootstrap";
 import RecipeContext from "../../utils/RecipeContext";
@@ -25,6 +25,7 @@ export default function NavDrop2() {
 
   const handleSelect = (e) => {
     routeChange(e);
+    console.log("sup");
   };
 
   const Dropdown2 = () => <Select options={bookTitles} />;
@@ -47,10 +48,16 @@ export default function NavDrop2() {
         <option value="" disabled selected>
           Select Book
         </option>
-        {bookTitles.map((book) => {
-          return <option value={book}>{book}</option>;
-        })}
-        {/* <option value="volvo">Volvo</option> */}
+        {/* {bookTitles.map((book) => (
+          <Link to={`(/book/${book})`}>
+            <option value={book}>{book}</option>
+          </Link>
+        ))} */}
+        {bookTitles.map((link) => (
+          <option onChange={handleSelect} value={link}>
+            {link}
+          </option>
+        ))}
       </select>
     </>
   );

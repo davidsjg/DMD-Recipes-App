@@ -7,6 +7,7 @@ import Recipe from "./pages/Recipe";
 import RecipeContext from "./utils/RecipeContext";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 import Header from "./components/Header/Header";
+import BookPage from "../src/pages/Bookpage/Bookpage";
 
 let allTitles = [
   "Catering to Nobody",
@@ -63,6 +64,7 @@ function App() {
                 <Home {...props} updateCurrRecipe={updateCurrRecipe} />
               )}
             />
+            <Route path="/book/:title" element={<BookPage />} />
             <Route
               exact
               path={"/recipeSelect/:recipe"}

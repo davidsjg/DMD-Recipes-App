@@ -66,20 +66,38 @@
 
 .logIn {
   color: #6d04ad;
+  font-size: 15px;
+  margin-top: 3.4px;
+  letter-spacing: 1.2px;
+  margin-left: 10px;
 }
 
 .header__center {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+
   cursor: pointer;
+}
+
+.linkHeader {
+  text-decoration: none;
+  font-size: 20px;
+  color: #6d04ad;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header__center img {
   height: 60px;
   border-radius: 50px;
   margin: 3px 0;
+}
+
+.mobileLogin {
+  display: none;
 }
 
 .header__right {
@@ -96,5 +114,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .header__left {
+    display: none;
+  }
+  .mobileLogin {
+    display: flex;
+    color: #6d04ad;
+    font-size: 15px;
+    margin: 8px 0;
+    font-size: 20px;
+    letter-spacing: 1.2px;
+    box-shadow: inset 0 0 0 1px #6d04ad;
+    /* border-radius: 24px; */
+    padding: 10px 24px;
   }
 }
