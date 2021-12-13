@@ -5,15 +5,16 @@ import Autocomplete from "../Autocomplete/Autocomplete";
 
 function HomeHero() {
   return (
-    <div className={styles["homeHero__mainContain"]}>
-      <div className={styles["homeHero__findRecipe"]}>Find a Recipe</div>
-      <div className="homeHero__searchbar">
-        <i class="fas fa-search fa-lg"></i>
-        <input type="text" className={styles["header__searchInput"]} />
+    <>
+      <div className={styles["homeHero__mainContain"]}>
+        <div className={styles["homeHero__findRecipe"]}>Search the Pantry</div>
+        <div className="homeHero__searchbar">
+          <i class="fas fa-search fa-lg"></i>
+          <input type="text" className={styles["header__searchInput"]} />
+        </div>
+        <div className={styles["homeHero__submitButton"]}>Search</div>
       </div>
-
-      <div className={styles["homeHero__submitButton"]}>Search</div>
-    </div>
+    </>
   );
 }
 

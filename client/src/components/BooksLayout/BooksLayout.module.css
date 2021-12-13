@@ -1,0 +1,27 @@
+.booksLayout__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 20px;
+}
+
+.booksLayout__container div {
+  border: 1px solid black;
+  padding: 50px;
+  margin: 10px;
+  word-wrap: break-word;
+}
+
+.bookData {
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+}
+
+.bookData div {
+}
+
+.tempImage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
