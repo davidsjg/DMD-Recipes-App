@@ -1,4 +1,6 @@
-export default function recipeReducer(state, action) {
+const initialState = {};
+
+export default function recipeReducer(state = initialState, action) {
   switch (action.type) {
     case "recipe/recipeSelected": {
       return {

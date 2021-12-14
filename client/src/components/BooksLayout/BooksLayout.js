@@ -12,8 +12,6 @@ import background from "./background4.jpeg";
 function BooksLayout() {
   const { allTitles } = useContext(RecipeContext);
 
-  console.log(allBooks);
-
   return (
     <>
       <MainBook background={background}> </MainBook>

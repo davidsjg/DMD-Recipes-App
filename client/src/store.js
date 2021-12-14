@@ -3,10 +3,6 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import rootReducer from "./reducer";
 import { loggerMiddleware } from "./addons/middleware";
 
-const store = createStore(rootReducer, preloadedState, loggerMiddleware);
-
-export default store;
-
 let preloadedState = {
   recipe: [
     {
@@ -63,3 +59,9 @@ let preloadedState = {
     },
   ],
 };
+
+const composedEnhancer = composeWithDevTools();
+
+const store = createStore(rootReducer, preloadedState, composedEnhancer);
+
+export default store;
