@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { allBooks } from "../../AllBooks";
 import { Link } from "react-router-dom";
 
-import background from "./background3.jpeg";
+import background from "./background4.jpeg";
 
 function BooksLayout() {
   const { allTitles } = useContext(RecipeContext);
@@ -45,22 +45,23 @@ const MainBook = styled.div`
   position: absolute;
   /* margin: 10px 40px; */
   margin-top: 10px;
-  /* border-radius: 5px; */
+
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.3;
   z-index: -1;
   /* height: 730px; */
-  height: 750px;
+  height: 630px;
   width: 100%;
 `;
 
-const BookCover = styled.img`
+const BookCover = styled.div`
   background-image: ${(props) => `url('${props.img}')`};
-  height: 190px;
-  width: 100px;
+  height: 154px;
+  width: 95px;
+  border: none;
   border-radius: 3px;
   background-position: center;
-  background-size: cover;
-  /* border: 2px solid #6d04ad; */
+  background-size: contain;
+  background-repeat: no-repeat;
 `;

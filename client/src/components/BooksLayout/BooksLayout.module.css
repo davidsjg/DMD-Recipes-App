@@ -3,18 +3,15 @@
 }
 
 .header {
-  /* padding-left: 50px; */
   padding-top: 15px;
   color: #6d04ad;
-  background-color: rgba(128, 128, 128, 0);
+
   text-align: center;
 }
 
 .booksLayout__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 213px));
-  /* grid-template-columns: repeat(auto-fit, minmax(120px, 300px)); */
-  /* margin: 0 20px; */
 }
 
 .bookLink {
@@ -49,13 +46,8 @@
 
 @media (max-width: 768px) {
   .booksLayout__container {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
     display: grid;
     grid-template-columns: repeat(4, 125px);
-    /* grid-template-columns: repeat(3, 155px); */
   }
   .header {
     padding: 0;
