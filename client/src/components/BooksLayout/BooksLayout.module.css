@@ -44,7 +44,7 @@
   align-items: center; */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 645px) {
   .booksLayout__container {
     display: grid;
     grid-template-columns: repeat(4, 120px);
