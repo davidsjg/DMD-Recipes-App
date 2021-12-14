@@ -49,8 +49,18 @@ const MainBook = styled.div`
   opacity: 0.3;
   z-index: -1;
   /* height: 730px; */
-  height: 630px;
-  width: 100%;
+  height: 650px;
+  width: 1264px;
+
+  @media (max-width: 768px) {
+
+    height: 1075px;
+    width: 484px;
+    border-radius: 5px
+/* 
+    display: grid;
+    grid-template-columns: repeat(4, 140px); */
+
 `;
 
 const BookCover = styled.div`

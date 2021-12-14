@@ -1,4 +1,6 @@
-const initialState = {};
+const initialState = {
+  // book: "Catering to Nobody",
+};
 
 export default function bookReducer(state = initialState, action) {
   switch (action.type) {

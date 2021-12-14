@@ -11,7 +11,7 @@
 
 .booksLayout__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 213px));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 210px));
 }
 
 .bookLink {
@@ -47,7 +47,7 @@
 @media (max-width: 768px) {
   .booksLayout__container {
     display: grid;
-    grid-template-columns: repeat(4, 125px);
+    grid-template-columns: repeat(4, 120px);
   }
   .header {
     padding: 0;
