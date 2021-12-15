@@ -21,7 +21,7 @@ function BooksLayout() {
           {allBooks.map(({ title, cName, img }, index) => {
             return (
               <aside className={styles["bookData"]} key={index}>
-                <Link to={`/book/${cName}`} className={styles["bookLink"]}>
+                <Link to={`/bookPage/${cName}`} className={styles["bookLink"]}>
                   <BookCover img={img} />
                   <span className={styles["bookTitle"]}>
                     <span>{title}</span>

@@ -5,10 +5,10 @@ import App from "./App";
 
 import store from "./store";
 
-console.log("Initial State: ", store.getState());
+// console.log("Initial State: ", store.getState());
 
 const unsubscribe = store.subscribe(() => {
-  console.log("State after dispatch: ", store.getState());
+  // console.log("State after dispatch: ", store.getState());
 });
 
 store.dispatch({
