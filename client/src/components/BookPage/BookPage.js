@@ -1,13 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./BookPage.module.css";
 import { useParams } from "react-router-dom";
 import { allBooks } from "../../AllBooks";
 import styled from "styled-components";
+import API from "../../utils/API";
 
 function BookPage() {
   let params = useParams();
 
   const currBook = allBooks.find((book) => book.cName === params.book);
+
+  console.log(currBook);
+
+  useEffect(() => {
+    //    historyRecipe = 'Catering to Nobody', searchParam = 'book'
+    API.singleQuery(currBook.title, "book").then((data) => {
+      console.log(data);
+    });
+  }, []);
 
   return (
     <>
