@@ -1,0 +1,41 @@
+.mainContain {
+  background-image: url("https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1453&q=80");
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 580px;
+  /* margin: 50px 250px;
+  margin-top: 50px;
+  margin-right: 250px;
+  margin-left: 300px; */
+  border-radius: 20px;
+  opacity: 0.6;
+}
+.imgDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid black;
+  padding-top: 20px;
+  margin-right: 20px;
+  padding: 20px;
+  height: 300px;
+  margin: 20px 0;
+  margin-right: 10px;
+}
+.bookImg {
+  border: 1px solid black;
+}
+.changeBook {
+  border: 1px solid black;
+}
+.recipesDisplay {
+  border: 1px solid black;
+  padding: 200px;
+  margin: 20px 0;
+}
+
+.fun {
+}

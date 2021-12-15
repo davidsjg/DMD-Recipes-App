@@ -12,7 +12,7 @@ export const allBooks = [
   {
     title: "The Cereal Murders",
     img: "/images/cereal.jpeg",
-    cName: "dying",
+    cName: "cerealMurders",
   },
   {
     title: "The Last Suppers",
