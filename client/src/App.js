@@ -1,98 +1,30 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React, { useState } from "react";
 import Home from "./pages/Home";
-import MappedRecipes from "./pages/MappedRecipes";
-import Recipe from "./pages/Recipe";
-import RecipeContext from "./utils/RecipeContext";
-import NavigationBar from "./components/NavigationBar/NavigationBar";
+
 import Header from "./components/Header/Header";
 import BookPage from "./components/BookPage/BookPage";
 
-let allTitles = [
-  "Catering to Nobody",
-  "Dying for Chocolate",
-  "The Cereal Murders",
-  "The Last Suppers",
-  "Killer Pancake",
-  "The Main Corpse",
-  "The Grilling Season",
-  "Prime Cut",
-  "Tough Cookie",
-  "Sticks & Scones",
-  "Chopping Spree",
-  "Double Shot",
-  "Dark Tort",
-  "Sweet Revenge",
-  "Fatally Flaky",
-  "Crunch Time",
-  "The Whole Enchilada",
-];
-
 function App() {
-  const [recipeState, setRecipeState] = useState({
-    bookRecipes: [],
-    ingredRecipes: [],
-    courseRecipes: [],
-    currRecipe: {},
-    allTitles: allTitles,
-  });
-
-  function updateCurrRecipe(currRecipe) {
-    setRecipeState({ ...recipeState, currRecipe });
-  }
-  // function updateCourse(courseRecipes) {
-  //   setRecipeState({ ...recipeState, courseRecipes });
-  // }
-  function updateIngred(ingredRecipes) {
-    setRecipeState({ ...recipeState, ingredRecipes });
-  }
-  // function updateBook(bookRecipes) {
-  //   setRecipeState({ ...recipeState, bookRecipes });
-  // }
+  // const [recipeState, setRecipeState] = useState({
+  //   bookRecipes: [],
+  //   ingredRecipes: [],
+  //   courseRecipes: [],
+  //   currRecipe: {},
+  //   allTitles: allTitles,
+  // });
 
   return (
-    <RecipeContext.Provider value={recipeState}>
-      <Router>
-        <div>
-          <Header />
-          <Switch>
-            <Route
-              exact
-              path={"/"}
-              render={(props) => (
-                <Home {...props} updateCurrRecipe={updateCurrRecipe} />
-              )}
-            />
-            <Route
-              path={"/bookPage/:book"}
-              render={(props) => (
-                <BookPage {...props} updateCurrRecipe={updateCurrRecipe} />
-              )}
-            />
-
-            <Route
-              exact
-              path={"/recipeSelect/:recipe"}
-              render={(props) => (
-                <MappedRecipes
-                  {...props}
-                  updateCurrRecipe={updateCurrRecipe}
-                  updateIngred={updateIngred}
-                />
-              )}
-            />
-            <Route
-              exact
-              path={"/recipe/:recipe"}
-              render={(props) => (
-                <Recipe {...props} updateCurrRecipe={updateCurrRecipe} />
-              )}
-            />
-          </Switch>
-        </div>
-      </Router>
-    </RecipeContext.Provider>
+    <Router>
+      <Header />
+      <>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/bookPage/:book" element={<BookPage />} />
+        </Routes>
+      </>
+    </Router>
   );
 }
 

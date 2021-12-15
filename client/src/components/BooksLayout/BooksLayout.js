@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./BooksLayout.module.css";
 import styled from "styled-components";
-
-import RecipeContext from "../../utils/RecipeContext";
 import { useContext } from "react";
 import { allBooks } from "../../AllBooks";
 import { Link } from "react-router-dom";
@@ -10,8 +8,6 @@ import { Link } from "react-router-dom";
 import background from "./background4.jpeg";
 
 function BooksLayout() {
-  const { allTitles } = useContext(RecipeContext);
-
   return (
     <>
       <MainBook background={background}> </MainBook>

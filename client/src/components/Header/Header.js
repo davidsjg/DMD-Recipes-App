@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styles from "./Header.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
-import NavDrop from "../NavDrop/NavDrop";
-import NavDrop2 from "../NavDrop2/NavDrop2";
+
+// import NavDrop2 from "../NavDrop2/NavDrop2";
 import { Link } from "react-router-dom";
 
 function Header() {
@@ -54,7 +54,8 @@ function Header() {
           <span>Sign-up</span>
         </div>
         <div className={styles["header__right"]}>
-          <NavDrop2 />
+          {/* <NavDrop2 /> */}
+          BOOK DROPDOWN
         </div>
       </div>
     </>
