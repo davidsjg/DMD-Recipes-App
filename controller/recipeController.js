@@ -29,6 +29,12 @@ module.exports = {
       })
         .then((dbModel) => res.json(dbModel))
         .catch((err) => res.status(422).json(err));
+    } else if (req.query.r === "allBooks") {
+      db.Recipe.find({
+        book: { $exists: true },
+      })
+        .then((dbModel) => res.json(dbModel))
+        .catch((err) => res.status(422).json(err));
     } else if (req.query.r === "recipe") {
       db.Recipe.find({
         name: { $regex: new RegExp(req.query.q, "i") },
@@ -47,7 +53,7 @@ module.exports = {
       })
         .then((dbModel) => res.json(dbModel))
         .catch((err) => res.status(422).json(err));
-    } else if (req.query.r === "allBooks") {
+    } else if (req.query.r === "allRecipes") {
       db.Recipe.find({
         book: { $exists: true },
       })

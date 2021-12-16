@@ -1,13 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./BooksLayout.module.css";
 import styled from "styled-components";
 import { useContext } from "react";
 import { allBooks } from "../../AllBooks";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+
+import API from "../../utils/API";
 
 import background from "./background4.jpeg";
 
 function BooksLayout() {
+  const recipes = useSelector((state) => state.recipe);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    //    historyRecipe = 'Catering to Nobody', searchParam = 'book'
+    API.singleQuery("sup", "allBooks").then((data) => {
+      console.log(data);
+    });
+  }, []);
+
+  const handleClick = (e) => () => {
+    let tempRecipes = allBooks.find((book) => book.cName === e);
+
+    console.log(tempRecipes);
+
+    // dispatch({ type: "recipe/recipeSelected", payload: e });
+  };
+
   return (
     <>
       <MainBook background={background}> </MainBook>
@@ -17,7 +38,11 @@ function BooksLayout() {
           {allBooks.map(({ title, cName, img }, index) => {
             return (
               <aside className={styles["bookData"]} key={index}>
-                <Link to={`/bookPage/${cName}`} className={styles["bookLink"]}>
+                <Link
+                  to={`/bookPage/${cName}`}
+                  onClick={handleClick(cName)}
+                  className={styles["bookLink"]}
+                >
                   <BookCover img={img} />
                   <span className={styles["bookTitle"]}>
                     <span>{title}</span>

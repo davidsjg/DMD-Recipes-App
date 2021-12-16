@@ -10,13 +10,9 @@ function BookPage() {
 
   const currBook = allBooks.find((book) => book.cName === params.book);
 
-  console.log(currBook);
-
   useEffect(() => {
     //    historyRecipe = 'Catering to Nobody', searchParam = 'book'
-    API.singleQuery(currBook.title, "book").then((data) => {
-      console.log(data);
-    });
+    API.singleQuery(currBook.title, "book").then((data) => {});
   }, []);
 
   return (

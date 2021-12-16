@@ -7,11 +7,8 @@ function HomeHero() {
 
   console.log(recipeState);
 
-  const handleClick = () => {};
-
   return (
     <>
-      <button onClick={handleClick}>click me</button>
       <div className={styles["homeHero__mainContain"]}>
         <div className={styles["homeHero__findRecipe"]}>Search the Pantry</div>
         <div className="homeHero__searchbar">
