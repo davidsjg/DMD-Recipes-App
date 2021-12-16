@@ -16,7 +16,7 @@ function BooksLayout() {
 
   useEffect(() => {
     //    historyRecipe = 'Catering to Nobody', searchParam = 'book'
-    API.singleQuery("sup", "allBooks").then((data) => {
+    API.singleQuery("allBooks", "recipe").then((data) => {
       console.log(data);
     });
   }, []);
