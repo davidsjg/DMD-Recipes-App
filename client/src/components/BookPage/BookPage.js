@@ -1,12 +1,14 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import styles from "./BookPage.module.css";
 import { useParams } from "react-router-dom";
 import { allBooks } from "../../AllBooks";
 import styled from "styled-components";
 import API from "../../utils/API";
+import { useSelector } from "react-redux";
 
 function BookPage() {
   let params = useParams();
+  let recipes = useSelector((state) => state.recipe.recipe);
 
   const currBook = allBooks.find((book) => book.cName === params.book);
 
@@ -25,6 +27,10 @@ function BookPage() {
           </div>
         </div>
         <div className={styles["recipesDisplay"]}>
+          {recipes.map(({ name }) => {
+            <div>{name}</div>;
+          })}
+
           <p>Recipes</p>
         </div>
       </div>

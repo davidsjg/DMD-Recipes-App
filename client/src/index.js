@@ -12,14 +12,8 @@ const unsubscribe = store.subscribe(() => {
   // console.log("State after dispatch: ", store.getState());
 });
 
-store.dispatch({
-  type: "book/bookSelected",
-  payload: "Dying for Chocolate",
-});
-
-store.dispatch({
-  type: "recipe/recipeSelected",
-  payload: {
+let initialBook = [
+  {
     name: "Almond Poppy Seed Muffins",
     book: "The Last Suppers",
     ingredients: [
@@ -52,13 +46,13 @@ store.dispatch({
     glutenFree: false,
     lowCarb: false,
     instructions1: `Preheat the oven to 325 degrees. Line 30 muffin cups with paper liners. In a large mixing bowl, beat together the eggs, sugar, evaporated milk, milk, and vegetable oil. Sift together the baking powder, salt and flour. Gradually add the flour mixture to the egg mixture, beating until well combined. Add the extracts and poppy seeds, stirring only until well combined. Using a 1/3-cup measure, pour the batter into the muffin cups. Bake for 25 to 30 minutes or until a toothpick inserted into the center of a muffin comes out clean.
-  Makes 30 muffins`,
+Makes 30 muffins`,
   },
-});
+];
 
 store.dispatch({
   type: "book/bookSelected",
-  payload: "Cereal Murders",
+  payload: initialBook,
 });
 
 unsubscribe();

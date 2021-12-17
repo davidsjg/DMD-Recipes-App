@@ -11,22 +11,24 @@ import API from "../../utils/API";
 import background from "./background4.jpeg";
 
 function BooksLayout() {
-  const books = useSelector((state) => state.recipe.recipe);
+  const books = useSelector((state) => state.book.book);
+  console.log(books);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    //    historyRecipe = 'Catering to Nobody', searchParam = 'book'
     API.singleQuery("allBooks", "allRecipes").then((recipe) => {
       let recipeDispatch = recipe.data[0].ingredients;
-
-      dispatch({ type: "recipe/recipeSelected", payload: recipeDispatch });
+      dispatch({ type: "book/bookSelected", payload: recipeDispatch });
     });
   }, []);
 
   const handleClick = (e) => () => {
-    let tempRecipes = allBooks.find((book) => book.cName === e);
+    let temp = allBooks.find((book) => book.cName === e);
+    let bookTitle = temp.title;
 
-    console.log(tempRecipes);
+    API.singleQuery(bookTitle, "book").then((recipes) => {
+      console.log(recipes);
+    });
   };
   const handleClick2 = () => {
     console.log(books);
@@ -34,7 +36,7 @@ function BooksLayout() {
 
   return (
     <>
-      <button onClick={handleClick2}>Click me</button>
+      <button onClick={handleClick2}>click</button>
       <MainBook background={background}> </MainBook>
       <div className={styles["mainDisplay"]}>
         <h5 className={styles["header"]}>Recipes by Book</h5>
