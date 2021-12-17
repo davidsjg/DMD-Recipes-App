@@ -10,30 +10,39 @@ function BookPage() {
   let params = useParams();
   let recipes = useSelector((state) => state.recipe.recipe);
 
+  console.log(recipes);
+
   const currBook = allBooks.find((book) => book.cName === params.book);
 
   useEffect(() => {
     //    historyRecipe = 'Catering to Nobody', searchParam = 'book'
-    API.singleQuery(currBook.title, "book").then((data) => {});
+    // API.singleQuery(currBook.title, "book").then((data) => {});
   }, []);
 
   return (
     <>
-      <div className={styles["mainContain"]}>
-        <div className={styles["imgDisplay"]}>
-          <BookImage img={currBook.img} />
-          <div className={styles["changeBook"]}>
-            <p>change Book</p>
+      {
+        <div className={styles["mainContain"]}>
+          <div className={styles["imgDisplay"]}>
+            <BookImage img={currBook.img} />
+            <div className={styles["changeBook"]}>
+              <p>change Book</p>
+            </div>
+          </div>
+          <div className={styles["recipesDisplay"]}>
+            {/* {recipes.length > 0
+              ? recipes.map(({ name }) => {
+                  <div>{name}</div>;
+                })
+              : null} */}
+
+            {recipes.map(({ name }) => {
+              return <div>{name}</div>;
+            })}
+            <p>Recipes</p>
           </div>
         </div>
-        <div className={styles["recipesDisplay"]}>
-          {recipes.map(({ name }) => {
-            <div>{name}</div>;
-          })}
-
-          <p>Recipes</p>
-        </div>
-      </div>
+      }
     </>
   );
 }

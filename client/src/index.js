@@ -54,6 +54,10 @@ store.dispatch({
   type: "book/bookSelected",
   payload: initialBook,
 });
+store.dispatch({
+  type: "recipe/recipeSelected",
+  payload: initialBook,
+});
 
 unsubscribe();
 

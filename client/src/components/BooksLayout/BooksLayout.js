@@ -27,7 +27,8 @@ function BooksLayout() {
     let bookTitle = temp.title;
 
     API.singleQuery(bookTitle, "book").then((recipes) => {
-      console.log(recipes);
+      console.log(recipes.data);
+      dispatch({ type: "recipe/recipeSelected", payload: recipes.data });
     });
   };
   const handleClick2 = () => {
@@ -36,7 +37,6 @@ function BooksLayout() {
 
   return (
     <>
-      <button onClick={handleClick2}>click</button>
       <MainBook background={background}> </MainBook>
       <div className={styles["mainDisplay"]}>
         <h5 className={styles["header"]}>Recipes by Book</h5>
