@@ -5,8 +5,6 @@ import { useSelector } from "react-redux";
 function HomeHero() {
   const recipeState = useSelector((state) => state.recipe);
 
-  console.log(recipeState);
-
   return (
     <>
       <div className={styles["homeHero__mainContain"]}>

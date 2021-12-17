@@ -14,10 +14,13 @@ function BooksLayout() {
   const recipes = useSelector((state) => state.recipe);
   const dispatch = useDispatch();
 
+  console.log(recipes);
+
   useEffect(() => {
     //    historyRecipe = 'Catering to Nobody', searchParam = 'book'
-    API.singleQuery("allBooks", "recipe").then((data) => {
-      console.log(data);
+    API.singleQuery("allBooks", "allRecipes").then((recipe) => {
+      console.log(recipe);
+      // dispatch({ type: "recipe/recipeSelected", payload: recipe });
     });
   }, []);
 
@@ -25,12 +28,14 @@ function BooksLayout() {
     let tempRecipes = allBooks.find((book) => book.cName === e);
 
     console.log(tempRecipes);
-
-    // dispatch({ type: "recipe/recipeSelected", payload: e });
+  };
+  const handleClick2 = () => {
+    console.log(recipes);
   };
 
   return (
     <>
+      <button onClick={handleClick2}>Click me</button>
       <MainBook background={background}> </MainBook>
       <div className={styles["mainDisplay"]}>
         <h5 className={styles["header"]}>Recipes by Book</h5>

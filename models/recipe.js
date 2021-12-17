@@ -10,6 +10,7 @@ const recipeSchema = new Schema({
   glutenFree: { type: Boolean },
   lowFat: { type: Boolean },
   instructions: { type: String },
+  allBooks: { type: Array },
 });
 
 const Recipe = mongoose.model("Recipe", recipeSchema);
