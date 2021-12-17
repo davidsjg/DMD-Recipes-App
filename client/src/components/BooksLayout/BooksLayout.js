@@ -19,8 +19,10 @@ function BooksLayout() {
   useEffect(() => {
     //    historyRecipe = 'Catering to Nobody', searchParam = 'book'
     API.singleQuery("allBooks", "allRecipes").then((recipe) => {
-      console.log(recipe);
-      // dispatch({ type: "recipe/recipeSelected", payload: recipe });
+      console.log(recipe.data[0].ingredients);
+      let recipeDispatch = recipe.data[0].ingredients;
+
+      dispatch({ type: "recipe/recipeSelected", payload: recipeDispatch });
     });
   }, []);
 
@@ -35,7 +37,7 @@ function BooksLayout() {
 
   return (
     <>
-      {/* <button onClick={handleClick2}>Click me</button> */}
+      <button onClick={handleClick2}>Click me</button>
       <MainBook background={background}> </MainBook>
       <div className={styles["mainDisplay"]}>
         <h5 className={styles["header"]}>Recipes by Book</h5>
