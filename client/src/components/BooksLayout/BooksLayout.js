@@ -35,7 +35,7 @@ function BooksLayout() {
 
   return (
     <>
-      <button onClick={handleClick2}>Click me</button>
+      {/* <button onClick={handleClick2}>Click me</button> */}
       <MainBook background={background}> </MainBook>
       <div className={styles["mainDisplay"]}>
         <h5 className={styles["header"]}>Recipes by Book</h5>
