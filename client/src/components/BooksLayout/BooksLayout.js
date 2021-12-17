@@ -11,15 +11,12 @@ import API from "../../utils/API";
 import background from "./background4.jpeg";
 
 function BooksLayout() {
-  const recipes = useSelector((state) => state.recipe);
+  const books = useSelector((state) => state.recipe.recipe);
   const dispatch = useDispatch();
-
-  console.log(recipes);
 
   useEffect(() => {
     //    historyRecipe = 'Catering to Nobody', searchParam = 'book'
     API.singleQuery("allBooks", "allRecipes").then((recipe) => {
-      console.log(recipe.data[0].ingredients);
       let recipeDispatch = recipe.data[0].ingredients;
 
       dispatch({ type: "recipe/recipeSelected", payload: recipeDispatch });
@@ -32,7 +29,7 @@ function BooksLayout() {
     console.log(tempRecipes);
   };
   const handleClick2 = () => {
-    console.log(recipes);
+    console.log(books);
   };
 
   return (
@@ -42,22 +39,24 @@ function BooksLayout() {
       <div className={styles["mainDisplay"]}>
         <h5 className={styles["header"]}>Recipes by Book</h5>
         <div className={styles["booksLayout__container"]}>
-          {allBooks.map(({ title, cName, img }, index) => {
-            return (
-              <aside className={styles["bookData"]} key={index}>
-                <Link
-                  to={`/bookPage/${cName}`}
-                  onClick={handleClick(cName)}
-                  className={styles["bookLink"]}
-                >
-                  <BookCover img={img} />
-                  <span className={styles["bookTitle"]}>
-                    <span>{title}</span>
-                  </span>
-                </Link>
-              </aside>
-            );
-          })}
+          {books.length > 0
+            ? books.map(({ title, cName, img }, index) => {
+                return (
+                  <aside className={styles["bookData"]} key={index}>
+                    <Link
+                      to={`/bookPage/${cName}`}
+                      onClick={handleClick(cName)}
+                      className={styles["bookLink"]}
+                    >
+                      <BookCover img={img} />
+                      <span className={styles["bookTitle"]}>
+                        <span>{title}</span>
+                      </span>
+                    </Link>
+                  </aside>
+                );
+              })
+            : console.log("nada")}
         </div>
       </div>
     </>
