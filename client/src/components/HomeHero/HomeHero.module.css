@@ -20,14 +20,25 @@
   justify-content: center;
 }
 
+.homeHero__subContain {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 .homeHero__findRecipe {
   font-size: 60px;
   color: #6d04ad;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
-.homeHero__serachbar {
+.homeHero__searchbar {
   height: 60px;
-  width: 200px;
+  width: 150px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -52,6 +63,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-right: 70px;
 }
 
 .homeHero__Button {
@@ -71,6 +83,30 @@
 .homeHero__Button:hover {
   color: white;
   background-color: #6d04ad;
+  box-shadow: inset 0 0 0 1px #6d04ad;
+  transform: scale(1.05);
+}
+
+.homeHero__submitButton {
+  color: white;
+  /* margin-top: 20px; */
+  box-shadow: 0 0 0 1px;
+  border: none;
+  background-color: #6d04ad;
+  padding: 10px 24px;
+  transition-duration: 167ms;
+  text-align: center;
+  cursor: pointer;
+  width: 150px;
+  font-size: larger;
+  margin-left: 1px;
+  margin-right: 10px;
+
+  height: 50px;
+}
+.homeHero__submitButton:hover {
+  color: #6d04ad;
+  background-color: white;
   box-shadow: inset 0 0 0 1px #6d04ad;
   transform: scale(1.05);
 }

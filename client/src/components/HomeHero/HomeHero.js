@@ -1,21 +1,26 @@
 import React, { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 import styles from "./HomeHero.module.css";
 import { useSelector } from "react-redux";
+import API from "../../utils/API";
 
 function HomeHero() {
   const [ingred, setIngred] = useState(true);
   const [book, setBook] = useState(false);
   const [recipe, setRecipe] = useState(false);
   const [course, setCourse] = useState(false);
-
-  let searchClass;
+  const [searchInput, setSearchInput] = useState();
 
   const recipeState = useSelector((state) => state.recipe);
+  const dispatch = useDispatch();
+  let ingredInput = useRef();
 
+  let searchParam = "Ingredient";
+  let searchClass;
   let searchTitles = ["Ingredient", "Book", "Recipe", "Course"];
 
   const handleClick = (e) => {
-    const searchParam = e.target.id;
+    searchParam = e.target.id;
 
     switch (searchParam) {
       case "Ingredient":
@@ -23,7 +28,6 @@ function HomeHero() {
         setBook(false);
         setRecipe(false);
         setCourse(false);
-        console.log(searchClass);
         break;
       case "Book":
         setIngred(false);
@@ -56,79 +60,147 @@ function HomeHero() {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault(e);
+    console.log(searchParam);
+    // API.singleQuery(searchInput, "ingred").then((data) => {
+    //   console.log(data);
+    // });
+    switch (searchParam) {
+      case "Ingredient":
+        console.log("inside ingred");
+        API.singleQuery(searchInput, "ingred").then((data) => {
+          console.log(data);
+        });
+        dispatch({ type: "" });
+        break;
+      case "Book":
+        API.singleQuery(searchInput).then((data) => {
+          console.log(data);
+        });
+        break;
+
+      default:
+        break;
+    }
+  };
+
   return (
     <>
       <div className={styles["homeHero__mainContain"]}>
-        <div className={styles["homeHero__ButtonsDisp"]}>
-          {searchTitles.map((title) => {
-            return (
-              <div
-                className={styles["homeHero__Button"]}
-                onClick={handleClick}
-                id={title}
-              >
-                Search {title}
-              </div>
-            );
-          })}
-        </div>
+        <form
+          onSubmit={handleSubmit}
+          className={styles["homeHero__subContain"]}
+        >
+          <div className={styles["homeHero__ButtonsDisp"]}>
+            {searchTitles.map((title) => {
+              return (
+                <>
+                  <div
+                    className={styles["homeHero__Button"]}
+                    onClick={handleClick}
+                    id={title}
+                  >
+                    Search {title}
+                  </div>
+                </>
+              );
+            })}
+          </div>
 
-        {ingred === true ? (
-          <div>
-            <div className="homeHero__searchbar">
-              <i class="fas fa-search fa-lg"></i>
-              <input
-                type="text"
-                placeholder="Enter Ingredient"
-                className={styles["homeHero__searchInput"]}
-              />
-            </div>
-          </div>
-        ) : book === true ? (
-          <div>
-            <div className="homeHero__searchbar">
-              <i class="fas fa-search fa-lg"></i>
-              <input
-                type="text"
-                placeholder="Enter Book"
-                className={styles["homeHero__searchInput"]}
-              />
-            </div>
-          </div>
-        ) : recipe === true ? (
-          <div>
-            <div className="homeHero__searchbar">
-              <i class="fas fa-search fa-lg"></i>
-              <input
-                type="text"
-                placeholder="Enter Recipe"
-                className={styles["homeHero__searchInput"]}
-              />
-            </div>
-          </div>
-        ) : course ? (
-          <div>
-            <div className="homeHero__searchbar">
-              <i class="fas fa-search fa-lg"></i>
-              <input
-                type="text"
-                placeholder="Enter Course"
-                className={styles["homeHero__searchInput"]}
-              />
-            </div>
-          </div>
-        ) : (
-          <div>
-            <div className="homeHero__searchbar">
-              <i class="fas fa-search fa-lg"></i>
-              <input
-                type="text"
-                placeholder=""
-                className={styles["homeHero__searchInput"]}
-              />
-            </div>
-          </div>
-        )}
+          {ingred === true ? (
+            <>
+              <div className={styles["homeHero__searchbar"]}>
+                <i class="fas fa-search fa-lg"></i>
+                <input
+                  type="text"
+                  placeholder="Enter Ingredient"
+                  className={styles["homeHero__searchInput"]}
+                  ref={ingredInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                />
+                <button
+                  type="submit"
+                  className={styles["homeHero__submitButton"]}
+                >
+                  Submit
+                </button>
+              </div>
+            </>
+          ) : book === true ? (
+            <>
+              <div className={styles["homeHero__searchbar"]}>
+                <i class="fas fa-search fa-lg"></i>
+                <input
+                  type="text"
+                  placeholder="Enter Book"
+                  className={styles["homeHero__searchInput"]}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                />
+                <button
+                  type="submit"
+                  className={styles["homeHero__submitButton"]}
+                >
+                  Submit
+                </button>
+              </div>
+            </>
+          ) : recipe === true ? (
+            <>
+              <div className={styles["homeHero__searchbar"]}>
+                <i class="fas fa-search fa-lg"></i>
+                <input
+                  type="text"
+                  placeholder="Enter Recipe"
+                  className={styles["homeHero__searchInput"]}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                />
+                <button
+                  type="submit"
+                  className={styles["homeHero__submitButton"]}
+                >
+                  Submit
+                </button>
+              </div>
+            </>
+          ) : course === true ? (
+            <>
+              <div className={styles["homeHero__searchbar"]}>
+                <i class="fas fa-search fa-lg"></i>
+                <input
+                  type="text"
+                  placeholder="Enter Course"
+                  className={styles["homeHero__searchInput"]}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                />
+                <button
+                  type="submit"
+                  className={styles["homeHero__submitButton"]}
+                >
+                  Submit
+                </button>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className={styles["homeHero__searchbar"]}>
+                <i class="fas fa-search fa-lg"></i>
+                <input
+                  type="text"
+                  placeholder=""
+                  className={styles["homeHero__searchInput"]}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                />
+              </div>
+              <button
+                type="submit"
+                className={styles["homeHero__searchButton"]}
+              >
+                Submit
+              </button>
+            </>
+          )}
+        </form>
       </div>
     </>
   );
