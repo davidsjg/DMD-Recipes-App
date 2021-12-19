@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import styles from "./HomeHero.module.css";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import API from "../../utils/API";
 
 function HomeHero() {
@@ -10,10 +11,11 @@ function HomeHero() {
   const [recipe, setRecipe] = useState(false);
   const [course, setCourse] = useState(false);
   const [searchInput, setSearchInput] = useState();
-  const [searchParam, setSearchParam] = useState();
+  const [searchParam, setSearchParam] = useState("ingredient");
 
   const recipeState = useSelector((state) => state.recipe);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   let ingredInput = useRef();
 
   let searchClass;
@@ -63,30 +65,36 @@ function HomeHero() {
   const handleSubmit = (e) => {
     e.preventDefault(e);
     console.log(searchParam);
-    // API.singleQuery(searchInput, "ingred").then((data) => {
-    //   console.log(data);
-    // });
+
     switch (searchParam) {
       case "ingredient":
         console.log("inside ingred");
         API.singleQuery(searchInput, "ingred").then((data) => {
-          console.log(data);
+          console.log(data.data);
+          dispatch({ type: "recipe/recipeSelected", payload: data.data });
+          navigate(`/chooseRecipe/${searchInput}`);
         });
         dispatch({ type: "" });
         break;
       case "course":
         API.singleQuery(searchInput, "course").then((data) => {
-          console.log(data);
+          console.log(data.data);
+          dispatch({ type: "recipe/recipeSelected", payload: data.data });
+          navigate(`/chooseRecipe/${searchInput}`);
         });
         break;
       case "recipe":
         API.singleQuery(searchInput, "recipe").then((data) => {
-          console.log(data);
+          console.log(data.data);
+          dispatch({ type: "recipe/recipeSelected", payload: data.data });
+          navigate(`/chooseRecipe/${searchInput}`);
         });
         break;
       case "book":
         API.singleQuery(searchInput, "book").then((data) => {
-          console.log(data);
+          console.log(data.data);
+          dispatch({ type: "recipe/recipeSelected", payload: data.data });
+          navigate(`/chooseRecipe/${searchInput}`);
         });
         break;
 
@@ -153,7 +161,12 @@ function HomeHero() {
 
           {ingredient === true ? (
             <>
-              <div className={styles["homeHero__searchbar"]}>
+              <div
+                className={[
+                  styles.homeHero__searchbar,
+                  styles.ingredInput,
+                ].join(" ")}
+              >
                 <i class="fas fa-search fa-lg"></i>
                 <input
                   type="text"

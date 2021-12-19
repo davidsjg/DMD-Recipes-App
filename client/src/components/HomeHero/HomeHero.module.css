@@ -19,6 +19,10 @@
   justify-content: center;
 }
 
+.ingredInput {
+  /* margin-bottom: 145px; */
+}
+
 .homeHero__subContain {
   display: flex;
   flex-direction: row;
@@ -38,7 +42,7 @@
 }
 
 .homeHero__searchbar {
-  height: 60px;
+  height: 50px;
   width: 150px;
   display: flex;
   flex-direction: row;
@@ -50,7 +54,7 @@
 
 .homeHero__searchInput {
   border: none;
-  height: 50px;
+  height: 40px;
   width: 400px;
   opacity: 0.8;
   /* margin-right: 20px; */
@@ -112,7 +116,7 @@
   margin-left: 1px;
   margin-right: 10px;
 
-  height: 50px;
+  height: 40px;
 }
 .homeHero__submitButton:hover {
   color: #6d04ad;

@@ -19,16 +19,17 @@ function ChooseRecipe() {
       <MainImage></MainImage>
       <div className={styles["mainContain"]}>
         <div className={styles["imgDisplay"]}>
-          <BookImage img={currBook.img} />
+          {/* {currBook.img && <BookImage img={currBook.img} />} */}
           <div className={styles["changeBook"]}>
             <p>change Book</p>
           </div>
         </div>
+
         <div className={styles["recipesDisplay"]}>
+          <h3 style={{ textDecoration: "underline" }}>Recipes</h3>
           {recipes.map(({ name }) => {
             return <div>{name}</div>;
           })}
-          <p>Recipes</p>
         </div>
       </div>
     </>
