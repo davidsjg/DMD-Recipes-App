@@ -58,12 +58,48 @@
   outline-width: 0;
 }
 
+.buttonSelected {
+  color: white;
+  background-color: #6d04ad;
+  margin-top: 20px;
+  box-shadow: inset 0 0 0 1px #6d04ad;
+  border-radius: 14px;
+  padding: 10px 24px;
+  transition-duration: 167ms;
+  text-align: center;
+  cursor: pointer;
+  width: 150px;
+  font-size: larger;
+  word-wrap: break-word;
+  margin-right: 10px;
+}
+
+/* .buttonSelected:hover {
+  color: #6d04ad;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1px #6d04ad;
+  transform: scale(1.05);
+} */
+
 .homeHero__ButtonsDisp {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-right: 70px;
+}
+
+.homeHero_ButtonStateTrue {
+  background-color: #6d04ad;
+  color: white;
+  margin-top: 20px;
+  box-shadow: inset 0 0 0 1px #6d04ad;
+  border-radius: 14px;
+  padding: 10px 24px;
+  transition-duration: 167ms;
+  text-align: center;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 .homeHero__Button {

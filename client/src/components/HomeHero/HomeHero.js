@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import API from "../../utils/API";
 
 function HomeHero() {
-  const [ingred, setIngred] = useState(true);
+  const [ingredient, setIngredient] = useState(true);
   const [book, setBook] = useState(false);
   const [recipe, setRecipe] = useState(false);
   const [course, setCourse] = useState(false);
@@ -20,29 +20,30 @@ function HomeHero() {
   let searchTitles = ["Ingredient", "Book", "Recipe", "Course"];
 
   const handleClick = (e) => {
+    console.log(e.target);
     searchParam = e.target.id;
 
     switch (searchParam) {
-      case "Ingredient":
-        setIngred(true);
+      case "ingredient":
+        setIngredient(true);
         setBook(false);
         setRecipe(false);
         setCourse(false);
         break;
-      case "Book":
-        setIngred(false);
+      case "book":
+        setIngredient(false);
         setBook(true);
         setRecipe(false);
         setCourse(false);
         break;
-      case "Recipe":
-        setIngred(false);
+      case "recipe":
+        setIngredient(false);
         setBook(false);
         setRecipe(true);
         setCourse(false);
         break;
-      case "Course":
-        setIngred(false);
+      case "course":
+        setIngredient(false);
         setBook(false);
         setRecipe(false);
         setCourse(true);
@@ -53,9 +54,9 @@ function HomeHero() {
     }
 
     if (searchParam === "Ingredient") {
-      setIngred(true);
+      setIngredient(true);
     } else if (searchParam === "Book") {
-      setIngred(false);
+      setIngredient(false);
       setBook(true);
     }
   };
@@ -93,22 +94,31 @@ function HomeHero() {
           className={styles["homeHero__subContain"]}
         >
           <div className={styles["homeHero__ButtonsDisp"]}>
-            {searchTitles.map((title) => {
-              return (
-                <>
-                  <div
-                    className={styles["homeHero__Button"]}
-                    onClick={handleClick}
-                    id={title}
-                  >
-                    Search {title}
-                  </div>
-                </>
-              );
-            })}
+            <div
+              className={[
+                ingredient === true
+                  ? styles.buttonSelected
+                  : styles.homeHero__Button,
+                ,
+              ].join(" ")}
+              onClick={handleClick}
+              id="ingredient"
+            >
+              Search Ingredient
+            </div>
+            <div
+              className={[
+                book === true ? styles.buttonSelected : styles.homeHero__Button,
+                ,
+              ].join(" ")}
+              onClick={handleClick}
+              id="book"
+            >
+              Search Book
+            </div>
           </div>
 
-          {ingred === true ? (
+          {ingredient === true ? (
             <>
               <div className={styles["homeHero__searchbar"]}>
                 <i class="fas fa-search fa-lg"></i>
