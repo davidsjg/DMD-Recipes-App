@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import styles from "./HomeHero.module.css";
 import { useSelector } from "react-redux";
@@ -10,20 +10,26 @@ function HomeHero() {
   const [recipe, setRecipe] = useState(false);
   const [course, setCourse] = useState(false);
   const [searchInput, setSearchInput] = useState();
+  const [searchParam, setSearchParam] = useState();
 
   const recipeState = useSelector((state) => state.recipe);
   const dispatch = useDispatch();
   let ingredInput = useRef();
 
-  let searchParam = "Ingredient";
   let searchClass;
   let searchTitles = ["Ingredient", "Book", "Recipe", "Course"];
 
   const handleClick = (e) => {
-    console.log(e.target);
-    searchParam = e.target.id;
+    console.log(e.target.id);
+    let temp = e.target.id;
+    setSearchParam(temp);
 
-    switch (searchParam) {
+    changeRoutes(e.target.id);
+  };
+
+  const changeRoutes = (param) => {
+    console.log(searchParam);
+    switch (param) {
       case "ingredient":
         setIngredient(true);
         setBook(false);
@@ -52,13 +58,6 @@ function HomeHero() {
       default:
         break;
     }
-
-    if (searchParam === "Ingredient") {
-      setIngredient(true);
-    } else if (searchParam === "Book") {
-      setIngredient(false);
-      setBook(true);
-    }
   };
 
   const handleSubmit = (e) => {
@@ -68,15 +67,25 @@ function HomeHero() {
     //   console.log(data);
     // });
     switch (searchParam) {
-      case "Ingredient":
+      case "ingredient":
         console.log("inside ingred");
         API.singleQuery(searchInput, "ingred").then((data) => {
           console.log(data);
         });
         dispatch({ type: "" });
         break;
-      case "Book":
-        API.singleQuery(searchInput).then((data) => {
+      case "course":
+        API.singleQuery(searchInput, "course").then((data) => {
+          console.log(data);
+        });
+        break;
+      case "recipe":
+        API.singleQuery(searchInput, "recipe").then((data) => {
+          console.log(data);
+        });
+        break;
+      case "book":
+        API.singleQuery(searchInput, "book").then((data) => {
           console.log(data);
         });
         break;
@@ -105,6 +114,30 @@ function HomeHero() {
               id="ingredient"
             >
               Search Ingredient
+            </div>
+            <div
+              className={[
+                course === true
+                  ? styles.buttonSelected
+                  : styles.homeHero__Button,
+                ,
+              ].join(" ")}
+              onClick={handleClick}
+              id="course"
+            >
+              Search Course
+            </div>
+            <div
+              className={[
+                recipe === true
+                  ? styles.buttonSelected
+                  : styles.homeHero__Button,
+                ,
+              ].join(" ")}
+              onClick={handleClick}
+              id="recipe"
+            >
+              Search Recipe
             </div>
             <div
               className={[

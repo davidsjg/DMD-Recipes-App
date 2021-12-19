@@ -9,7 +9,6 @@
   bottom: 0;
   z-index: -1;
   height: 350px;
-  /* width: 100%; */
 
   background-repeat: no-repeat;
   background-size: cover;
@@ -25,15 +24,17 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  width: 800px;
 }
 
-.homeHero__findRecipe {
-  font-size: 60px;
-  color: #6d04ad;
+.homeHero__ButtonsDisp {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
+  margin-right: 20px;
+  height: 200px;
+  width: 800px;
 }
 
 .homeHero__searchbar {
@@ -44,12 +45,13 @@
   align-items: center;
   justify-content: center;
   color: #6d04ad;
+  width: 800px;
 }
 
 .homeHero__searchInput {
   border: none;
   height: 50px;
-  width: 450px;
+  width: 400px;
   opacity: 0.8;
   /* margin-right: 20px; */
 }
@@ -61,8 +63,8 @@
 .buttonSelected {
   color: white;
   background-color: #6d04ad;
-  margin-top: 20px;
-  box-shadow: inset 0 0 0 1px #6d04ad;
+
+  box-shadow: 0 0 0 1px #6d04ad;
   border-radius: 14px;
   padding: 10px 24px;
   transition-duration: 167ms;
@@ -71,40 +73,12 @@
   width: 150px;
   font-size: larger;
   word-wrap: break-word;
-  margin-right: 10px;
-}
-
-/* .buttonSelected:hover {
-  color: #6d04ad;
-  background-color: transparent;
-  box-shadow: inset 0 0 0 1px #6d04ad;
-  transform: scale(1.05);
-} */
-
-.homeHero__ButtonsDisp {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-right: 70px;
-}
-
-.homeHero_ButtonStateTrue {
-  background-color: #6d04ad;
-  color: white;
-  margin-top: 20px;
-  box-shadow: inset 0 0 0 1px #6d04ad;
-  border-radius: 14px;
-  padding: 10px 24px;
-  transition-duration: 167ms;
-  text-align: center;
-  cursor: pointer;
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }
 
 .homeHero__Button {
   color: #6d04ad;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   box-shadow: inset 0 0 0 1px #6d04ad;
   border-radius: 14px;
   padding: 10px 24px;
@@ -114,7 +88,7 @@
   width: 150px;
   font-size: larger;
   word-wrap: break-word;
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }
 .homeHero__Button:hover {
   color: white;
