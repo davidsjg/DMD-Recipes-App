@@ -12,7 +12,7 @@ import background from "./background4.jpeg";
 
 function BooksLayout() {
   const books = useSelector((state) => state.book.book);
-  console.log(books);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,7 +27,6 @@ function BooksLayout() {
     let bookTitle = temp.title;
 
     API.singleQuery(bookTitle, "book").then((recipes) => {
-      console.log(recipes.data);
       dispatch({ type: "recipe/recipeSelected", payload: recipes.data });
     });
   };
