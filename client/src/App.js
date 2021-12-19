@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Home from "./pages/Home";
 
 import Header from "./components/Header/Header";
-import BookPage from "./components/BookPage/BookPage";
+import ChooseRecipe from "./components/ChooseRecipe/ChooseRecipe";
 
 function App() {
   // const [recipeState, setRecipeState] = useState({
@@ -21,7 +21,7 @@ function App() {
       <>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/bookPage/:book" element={<BookPage />} />
+          <Route path="/chooseRecipe/:book" element={<ChooseRecipe />} />
         </Routes>
       </>
     </Router>

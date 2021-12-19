@@ -46,7 +46,7 @@ function BooksLayout() {
                 return (
                   <aside className={styles["bookData"]} key={index}>
                     <Link
-                      to={`/bookPage/${cName}`}
+                      to={`/chooseRecipe/${cName}`}
                       onClick={handleClick(cName)}
                       className={styles["bookLink"]}
                     >
