@@ -263,7 +263,3 @@ function HomeHero() {
 }
 
 export default HomeHero;
-
-{
-  /* <div className={styles["homeHero__findRecipe"]}>Search the Pantry</div> */
-}

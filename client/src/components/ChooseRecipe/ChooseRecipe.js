@@ -39,33 +39,29 @@ function ChooseRecipe() {
 export default ChooseRecipe;
 
 const MainImage = styled.div`
-  background-image: url("https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1453&q=80");
+  /* background-image: url("https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1453&q=80"); */
+  background-image: url("https://images.unsplash.com/photo-1495195134817-aeb325a55b65?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80");
+
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   margin-top: 74px;
-  border-radius: 20px;
+  margin-left: 7px;
+  margin-right: 7px;
 
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.3;
+
   z-index: -1;
-  /* height: 730px; */
-  height: 650px;
-  width: 100%;
-  margin-right: 100px;
+
+  height: 580px;
 
   @media (max-width: 768px) {
     height: 1075px;
     margin-top: 535px;
     border-radius: 5px;
   }
-  /* @media (max-width: 1276px) {
-    height: 1075px;
-    width: 1235px;
-    border-radius: 5px;
-  } */
 `;
 
 const BookImage = styled.div`

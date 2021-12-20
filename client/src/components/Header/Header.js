@@ -4,6 +4,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 // import NavDrop2 from "../NavDrop2/NavDrop2";
 import { Link } from "react-router-dom";
+import BookDropdown from "../BookDropdown/BookDropdown";
 
 function Header() {
   const [burgerStatus, setBurgerStatus] = useState(false);
@@ -55,7 +56,7 @@ function Header() {
         </div>
         <div className={styles["header__right"]}>
           {/* <NavDrop2 /> */}
-          BOOK DROPDOWN
+          <BookDropdown />
         </div>
       </div>
     </>
