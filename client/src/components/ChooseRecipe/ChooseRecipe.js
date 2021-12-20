@@ -12,13 +12,38 @@ function ChooseRecipe() {
   let recipes = useSelector((state) => state.recipe.recipe);
   const dispatch = useDispatch();
 
-  console.log(params);
+  let courseArray = ["appetizer", "breakfast", "main", "dessert"];
+
+  const allTitles = allBooks.map((book) => {
+    return book.title;
+  });
+
+  const titleFound = console.log(params);
 
   useEffect(() => {
-    API.singleQuery(params.book, "book").then((recipes) => {
-      console.log(recipes.data);
-      dispatch({ type: "recipe/recipeSelected", payload: recipes.data });
-    });
+    if (allTitles.find((title) => title === params.book)) {
+      console.log("its a book title");
+      API.singleQuery(params.book, "book").then((recipes) => {
+        console.log(recipes.data);
+        dispatch({ type: "recipe/recipeSelected", payload: recipes.data });
+      });
+    } else if (courseArray.find((course) => course === params.book)) {
+      console.log("its a course");
+      API.singleQuery(params.book, "course").then((recipes) => {
+        console.log(recipes.data);
+        dispatch({ type: "recipe/recipeSelected", payload: recipes.data });
+      });
+    } else {
+      API.singleQuery(params.book, "ingred").then((recipes) => {
+        console.log(recipes.data);
+        dispatch({ type: "recipe/recipeSelected", payload: recipes.data });
+      });
+    }
+
+    // API.singleQuery(params.book, "book").then((recipes) => {
+    //   console.log(recipes.data);
+    //   dispatch({ type: "recipe/recipeSelected", payload: recipes.data });
+    // });
   }, []);
 
   console.log(recipes);
@@ -38,9 +63,11 @@ function ChooseRecipe() {
 
         <div className={styles["recipesDisplay"]}>
           <h3 style={{ textDecoration: "underline" }}>Recipes</h3>
-          {recipes.map(({ name }) => {
-            return <div>{name}</div>;
-          })}
+          {recipes.length > 1
+            ? recipes.map(({ name }) => {
+                return <div>{name}</div>;
+              })
+            : console.log("nada")}
         </div>
       </div>
     </>
