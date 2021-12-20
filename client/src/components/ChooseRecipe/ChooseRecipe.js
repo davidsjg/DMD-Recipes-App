@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import styles from "./ChooseRecipe.module.css";
 import { useParams } from "react-router-dom";
 import { allBooks } from "../../AllBooks";
@@ -9,6 +10,16 @@ import { useSelector } from "react-redux";
 function ChooseRecipe() {
   let params = useParams();
   let recipes = useSelector((state) => state.recipe.recipe);
+  const dispatch = useDispatch();
+
+  console.log(params);
+
+  useEffect(() => {
+    API.singleQuery(params.book, "book").then((recipes) => {
+      console.log(recipes.data);
+      dispatch({ type: "recipe/recipeSelected", payload: recipes.data });
+    });
+  }, []);
 
   console.log(recipes);
 

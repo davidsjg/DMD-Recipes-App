@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import styles from "./BookDropdown.module.css";
 import { allBooks } from "../../AllBooks";
+import API from "../../utils/API";
 
 function BookDropdown() {
   const [allTitles, setAllTitles] = useState(["catering"]);
+  const dispatch = useDispatch();
   useEffect(() => {
     let tempTitles;
     tempTitles = allBooks.map((book) => {
@@ -13,21 +16,15 @@ function BookDropdown() {
     setAllTitles(tempTitles);
   }, []);
 
-  const handleClick = () => {
-    console.log(allTitles.length);
-  };
-
   return (
     <>
       <div className={styles["dropdown"]}>
-        <button className={styles["dropbtn"]} onClick={handleClick}>
-          Select Book
-        </button>
+        <button className={styles["dropbtn"]}>Select Book</button>
 
         <div className={styles["dropdown-content"]}>
           {allTitles.length > 1
             ? allTitles.map((title) => {
-                return <a href="#">{title}</a>;
+                return <a href={`/chooseRecipe/${title}`}>{title}</a>;
               })
             : console.log("nada")}
         </div>

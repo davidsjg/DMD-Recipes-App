@@ -26,16 +26,16 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  /* transition: cubic-bezier(0.175, 0.885, 0.32, 1.275); */
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: black;
+  color: #6d04ad;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
   transition: all 250ms;
+  margin-right: 10px;
 }
 
 /* Change color of dropdown links on hover */
@@ -43,6 +43,7 @@
   background-color: #6d04ad;
   transition: all 250ms;
   color: white;
+  margin-right: 10px;
 }
 
 /* Show the dropdown menu on hover */
