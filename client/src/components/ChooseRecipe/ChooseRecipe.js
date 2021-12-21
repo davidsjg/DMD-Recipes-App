@@ -79,7 +79,6 @@ export default ChooseRecipe;
 const MainImage = styled.div`
   /* background-image: url("https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1453&q=80"); */
   background-image: url("https://images.unsplash.com/photo-1495195134817-aeb325a55b65?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80");
-
   position: absolute;
   top: 0;
   left: 0;
@@ -87,12 +86,9 @@ const MainImage = styled.div`
   margin-top: 74px;
   margin-left: 7px;
   margin-right: 7px;
-
   background-repeat: no-repeat;
   background-size: cover;
-
   z-index: -1;
-
   height: 580px;
 
   @media (max-width: 768px) {

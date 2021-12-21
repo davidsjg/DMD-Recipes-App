@@ -5,17 +5,9 @@ import Home from "./pages/Home";
 
 import Header from "./components/Header/Header";
 import ChooseRecipe from "./components/ChooseRecipe/ChooseRecipe";
-import Recipe from "./pages/Recipe";
+import Recipe from "./components/Recipe/Recipe";
 
 function App() {
-  // const [recipeState, setRecipeState] = useState({
-  //   bookRecipes: [],
-  //   ingredRecipes: [],
-  //   courseRecipes: [],
-  //   currRecipe: {},
-  //   allTitles: allTitles,
-  // });
-
   return (
     <Router>
       <Header />
