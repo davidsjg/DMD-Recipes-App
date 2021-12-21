@@ -24,7 +24,6 @@ function Recipe() {
   return (
     <>
       <MainImage></MainImage>
-      <button onClick={handleClick}>click me</button>
       <h3>{currRecipe?.name}</h3>
     </>
   );

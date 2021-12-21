@@ -71,7 +71,7 @@ function HomeHero() {
         console.log("inside ingred");
         API.singleQuery(searchInput, "ingred").then((data) => {
           console.log(data.data);
-          dispatch({ type: "recipe/recipeSelected", payload: data.data });
+          // dispatch({ type: "recipe/recipeSelected", payload: data.data });
           navigate(`/chooseRecipe/${searchInput}`);
         });
         dispatch({ type: "" });
@@ -79,15 +79,15 @@ function HomeHero() {
       case "course":
         API.singleQuery(searchInput, "course").then((data) => {
           console.log(data.data);
-          dispatch({ type: "recipe/recipeSelected", payload: data.data });
+          // dispatch({ type: "recipe/recipeSelected", payload: data.data });
           navigate(`/chooseRecipe/${searchInput}`);
         });
         break;
       case "recipe":
         API.singleQuery(searchInput, "recipe").then((data) => {
           console.log(data.data);
-          dispatch({ type: "recipe/recipeSelected", payload: data.data });
-          navigate(`/chooseRecipe/${searchInput}`);
+          // dispatch({ type: "recipe/recipeSelected", payload: data.data });
+          navigate(`/recipe/${searchInput}`);
         });
         break;
       case "book":
