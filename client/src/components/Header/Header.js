@@ -27,11 +27,6 @@ function Header() {
               </div>
             </div>
             <p>test</p>
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
           </div>
           <aside className={styles["header__customMenu"]}>
             <i

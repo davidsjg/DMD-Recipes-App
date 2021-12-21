@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 
 import Header from "./components/Header/Header";
 import ChooseRecipe from "./components/ChooseRecipe/ChooseRecipe";
+import Recipe from "./pages/Recipe";
 
 function App() {
   // const [recipeState, setRecipeState] = useState({
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/chooseRecipe/:book" element={<ChooseRecipe />} />
+          <Route path="/recipe/:recipe" element={<Recipe />} />
         </Routes>
       </>
     </Router>

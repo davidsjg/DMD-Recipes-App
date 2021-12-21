@@ -6,6 +6,7 @@ import { allBooks } from "../../AllBooks";
 import styled from "styled-components";
 import API from "../../utils/API";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function ChooseRecipe() {
   let params = useParams();
@@ -22,52 +23,51 @@ function ChooseRecipe() {
 
   useEffect(() => {
     if (allTitles.find((title) => title === params.book)) {
-      console.log("its a book title");
       API.singleQuery(params.book, "book").then((recipes) => {
         console.log(recipes.data);
         dispatch({ type: "recipe/recipeSelected", payload: recipes.data });
       });
     } else if (courseArray.find((course) => course === params.book)) {
-      console.log("its a course");
       API.singleQuery(params.book, "course").then((recipes) => {
         console.log(recipes.data);
         dispatch({ type: "recipe/recipeSelected", payload: recipes.data });
       });
     } else {
       API.singleQuery(params.book, "ingred").then((recipes) => {
-        console.log(recipes.data);
         dispatch({ type: "recipe/recipeSelected", payload: recipes.data });
       });
     }
-
-    // API.singleQuery(params.book, "book").then((recipes) => {
-    //   console.log(recipes.data);
-    //   dispatch({ type: "recipe/recipeSelected", payload: recipes.data });
-    // });
   }, []);
-
-  console.log(recipes);
-
-  const currBook = allBooks.find((book) => book.cName === params.book);
 
   return (
     <>
       <MainImage></MainImage>
       <div className={styles["mainContain"]}>
-        <div className={styles["imgDisplay"]}>
-          {/* {currBook.img && <BookImage img={currBook.img} />} */}
+        {/* <div className={styles["imgDisplay"]}>
+          <BookImage img={"/images/lotBooks.jpeg"} />
           <div className={styles["changeBook"]}>
             <p>change Book</p>
           </div>
-        </div>
+        </div> */}
 
         <div className={styles["recipesDisplay"]}>
-          <h3 style={{ textDecoration: "underline" }}>Recipes</h3>
-          {recipes.length > 1
-            ? recipes.map(({ name }) => {
-                return <div>{name}</div>;
-              })
-            : console.log("nada")}
+          <h3 className={styles["recipesHeader"]}>Recipes</h3>
+          <div className={styles["recipeContain"]}>
+            {recipes.length > 1
+              ? recipes.map(({ name }) => {
+                  return (
+                    <Link
+                      to={`/recipe/${name}`}
+                      className={styles["recipeList"]}
+                    >
+                      {/* <span className={styles["spanEnya"]}>~ </span> */}
+                      {name}
+                      {/* <span className={styles["spanEnya"]}> ~</span> */}
+                    </Link>
+                  );
+                })
+              : console.log("nada")}
+          </div>
         </div>
       </div>
     </>
@@ -106,7 +106,19 @@ const BookImage = styled.div`
   background-image: ${(props) => `url('${props.img}')`};
   background-size: contain;
   background-repeat: no-repeat;
-  border-radius: 3px;
-  height: 152px;
-  width: 100px;
+  border-radius: 100px;
+  height: 483px;
+  width: 400px;
+  opacity: 0.5;
+  /* margin-right: 50px; */
 `;
+
+// const RecipesDisplay = styled.div`
+//   background-image: url("/images/background4.jpeg");
+//   opacity: 1;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: space-evenly;
+//   border: 1px solid #6d04ad;
+// `;

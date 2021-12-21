@@ -19,7 +19,7 @@ function HomeHero() {
   let ingredInput = useRef();
 
   let searchClass;
-  let searchTitles = ["Ingredient", "Book", "Recipe", "Course"];
+  let searchType = ["ingredient", "book", "recipe", "course"];
 
   const handleClick = (e) => {
     console.log(e.target.id);
@@ -123,6 +123,7 @@ function HomeHero() {
             >
               Search Ingredient
             </div>
+
             <div
               className={[
                 course === true
@@ -135,6 +136,7 @@ function HomeHero() {
             >
               Search Course
             </div>
+
             <div
               className={[
                 recipe === true
@@ -147,6 +149,7 @@ function HomeHero() {
             >
               Search Recipe
             </div>
+
             <div
               className={[
                 book === true ? styles.buttonSelected : styles.homeHero__Button,
