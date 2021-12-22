@@ -86,10 +86,11 @@ const MainImage = styled.div`
   margin-top: 74px;
   margin-left: 7px;
   margin-right: 7px;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
   z-index: -1;
-  height: 580px;
+  /* height: 580px; */
+  height: 100%;
 
   @media (max-width: 768px) {
     height: 1075px;
