@@ -19,6 +19,7 @@ function HomeHero() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   let ingredInput = useRef();
+  let recipeSearch = useRef();
 
   let searchClass;
   let searchType = ["ingredient", "book", "recipe", "course"];
@@ -55,11 +56,15 @@ function HomeHero() {
   }, []);
 
   const handleClick = (e) => {
-    console.log(e.target.id);
+    console.log(e.target.value);
     let temp = e.target.id;
     setSearchParam(temp);
 
     changeRoutes(e.target.id);
+  };
+
+  const handleClick2 = (e) => {
+    console.log(recipeSearch.current.state.value);
   };
 
   const changeRoutes = (param) => {
@@ -117,11 +122,13 @@ function HomeHero() {
         });
         break;
       case "recipe":
-        API.singleQuery(searchInput, "recipe").then((data) => {
-          console.log(data.data);
-          // dispatch({ type: "recipe/recipeSelected", payload: data.data });
-          navigate(`/recipe/${searchInput}`);
-        });
+        API.singleQuery(recipeSearch.current.state.value, "recipe").then(
+          (data) => {
+            console.log(data.data);
+            // dispatch({ type: "recipe/recipeSelected", payload: data.data });
+            navigate(`/recipe/${recipeSearch.current.state.value}`);
+          }
+        );
         break;
       case "book":
         API.singleQuery(searchInput, "book").then((data) => {
@@ -139,6 +146,7 @@ function HomeHero() {
   return (
     <>
       <div className={styles["homeHero__mainContain"]}>
+        <button onClick={handleClick2}>clicke me</button>
         <form
           onSubmit={handleSubmit}
           className={styles["homeHero__subContain"]}
@@ -250,7 +258,7 @@ function HomeHero() {
                 <Autocomplete
                   className={styles["homeHero__searchInput"]}
                   recipeTitles={allRecipes}
-                  onChange={(e) => setSearchInput(e.target.value)}
+                  ref={recipeSearch}
                 />
                 <button
                   type="submit"
