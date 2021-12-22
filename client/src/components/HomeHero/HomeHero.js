@@ -4,6 +4,7 @@ import styles from "./HomeHero.module.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import API from "../../utils/API";
+import Autocomplete from "../Autocomplete/Autocomplete";
 
 function HomeHero() {
   const [ingredient, setIngredient] = useState(true);
@@ -12,6 +13,7 @@ function HomeHero() {
   const [course, setCourse] = useState(false);
   const [searchInput, setSearchInput] = useState();
   const [searchParam, setSearchParam] = useState("ingredient");
+  const [allRecipes, setAllRecipes] = useState([]);
 
   const recipeState = useSelector((state) => state.recipe);
   const dispatch = useDispatch();
@@ -20,6 +22,37 @@ function HomeHero() {
 
   let searchClass;
   let searchType = ["ingredient", "book", "recipe", "course"];
+
+  let tempBooks = [];
+  let tempData;
+  let recipeTitles = [];
+  let newArray = [];
+  let bookTitles;
+
+  useEffect(() => {
+    API.getTitles().then((data) => {
+      //all book titles, including allBooks at index 0
+      console.log(data.data);
+
+      tempData = data.data;
+      bookTitles = data.data;
+
+      console.log(tempData);
+
+      tempData.map((name) => {
+        recipeTitles.push(name.name);
+      });
+
+      console.log(recipeTitles);
+
+      //recipe titles mapped into new array with 2 key value pairs for
+      recipeTitles.map((title, index) => {
+        //recipe titles mapped into new array with 2 key value pairs for, send to Autocomplete
+        newArray.push({ id: title, label: title });
+        setAllRecipes(newArray);
+      });
+    });
+  }, []);
 
   const handleClick = (e) => {
     console.log(e.target.id);
@@ -208,10 +241,15 @@ function HomeHero() {
             <>
               <div className={styles["homeHero__searchbar"]}>
                 <i class="fas fa-search fa-lg"></i>
-                <input
+                {/* <input
                   type="text"
                   placeholder="Enter Recipe"
                   className={styles["homeHero__searchInput"]}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                /> */}
+                <Autocomplete
+                  className={styles["homeHero__searchInput"]}
+                  recipeTitles={allRecipes}
                   onChange={(e) => setSearchInput(e.target.value)}
                 />
                 <button
