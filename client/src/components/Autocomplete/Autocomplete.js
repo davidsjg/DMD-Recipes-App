@@ -34,7 +34,6 @@ class Autocomplete extends React.Component {
           onChange={(e) => this.setState({ value: e.target.value })}
           onSelect={(value) => this.setState({ value })}
           inputProps={{ className: "homeHero__searchInput" }}
-          // inputProps={{ style: (placeholder = "test") }}
         />
       </>
     );

@@ -41,6 +41,12 @@
   width: 800px;
 }
 
+.recipeSearch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .homeHero__searchbar {
   height: 50px;
   width: 150px;

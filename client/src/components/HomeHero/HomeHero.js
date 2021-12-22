@@ -247,14 +247,11 @@ function HomeHero() {
             </>
           ) : recipe === true ? (
             <>
+              {/* <span className={styles["recipeSearch"]}> */}
+
               <div className={styles["homeHero__searchbar"]}>
                 <i class="fas fa-search fa-lg"></i>
-                {/* <input
-                  type="text"
-                  placeholder="Enter Recipe"
-                  className={styles["homeHero__searchInput"]}
-                  onChange={(e) => setSearchInput(e.target.value)}
-                /> */}
+
                 <Autocomplete
                   className={styles["homeHero__searchInput"]}
                   recipeTitles={allRecipes}
@@ -267,6 +264,7 @@ function HomeHero() {
                   Submit
                 </button>
               </div>
+              {/* </span> */}
             </>
           ) : course === true ? (
             <>
