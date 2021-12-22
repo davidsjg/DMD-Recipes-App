@@ -4,11 +4,13 @@ const db = require("../models");
 module.exports = {
   findTitles: function (req, res) {
     db.Recipe.find({}, { name: 1 })
+      .sort({ name: 1 })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   findBooks: function (req, res) {
     db.Recipe.find({}, { book: 1 })
+      .sort({ name: 1 })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
@@ -17,6 +19,7 @@ module.exports = {
     db.Recipe.find({
       ingredients: { $regex: new RegExp(req.query.q, "i") },
     })
+      .sort({ name: 1 })
       .then((dbModel) => res.json(dbModel))
 
       .catch((err) => res.status(422).json(err));
@@ -27,30 +30,35 @@ module.exports = {
       db.Recipe.find({
         book: { $regex: new RegExp(req.query.q, "i") },
       })
+        .sort({ name: 1 })
         .then((dbModel) => res.json(dbModel))
         .catch((err) => res.status(422).json(err));
     } else if (req.query.r === "recipe") {
       db.Recipe.find({
         name: { $regex: new RegExp(req.query.q, "i") },
       })
+        .sort({ name: 1 })
         .then((dbModel) => res.json(dbModel))
         .catch((err) => res.status(422).json(err));
     } else if (req.query.r === "ingred") {
       db.Recipe.find({
         ingredients: { $regex: new RegExp(req.query.q, "i") },
       })
+        .sort({ name: 1 })
         .then((dbModel) => res.json(dbModel))
         .catch((err) => res.status(422).json(err));
     } else if (req.query.r === "course") {
       db.Recipe.find({
         course: { $regex: new RegExp(req.query.q, "i") },
       })
+        .sort({ name: 1 })
         .then((dbModel) => res.json(dbModel))
         .catch((err) => res.status(422).json(err));
     } else if (req.query.r === "allRecipes") {
       db.Recipe.find({
         book: { $exists: true },
       })
+        .sort({ name: 1 })
         .then((dbModel) => res.json(dbModel))
         .catch((err) => res.status(422).json(err));
     }

@@ -21,9 +21,14 @@
   height: 40px;
   width: 400px;
   opacity: 0.8;
+
   /* margin-right: 20px; */
 }
 
 .homeHero__searchInput:focus {
   outline-width: 0;
+}
+
+.homeHero__searchInput::placeholder {
+  content: "hello";
 }
