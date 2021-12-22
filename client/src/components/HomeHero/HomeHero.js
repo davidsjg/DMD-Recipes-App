@@ -146,7 +146,6 @@ function HomeHero() {
   return (
     <>
       <div className={styles["homeHero__mainContain"]}>
-        <button onClick={handleClick2}>clicke me</button>
         <form
           onSubmit={handleSubmit}
           className={styles["homeHero__subContain"]}

@@ -13,9 +13,13 @@ function Recipe() {
   const [currRecipe, setCurrRecipe] = useState();
   const [currBook, setCurrBook] = useState();
 
+  let ingredArray = currRecipe?.ingredients;
+
+  console.log(ingredArray);
+
   useEffect(() => {
     API.singleQuery(params.recipe, "recipe").then((data) => {
-      console.log(data.data);
+      console.log(data.data[0]);
       dispatch({ type: "recipe/recipeSelected", payload: data.data });
       setCurrRecipe(data.data[0]);
     });
@@ -25,7 +29,7 @@ function Recipe() {
   }, []);
 
   const handleClick = () => {
-    console.log(currBook);
+    console.log(currRecipe);
   };
 
   return (
@@ -33,21 +37,31 @@ function Recipe() {
       {/* background image */}
       <div className={styles["mainImage"]}>
         <div className={styles["leftContent"]}>
-          {/* <div className={styles["recipeTitle"]}> */}
           <RecipeTitle cover={currBook?.img} />
-          {/* <button onClick={handleClick}>sup</button> */}
-          {/* <h1>{currRecipe?.name}</h1> */}
-          {/* </div> */}
+          <button onClick={handleClick}>sup</button>
         </div>
 
-        {/* lemon recipe image */}
         <div className={styles["recipeImg"]}>
-          {/* recipe contents */}
           <div className={styles["recipe"]}>
             <h2>{currRecipe?.name}</h2>
+
             <span className={styles["recipeUnderline"]}>
               <hr styles={{ color: "darkred" }} />
             </span>
+            <div className={styles["recipeContents"]}>
+              {currRecipe?.quantities.map((amount, index) => {
+                return (
+                  <div type="checkbox">
+                    <input
+                      type="checkbox"
+                      style={{ backgroundColor: "#6d04ad" }}
+                      className={styles["ingredCheckbox"]}
+                    />{" "}
+                    {amount} {ingredArray[index]}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
         <div className={styles["bookCover"]}>
