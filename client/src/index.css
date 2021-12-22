@@ -15,3 +15,15 @@
   opacity: 0.8;
   color: #6d04ad;
 }
+
+.homeHero__searchInput {
+  border: none;
+  height: 40px;
+  width: 400px;
+  opacity: 0.8;
+  /* margin-right: 20px; */
+}
+
+.homeHero__searchInput:focus {
+  outline-width: 0;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import ReactAutocomplete from "react-autocomplete";
 import API from "../../utils/API";
+import styles from "./Autocomplete.module.css";
 
 //need to pass down all recipe titles
 
@@ -32,6 +33,7 @@ class Autocomplete extends React.Component {
           value={this.state.value}
           onChange={(e) => this.setState({ value: e.target.value })}
           onSelect={(value) => this.setState({ value })}
+          inputProps={{ className: "homeHero__searchInput" }}
         />
       </>
     );
