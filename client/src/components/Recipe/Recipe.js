@@ -33,10 +33,11 @@ function Recipe() {
       {/* background image */}
       <div className={styles["mainImage"]}>
         <div className={styles["leftContent"]}>
-          <div className={styles["recipeTitle"]}>
-            {/* <button onClick={handleClick}>sup</button> */}
-            {/* <h1>{currRecipe?.name}</h1> */}
-          </div>
+          {/* <div className={styles["recipeTitle"]}> */}
+          <RecipeTitle cover={currBook?.img} />
+          {/* <button onClick={handleClick}>sup</button> */}
+          {/* <h1>{currRecipe?.name}</h1> */}
+          {/* </div> */}
         </div>
 
         {/* lemon recipe image */}
@@ -50,7 +51,7 @@ function Recipe() {
           </div>
         </div>
         <div className={styles["bookCover"]}>
-          <BookCover cover={currBook?.img} />
+          <BookCover />
         </div>
       </div>
     </>
@@ -59,8 +60,21 @@ function Recipe() {
 
 export default Recipe;
 
-const BookCover = styled.div`
+const RecipeTitle = styled.div`
+  /* display: flex;
+  flex-direction: row; */
   background-image: ${(props) => `url('${props.cover}')`};
+  opacity: 1;
+  background-size: cover;
+  width: 150px;
+  height: 250px;
+  border-radius: 8px;
+  margin-left: 165px;
+`;
+
+const BookCover = styled.div`
+  background-image: url("https://images.unsplash.com/photo-1541795795328-f073b763494e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+
   background-size: cover;
   width: 150px;
   height: 250px;
