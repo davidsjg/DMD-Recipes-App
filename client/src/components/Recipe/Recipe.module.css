@@ -7,10 +7,10 @@
   margin-top: 74px;
   margin-left: 7px;
   margin-right: 7px;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
   z-index: -1;
-  height: 580px;
+  height: 250%;
   display: grid;
   grid-template-columns: 325px 580px 300px;
 }
@@ -35,13 +35,14 @@
 .recipeImg {
   position: relative;
   margin-top: 15px;
-  height: 543px;
+  height: 98%;
   background-image: url("./page2.png");
   content: "";
-  opacity: 0.8;
+  /* opacity: 0.6; */
   border-radius: 10px;
   margin-left: 39px;
   background-repeat: no-repeat;
+  background-size: cover;
   z-index: -1;
   width: 560px;
 }
@@ -77,12 +78,24 @@
   opacity: 0.8;
 }
 
+.checkboxContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  font-size: larger;
+  border-bottom: 1px solid lightblue;
+  border-width: 100%;
+  margin-bottom: 3px;
+}
+
 .ingredCheckbox {
   -webkit-appearance: none;
+
   height: 12px;
   width: 12px;
   background-color: #6d04ad;
-
+  margin-right: 6px;
   /* border: 1px solid #cacece; */
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
     inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
@@ -94,8 +107,8 @@
 
 .ingredCheckbox:active,
 .ingredCheckbox:checked:active {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
-    inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15),
+    inset 1px 1px 1px rgba(0, 0, 0, 0.13);
 }
 
 .ingredCheckbox:checked {
@@ -103,17 +116,27 @@
   border: 1px solid #adb8c0;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
     inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05),
-    inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+    inset 5px 10px -12px rgba(255, 255, 255, 0.1);
   color: #99a1a7;
 }
 
 .ingredCheckbox:checked:after {
   content: "\2714";
-  font-size: 14px;
+  font-size: 13px;
   position: absolute;
-  top: 0px;
-  left: 3px;
-  color: black;
+  top: -4px;
+  left: 2px;
+  color: white;
 }
+
+.checkboxText {
+  word-spacing: 1.3px;
+}
+
+.instructions p {
+  font-size: x-large;
+  padding: 0 8px;
+}
+
 @media (max-width: 768px) {
 }

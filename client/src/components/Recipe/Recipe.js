@@ -38,7 +38,7 @@ function Recipe() {
       <div className={styles["mainImage"]}>
         <div className={styles["leftContent"]}>
           <RecipeTitle cover={currBook?.img} />
-          <button onClick={handleClick}>sup</button>
+          {/* <button onClick={handleClick}>sup</button> */}
         </div>
 
         <div className={styles["recipeImg"]}>
@@ -51,16 +51,26 @@ function Recipe() {
             <div className={styles["recipeContents"]}>
               {currRecipe?.quantities.map((amount, index) => {
                 return (
-                  <div type="checkbox">
+                  <div className={styles["checkboxContainer"]}>
                     <input
                       type="checkbox"
                       style={{ backgroundColor: "#6d04ad" }}
                       className={styles["ingredCheckbox"]}
                     />{" "}
-                    {amount} {ingredArray[index]}
+                    <div className={styles["checkboxText"]}>
+                      {" "}
+                      {amount} {ingredArray[index]}
+                    </div>
                   </div>
                 );
               })}
+            </div>
+            <div className={styles["instructions"]}>
+              <p>{currRecipe?.instructions1}</p>
+              <p>{currRecipe?.instructions2}</p>
+              <p>{currRecipe?.instructions3}</p>
+              <p>{currRecipe?.instructions4}</p>
+              <p style={{ color: "white" }}>{currRecipe?.instructions5}</p>
             </div>
           </div>
         </div>
