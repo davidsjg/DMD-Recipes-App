@@ -40,11 +40,11 @@ function Header() {
             <span>Sign-up</span>
           </aside>
         </div>
-        <Link to="/" className={styles["linkHeader"]}>
+        <a href="/" className={styles["linkHeader"]}>
           <div className={styles["header__center"]}>
             <img src="/images/goldysLogo6.png" alt="" />
           </div>
-        </Link>
+        </a>
         <div className={styles["mobileLogin"]}>
           <span>Log-In/</span>
           <span>Sign-up</span>
