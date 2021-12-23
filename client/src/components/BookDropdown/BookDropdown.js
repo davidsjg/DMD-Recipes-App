@@ -23,11 +23,14 @@ function BookDropdown() {
         <button className={styles["dropbtn"]}>Select Book</button>
 
         <div className={styles["dropdown-content"]}>
-          {allTitles.length > 1
+          {allTitles.map((title) => {
+            return <Link to={`/chooseRecipe/${title}`}>{title}</Link>;
+          })}
+          {/* {allTitles.length > 1
             ? allTitles.map((title) => {
-                return <a href={`/chooseRecipe/${title}`}>{title}</a>;
+                return <Link to={`/chooseRecipe/${title}`}>{title}</Link>;
               })
-            : null}
+            : null} */}
         </div>
       </div>
     </>

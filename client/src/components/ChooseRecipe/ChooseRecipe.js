@@ -41,7 +41,7 @@ function ChooseRecipe() {
         dispatch({ type: "recipe/recipeSelected", payload: recipes.data });
       });
     }
-  }, []);
+  }, [params]);
 
   return (
     <>
