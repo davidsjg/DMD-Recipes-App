@@ -38,12 +38,12 @@ function BooksLayout() {
   return (
     <>
       <MainBook background={background}> </MainBook>
-      <button onClick={handleClick2}>click me</button>
+      {/* <button onClick={handleClick2}>click me</button> */}
       <div className={styles["mainDisplay"]}>
-        <h5 className={styles["header"]}>Recipes by Book</h5>
+        <h3 className={styles["header"]}>Recipes by Book</h3>
         <div className={styles["booksLayout__container"]}>
           {books.length > 0
-            ? doneBooks.map(({ title, cName, img }, index) => {
+            ? allBooks.map(({ title, cName, img }, index) => {
                 return (
                   <aside className={styles["bookData"]} key={index}>
                     <Link
