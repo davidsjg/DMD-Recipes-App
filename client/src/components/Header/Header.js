@@ -3,15 +3,20 @@ import styles from "./Header.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
 
 // import NavDrop2 from "../NavDrop2/NavDrop2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import BookDropdown from "../BookDropdown/BookDropdown";
 
 function Header() {
   const [burgerStatus, setBurgerStatus] = useState(false);
+  const navigate = useNavigate();
 
   const burgerTrue = burgerStatus
     ? styles.burgerNavTrue
     : styles.burgerNavFalse;
+
+  const redirectHome = () => {
+    navigate("/");
+  };
   return (
     <>
       <div className={styles["header__container"]}>
@@ -40,11 +45,13 @@ function Header() {
             <span>Sign-up</span>
           </aside>
         </div>
-        <a href="/" className={styles["linkHeader"]}>
-          <div className={styles["header__center"]}>
-            <img src="/images/goldysLogo6.png" alt="" />
-          </div>
-        </a>
+
+        <div className={styles["header__center"]}>
+          <a href="/">
+            <img src="/images/goldysLogo6.png" alt="DMDlogo" />
+          </a>
+        </div>
+
         <div className={styles["mobileLogin"]}>
           <span>Log-In/</span>
           <span>Sign-up</span>

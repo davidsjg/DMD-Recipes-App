@@ -48,7 +48,7 @@ function HomeHero() {
         setAllRecipes(newArray);
       });
     });
-  }, []);
+  }, [searchParam]);
 
   const handleClick = (e) => {
     console.log(e.target.value);
