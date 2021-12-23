@@ -9,8 +9,10 @@ const recipeSchema = new Schema({
   course: { type: String },
   glutenFree: { type: Boolean },
   lowFat: { type: Boolean },
-  instructions: { type: String },
-  allBooks: { type: Array },
+  instructions1: { type: String },
+  instructions2: { type: String },
+  instructions3: { type: String },
+  instructions4: { type: String },
 });
 
 const Recipe = mongoose.model("Recipe", recipeSchema);
