@@ -33,18 +33,13 @@ function HomeHero() {
   useEffect(() => {
     API.getTitles().then((data) => {
       //all book titles, including allBooks at index 0
-      console.log(data.data);
 
       tempData = data.data;
       bookTitles = data.data;
 
-      console.log(tempData);
-
       tempData.map((name) => {
         recipeTitles.push(name.name);
       });
-
-      console.log(recipeTitles);
 
       //recipe titles mapped into new array with 2 key value pairs for
       recipeTitles.map((title, index) => {

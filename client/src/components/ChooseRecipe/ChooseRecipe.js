@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import styles from "./ChooseRecipe.module.css";
 import { useParams } from "react-router-dom";
 import { allBooks } from "../../AllBooks";
+import { doneBooks } from "../../AllBooks";
 import styled from "styled-components";
 import API from "../../utils/API";
 import { useSelector } from "react-redux";
@@ -15,17 +16,20 @@ function ChooseRecipe() {
 
   let courseArray = ["appetizer", "breakfast", "main", "dessert"];
 
-  const allTitles = allBooks.map((book) => {
+  const allTitles = doneBooks.map((book) => {
     return book.title;
   });
 
-  const titleFound = console.log(params);
+  // const titleFound = console.log(params);
+
+  console.log(params.book);
 
   useEffect(() => {
     if (allTitles.find((title) => title === params.book)) {
       API.singleQuery(params.book, "book").then((recipes) => {
         console.log(recipes.data);
         dispatch({ type: "recipe/recipeSelected", payload: recipes.data });
+        // window.location.reload(false);
       });
     } else if (courseArray.find((course) => course === params.book)) {
       API.singleQuery(params.book, "course").then((recipes) => {

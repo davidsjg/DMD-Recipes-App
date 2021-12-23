@@ -3,6 +3,7 @@ import styles from "./BooksLayout.module.css";
 import styled from "styled-components";
 import { useContext } from "react";
 import { allBooks } from "../../AllBooks";
+import { doneBooks } from "../../AllBooks";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -37,11 +38,12 @@ function BooksLayout() {
   return (
     <>
       <MainBook background={background}> </MainBook>
+      <button onClick={handleClick2}>click me</button>
       <div className={styles["mainDisplay"]}>
         <h5 className={styles["header"]}>Recipes by Book</h5>
         <div className={styles["booksLayout__container"]}>
           {books.length > 0
-            ? books.map(({ title, cName, img }, index) => {
+            ? doneBooks.map(({ title, cName, img }, index) => {
                 return (
                   <aside className={styles["bookData"]} key={index}>
                     <Link

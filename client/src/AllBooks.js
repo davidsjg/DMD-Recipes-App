@@ -85,3 +85,21 @@ export const allBooks = [
     clas: "enchilada",
   },
 ];
+
+export const doneBooks = [
+  {
+    title: "Catering to Nobody",
+    img: "/images/catering.jpg",
+    cName: "catering",
+  },
+  {
+    title: "The Cereal Murders",
+    img: "/images/cereal.jpeg",
+    cName: "cerealMurders",
+  },
+  {
+    title: "The Last Suppers",
+    img: "/images/suppers.jpeg",
+    cName: "lastSuppers",
+  },
+];

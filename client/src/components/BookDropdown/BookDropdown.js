@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import styles from "./BookDropdown.module.css";
 import { allBooks } from "../../AllBooks";
+import { doneBooks } from "../../AllBooks";
 import API from "../../utils/API";
 
 function BookDropdown() {
@@ -10,7 +11,7 @@ function BookDropdown() {
   const dispatch = useDispatch();
   useEffect(() => {
     let tempTitles;
-    tempTitles = allBooks.map((book) => {
+    tempTitles = doneBooks.map((book) => {
       return book.title;
     });
     setAllTitles(tempTitles);
@@ -26,7 +27,7 @@ function BookDropdown() {
             ? allTitles.map((title) => {
                 return <a href={`/chooseRecipe/${title}`}>{title}</a>;
               })
-            : console.log("nada")}
+            : null}
         </div>
       </div>
     </>
