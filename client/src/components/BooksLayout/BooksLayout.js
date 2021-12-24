@@ -87,7 +87,7 @@ const MainBook = styled.div`
   margin-right: 100px;
 
   @media (max-width: 768px) {
-    height: 1075px;
+    height: 1090px;
     margin-top: 535px;
     border-radius: 5px;
   }

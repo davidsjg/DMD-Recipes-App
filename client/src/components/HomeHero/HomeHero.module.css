@@ -132,12 +132,13 @@
 }
 
 @media (max-width: 768px) {
-  .homeHero__mainContain {
-    /* margin-top: 125px; */
-
-    border-radius: 10px;
+  .homeHero__subContain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-  .header__searchInput {
-    width: 300px;
+  .homeHero__searchbar {
+    width: 400px;
   }
 }
