@@ -98,7 +98,7 @@ const MainImage = styled.div`
 
   @media (max-width: 768px) {
     height: 1075px;
-    margin-top: 535px;
+    margin-top: 185px;
     border-radius: 5px;
   }
 `;
@@ -113,13 +113,3 @@ const BookImage = styled.div`
   opacity: 0.5;
   /* margin-right: 50px; */
 `;
-
-// const RecipesDisplay = styled.div`
-//   background-image: url("/images/background4.jpeg");
-//   opacity: 1;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: space-evenly;
-//   border: 1px solid #6d04ad;
-// `;

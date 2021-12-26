@@ -94,6 +94,9 @@ const RecipeTitle = styled.div`
   height: 250px;
   border-radius: 8px;
   margin-left: 165px;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const BookCover = styled.div`
@@ -103,4 +106,5 @@ const BookCover = styled.div`
   width: 150px;
   height: 250px;
   border-radius: 8px;
+  display: none;
 `;

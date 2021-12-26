@@ -139,4 +139,19 @@
 }
 
 @media (max-width: 768px) {
+  .mainImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .recipeImg {
+    margin-top: 100px;
+    width: 480px;
+    margin-left: 0;
+  }
+  .recipeUnderline hr {
+    border-color: darkred;
+    width: 470px;
+  }
 }

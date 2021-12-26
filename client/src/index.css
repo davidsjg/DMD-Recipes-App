@@ -36,3 +36,9 @@
 .homeHero__searchInput::placeholder {
   content: "hello";
 }
+
+@media (max-width: 768px) {
+  .homeHero__searchInput {
+    width: 244px;
+  }
+}

@@ -36,6 +36,7 @@
   display: block;
   transition: all 250ms;
   margin-right: 10px;
+  transition: transform 0.5x;
 }
 
 /* Change color of dropdown links on hover */
@@ -49,6 +50,7 @@
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+  transform: translateX(1);
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
