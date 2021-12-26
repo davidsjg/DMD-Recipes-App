@@ -43,7 +43,7 @@ function BooksLayout() {
         <h3 className={styles["header"]}>Recipes by Book</h3>
         <div className={styles["booksLayout__container"]}>
           {books.length > 0
-            ? allBooks.map(({ title, cName, img }, index) => {
+            ? doneBooks.map(({ title, cName, img }, index) => {
                 return (
                   <aside className={styles["bookData"]} key={index}>
                     <Link
