@@ -266,7 +266,7 @@ function HomeHero() {
                 <i class="fas fa-search fa-lg"></i>
                 <input
                   type="text"
-                  placeholder="Enter Course"
+                  placeholder="Enter Course (appetizer, breakfast, main, or dessert)"
                   className={styles["homeHero__searchInput"]}
                   onChange={(e) => setSearchInput(e.target.value)}
                 />
