@@ -131,7 +131,7 @@
   transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 835px) {
   .homeHero__subContain {
     display: flex;
     flex-direction: column;
@@ -141,6 +141,9 @@
   }
   .homeHero__searchbar {
     width: 400px;
+  }
+  .homeHero__ButtonsDisp {
+    width: 375px;
   }
 }
 

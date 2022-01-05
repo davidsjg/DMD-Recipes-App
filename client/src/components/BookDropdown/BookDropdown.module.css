@@ -59,8 +59,20 @@
   color: white;
 }
 
-@media (max-width: 415px) {
+@media (max-width: 768px) {
   .dropbtn {
     margin-bottom: 3px;
   }
 }
+
+/* @media (max-width: 500px) {
+  .dropbtn {
+    margin-bottom: 3px;
+  }
+}
+
+@media (max-width: 415px) {
+  .dropbtn {
+    margin-bottom: 3px;
+  }
+} */
