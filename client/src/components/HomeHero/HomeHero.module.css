@@ -49,7 +49,7 @@
 
 .homeHero__searchbar {
   height: 50px;
-  width: 150px;
+  width: 130px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -137,8 +137,28 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
   }
   .homeHero__searchbar {
     width: 400px;
+  }
+}
+
+@media (max-width: 415px) {
+  .homeHero__mainContain {
+    width: 100%;
+  }
+  .homeHero__ButtonsDisp {
+    width: 375px;
+  }
+  .homeHero__subContain {
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .homeHero__searchbar {
+    width: 350px;
   }
 }

@@ -82,14 +82,17 @@ const MainBook = styled.div`
   opacity: 0.3;
   z-index: -1;
   /* height: 730px; */
-  height: 650px;
+  height: 290px;
   width: 100%;
   margin-right: 100px;
 
   @media (max-width: 768px) {
-    height: 1090px;
+    height: 255px;
     margin-top: 535px;
     border-radius: 5px;
+  }
+  @media (max-width: 414px) {
+    height: 300px;
   }
   /* @media (max-width: 1276px) {
     height: 1075px;

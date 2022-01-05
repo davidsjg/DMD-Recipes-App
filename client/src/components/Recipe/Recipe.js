@@ -106,5 +106,11 @@ const BookCover = styled.div`
   width: 150px;
   height: 250px;
   border-radius: 8px;
-  display: none;
+  @media (max-width: 768px) {
+    display: none;
+  }
+  @media (max-width: 415px) {
+    display: none;
+  }
+  /* display: none; */
 `;

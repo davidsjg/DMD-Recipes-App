@@ -45,35 +45,36 @@ function ChooseRecipe() {
 
   return (
     <>
-      <MainImage></MainImage>
-      <div className={styles["mainContain"]}>
-        {/* <div className={styles["imgDisplay"]}>
+      <MainImage>
+        <div className={styles["mainContain"]}>
+          {/* <div className={styles["imgDisplay"]}>
           <BookImage img={"/images/lotBooks.jpeg"} />
           <div className={styles["changeBook"]}>
             <p>change Book</p>
           </div>
         </div> */}
 
-        <div className={styles["recipesDisplay"]}>
-          <h3 className={styles["recipesHeader"]}>Recipes</h3>
-          <div className={styles["recipeContain"]}>
-            {recipes.length > 1
-              ? recipes.map(({ name }) => {
-                  return (
-                    <Link
-                      to={`/recipe/${name}`}
-                      className={styles["recipeList"]}
-                    >
-                      {/* <span className={styles["spanEnya"]}>~ </span> */}
-                      {name}
-                      {/* <span className={styles["spanEnya"]}> ~</span> */}
-                    </Link>
-                  );
-                })
-              : console.log("nada")}
+          <div className={styles["recipesDisplay"]}>
+            <h3 className={styles["recipesHeader"]}>Recipes</h3>
+            <div className={styles["recipeContain"]}>
+              {recipes.length > 1
+                ? recipes.map(({ name }) => {
+                    return (
+                      <Link
+                        to={`/recipe/${name}`}
+                        className={styles["recipeList"]}
+                      >
+                        {/* <span className={styles["spanEnya"]}>~ </span> */}
+                        {name}
+                        {/* <span className={styles["spanEnya"]}> ~</span> */}
+                      </Link>
+                    );
+                  })
+                : console.log("nada")}
+            </div>
           </div>
         </div>
-      </div>
+      </MainImage>
     </>
   );
 }
@@ -94,10 +95,15 @@ const MainImage = styled.div`
   background-size: cover;
   z-index: -1;
   /* height: 580px; */
-  height: 100%;
+  height: fit-content;
 
   @media (max-width: 768px) {
     height: 1075px;
+    margin-top: 185px;
+    border-radius: 5px;
+  }
+  @media (max-width: 415px) {
+    height: fit-content;
     margin-top: 185px;
     border-radius: 5px;
   }

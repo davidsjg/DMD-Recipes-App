@@ -75,7 +75,10 @@
 .bookCover {
   height: 550px;
   margin-left: 70px;
-  margin-top: 308px;
+  /* margin-top: 308px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   opacity: 0.8;
 }
 
@@ -154,5 +157,36 @@
   .recipeUnderline hr {
     border-color: darkred;
     width: 470px;
+  }
+  .bookCover {
+    display: none;
+  }
+}
+
+@media (max-width: 415px) {
+  .mainImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .recipeImg {
+    margin-top: 100px;
+    width: 400px;
+    margin-left: 0;
+  }
+  .recipeUnderline hr {
+    border-color: darkred;
+    width: 470px;
+  }
+  .recipeImg {
+    width: 400px;
+  }
+  .recipeUnderline hr {
+    border-color: darkred;
+    width: 390px;
+  }
+  .bookCover {
+    display: none;
   }
 }

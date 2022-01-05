@@ -42,3 +42,9 @@
     width: 244px;
   }
 }
+
+@media (max-width: 376px) {
+  .homeHero__searchInput {
+    width: 200px;
+  }
+}

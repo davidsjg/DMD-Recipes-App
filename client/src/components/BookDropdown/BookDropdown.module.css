@@ -58,3 +58,9 @@
   background-color: #6d04ad;
   color: white;
 }
+
+@media (max-width: 415px) {
+  .dropbtn {
+    margin-bottom: 3px;
+  }
+}
